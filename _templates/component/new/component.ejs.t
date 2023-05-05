@@ -4,10 +4,12 @@ to: src/components/<%=name %>/index.tsx
 <%= interfaceName = "I"+name %>
 import React from 'react'
 
-interface <%=interface%> {
+interface <%=interfaceName%> {
 }
-const <%=name%>: FC = (i<%=name%>: <%=interfaceName%>) => {
+const <%=Name%>: FC = ({
+
+}: <%=interfaceName%>) => {
     return <></>;
 }
 
-export default <%=name%>;
+export default <%=Name%>;

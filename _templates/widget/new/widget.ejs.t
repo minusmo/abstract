@@ -6,7 +6,9 @@ import React from 'react'
 
 interface <%=interfaceName%> {
 }
-const <%=Name%>: FC = (i<%=name%>: <%=interfaceName%>) => {
+const <%=Name%>: FC = ({
+
+}: <%=interfaceName%>) => {
     return (
         <>
 
