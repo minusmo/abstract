@@ -1,14 +1,13 @@
 ---
 to: src/components/<%=name %>/index.tsx
 ---
-<%= interfaceName = "I"+name %>
-import React from 'react'
+import React, {FC} from 'react';
 
-interface <%=interfaceName%> {
+interface I<%=Name%> {
 }
 const <%=Name%>: FC = ({
 
-}: <%=interfaceName%>) => {
+}: I<%=Name%>) => {
     return <></>;
 }
 
