@@ -1,5 +1,6 @@
 ---
 to: src/widgets/<%=name %>/index.tsx
+force: true
 ---
 import React, {FC} from 'react';
 
