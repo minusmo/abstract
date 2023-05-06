@@ -1,5 +1,5 @@
 ---
-to: src/widgets/<%=name %>/index.tsx
+to: src/widgets/<%=name %>/presenter.tsx
 force: true
 ---
 import React, {FC} from 'react';
