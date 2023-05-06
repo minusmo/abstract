@@ -4,11 +4,11 @@ force: true
 ---
 import React, {FC} from 'react';
 
-interface I<%=Name%> {
+interface I<%=Name%>Presenter {
 }
-const <%=Name%>: FC = ({
+const <%=Name%>Presenter: FC = ({
 
-}: I<%=Name%>) => {
+}: I<%=Name%>Presenter) => {
     return (
         <>
 
@@ -16,4 +16,4 @@ const <%=Name%>: FC = ({
     );
 }
 
-export default <%=Name%>;
+export default <%=Name%>Presenter;
