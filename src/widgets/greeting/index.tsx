@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
+import GreetingPresenter from './presenter';
 
-interface IGreeting {}
-const Greeting: FC = ({}: IGreeting) => {
-  return <></>;
+interface IGreetingContainer {}
+const GreetingContainer: FC = ({}: IGreetingContainer) => {
+  return <GreetingPresenter />;
 };
 
-export default Greeting;
+export default GreetingContainer;
