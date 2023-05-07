@@ -27,9 +27,13 @@
     "@chakra-ui/react": "^2.4.9",
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
+    "@react-three/drei": "^9.66.3",
+    "@react-three/fiber": "^8.13.0",
+    "@types/three": "^0.152.0",
     "framer-motion": "^8.5.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "three": "^0.152.2"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
