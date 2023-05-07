@@ -16,7 +16,7 @@ interface ISoftSkills {
   softSkills: string[];
 }
 const SoftSkills: FC<ISoftSkills> = ({ softSkills }: ISoftSkills) => (
-  <Container>
+  <Container centerContent width={'100vw'} height={'100vh'}>
     <Card>
       <CardHeader>
         <Heading>Soft Skills</Heading>
