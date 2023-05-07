@@ -7,7 +7,7 @@ import <%=Name%>Presenter from './presenter';
 
 interface I<%=Name%>Container {
 }
-const <%=Name%>Container: FC = ({
+const <%=Name%>Container: FC<I<%=Name%>Container> = ({
 
 }: I<%=Name%>Container) => {
     return < <%= Name %>Presenter />;
