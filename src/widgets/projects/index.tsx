@@ -10,13 +10,14 @@ import {
   Heading,
   Wrap,
   WrapItem,
+  Text,
 } from '@chakra-ui/react';
 
 interface IProjects {
   projects: any[];
 }
 const Projects: FC<IProjects> = ({ projects }: IProjects) => (
-  <Container>
+  <Container centerContent width={'100vw'} height={'100vh'}>
     <Wrap>
       {projects.map((project) => {
         return (

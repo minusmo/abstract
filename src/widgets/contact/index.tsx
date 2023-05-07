@@ -5,7 +5,7 @@ import { Container, Link, List, ListIcon, ListItem } from '@chakra-ui/react';
 
 interface IContact {}
 const Contact: FC<IContact> = ({}: IContact) => (
-  <Container>
+  <Container centerContent width={'100vw'} height={'25vh'}>
     <List>
       <ListItem>
         <ListIcon as={PhoneIcon} />

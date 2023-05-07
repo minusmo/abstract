@@ -4,32 +4,41 @@ import { FC, useState } from 'react';
 import { Box, Button, Flex, Image, Link, Text, VStack } from '@chakra-ui/react';
 
 import ThemeToggleButton from './components/ThemeToggleButton';
-import Greeting from './widgets/greeting';
+import Contact from './widgets/contact';
 import Education from './widgets/education';
-import NavigationBar from './widgets/navigationBar';
-import Interests from './widgets/interests';
 import FeaturedCourses from './widgets/featuredCourses';
+import Greeting from './widgets/greeting';
+import Interests from './widgets/interests';
+import NavigationBar from './widgets/navigationBar';
+import Projects from './widgets/projects';
 import SoftSkills from './widgets/softSkills';
 import TechSkills from './widgets/techSkills';
-import Projects from './widgets/projects';
-import Contact from './widgets/contact';
 
 const textFontSizes = [16, 18, 24, 30];
 
 const App: FC = () => {
-  const [count, setCount] = useState(0);
+  const projects = [
+    {
+      title: 'my music db',
+      description: 'own favorite music archive',
+      link: '',
+    },
+  ];
 
   return (
     <Box>
       <NavigationBar />
       <VStack>
         <Greeting />
-        <Education />
+        <Education
+          title="Chung-Ang Univ"
+          subtitle="Physics(major), Cyber Security(minor)"
+        />
         <Interests />
         <FeaturedCourses />
-        <SoftSkills />
+        <SoftSkills softSkills={['fluent communication', 'product leading']} />
         <TechSkills />
-        <Projects />
+        <Projects projects={projects} />
         <Contact />
       </VStack>
     </Box>

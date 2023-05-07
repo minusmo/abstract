@@ -16,7 +16,7 @@ import Title from '../../components/title';
 
 interface ITechSkills {}
 const TechSkills: FC<ITechSkills> = ({}: ITechSkills) => (
-  <Container>
+  <Container centerContent width={'100vw'} height={'100vh'}>
     <Card>
       <CardHeader>
         <Heading>Soft Skills</Heading>
