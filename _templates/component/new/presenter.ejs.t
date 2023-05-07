@@ -6,7 +6,7 @@ import React, {FC} from 'react';
 
 interface I<%=Name%>Presenter {
 }
-const <%=Name%>Presenter: FC<I<%=Name%>Container> = ({
+const <%=Name%>Presenter: FC<I<%=Name%>Presenter> = ({
 
 }: I<%=Name%>Presenter) => {
     return <></>;
