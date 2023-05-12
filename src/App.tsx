@@ -13,6 +13,7 @@ import NavigationBar from './widgets/navigationBar';
 import Projects from './widgets/projects';
 import SoftSkills from './widgets/softSkills';
 import TechSkills from './widgets/techSkills';
+import Skills from './widgets/skills';
 
 const textFontSizes = [16, 18, 24, 30];
 
@@ -36,8 +37,7 @@ const App: FC = () => {
         {/*/>*/}
         <Interests />
         <FeaturedCourses />
-        <SoftSkills softSkills={['fluent communication', 'product leading']} />
-        <TechSkills />
+        <Skills />
         <Projects projects={projects} />
         <Contact />
       </VStack>
