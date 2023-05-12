@@ -19,7 +19,7 @@ export const thetaFromCos2 = (p1: number[], p2: number[]) => {
   return Math.acos(cosTheta);
 };
 
-export const interpolationPoint = (
+export const centripetalInterpolant = (
   v1: number[],
   v2: number[],
   deg: number,
@@ -33,4 +33,16 @@ export const interpolationPoint = (
   const y = cost * normalizedV1[1] + sint * normalizedV2[1];
   const z = cost * normalizedV1[2] + sint * normalizedV2[2];
   return [x * r, y * r, z * r];
+};
+
+export const centripetalInterpolants = (
+  n: number,
+  v1: number[],
+  v2: number[],
+  r: number
+): number[][] => {
+  const degrees = new Array(n)
+    .fill(1)
+    .map((degree, index) => (index * degree) / n);
+  return degrees.map((degree) => centripetalInterpolant(v1, v2, degree, r));
 };
