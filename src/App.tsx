@@ -30,10 +30,10 @@ const App: FC = () => {
       <NavigationBar />
       <VStack>
         <Greeting />
-        <Education
-          title="Chung-Ang Univ"
-          subtitle="Physics(major), Cyber Security(minor)"
-        />
+        {/*<Education*/}
+        {/*  title="Chung-Ang Univ"*/}
+        {/*  subtitle="Physics(major), Cyber Security(minor)"*/}
+        {/*/>*/}
         <Interests />
         <FeaturedCourses />
         <SoftSkills softSkills={['fluent communication', 'product leading']} />
