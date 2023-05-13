@@ -20,9 +20,46 @@ const textFontSizes = [16, 18, 24, 30];
 const App: FC = () => {
   const projects = [
     {
-      title: 'my music db',
+      title: 'My Music DB',
+      description: 'My own favorite music archive',
+      link: 'https://github.com/minusmo/My-Music-DB',
+      demo: 'https://minusmo.github.io/My-Music-DB/',
+    },
+    {
+      title: 'YouTube Quick Search Extension for Chrome',
+      description: 'Chrome extension to make shortcut for youtube search',
+      link: 'https://github.com/minusmo/YouTube-Quick-Search-Chrome-Extension',
+      demo: '',
+    },
+    {
+      title: 'Anomaly Detection',
+      description: 'ML model to predict anomalies',
+      link: 'https://github.com/minusmo/Anomaly_Detection',
+      demo: '',
+    },
+    {
+      title: 'Mobile Topster',
       description: 'own favorite music archive',
-      link: '',
+      link: 'https://github.com/minusmo/mobile-topster',
+      demo: 'https://minusmo.github.io/mobile-topster/',
+    },
+    {
+      title: 'Seoul Ro',
+      description: 'Real-Time schedule complexity solver',
+      link: 'https://github.com/SeoulRo/SeoulRo',
+      demo: '',
+    },
+    {
+      title: 'Carbon Hero',
+      description: 'Web game for climate change education',
+      link: 'https://github.com/GDSC-CAU/Carbon-Hero',
+      demo: 'https://carbon-hero.vercel.app/',
+    },
+    {
+      title: 'NHN Toast Notification Service Custom Connector',
+      description: 'Cloud API orchestration for BFF',
+      link: 'https://github.com/minusmo/nhn-toast-notification-service-custom-connector',
+      demo: '',
     },
   ];
 
@@ -31,10 +68,6 @@ const App: FC = () => {
       <NavigationBar />
       <VStack>
         <Greeting />
-        {/*<Education*/}
-        {/*  title="Chung-Ang Univ"*/}
-        {/*  subtitle="Physics(major), Cyber Security(minor)"*/}
-        {/*/>*/}
         <Interests />
         <FeaturedCourses />
         <Skills />
