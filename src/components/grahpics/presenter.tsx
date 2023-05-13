@@ -51,7 +51,7 @@ const GrahpicsPresenter: FC<IGraphicsPresenter> = ({
           />
         ))}
         <Lines points={augmentedPoints} />
-        <OrbitControls enableZoom={false} />
+        <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1} />
       </Canvas>
     </Box>
   );
