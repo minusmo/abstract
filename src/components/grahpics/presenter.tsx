@@ -38,7 +38,7 @@ const GrahpicsPresenter: FC<IGraphicsPresenter> = ({
           far: farDistance,
         }}
       >
-        <color attach="background" args={['#f0f0f0']} />
+        <color attach="background" args={['#d8dee3']} />
         <ambientLight intensity={0.7} />
         <spotLight position={[BOUND, BOUND, BOUND]} angle={0.15} penumbra={1} />
         <pointLight position={[-50, -50, -50]} />
