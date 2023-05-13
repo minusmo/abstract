@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useSpring } from 'framer-motion';
 import React, { FC } from 'react';
 
 import {
@@ -20,6 +20,48 @@ import {
 interface IProjects {
   projects: any[];
 }
+interface IAnimatingCard {
+  project: any;
+  index: number;
+}
+function AnimatingCard({ project, index }: IAnimatingCard) {
+  const animationProps = {
+    animate: {
+      y: 50,
+    },
+    transition: {
+      duration: 0.5,
+      delay: 0.5 * index,
+      type: 'spring',
+      stiffness: 100,
+    },
+  };
+  return (
+    <motion.div {...animationProps}>
+      <Card w="100%" boxShadow="xl" borderWidth={1} borderColor="green.300">
+        <CardHeader>
+          <Heading size="md">{project.title}</Heading>
+        </CardHeader>
+        <CardBody>
+          <Text>{project.description}</Text>
+        </CardBody>
+        <CardFooter>
+          <Button>
+            <Link href={project.link}>See Details</Link>
+          </Button>
+          {project.demo.length > 0 ? (
+            <Button marginLeft={2}>
+              <Link href={project.demo}>See Demo</Link>
+            </Button>
+          ) : (
+            <></>
+          )}
+        </CardFooter>
+      </Card>
+    </motion.div>
+  );
+}
+
 const Projects: FC<IProjects> = ({ projects }: IProjects) => (
   <motion.div
     initial={{ opacity: 0 }}
@@ -39,31 +81,7 @@ const Projects: FC<IProjects> = ({ projects }: IProjects) => (
         >
           {projects.map((project, index) => (
             <WrapItem key={`wid${index}`}>
-              <Card
-                w="100%"
-                boxShadow="xl"
-                borderWidth={1}
-                borderColor="green.300"
-              >
-                <CardHeader>
-                  <Heading size="md">{project.title}</Heading>
-                </CardHeader>
-                <CardBody>
-                  <Text>{project.description}</Text>
-                </CardBody>
-                <CardFooter>
-                  <Button>
-                    <Link href={project.link}>See Details</Link>
-                  </Button>
-                  {project.demo.length > 0 ? (
-                    <Button marginLeft={2}>
-                      <Link href={project.demo}>See Demo</Link>
-                    </Button>
-                  ) : (
-                    <></>
-                  )}
-                </CardFooter>
-              </Card>
+              <AnimatingCard project={project} index={index} />
             </WrapItem>
           ))}
         </Wrap>
