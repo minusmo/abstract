@@ -120,7 +120,7 @@ function PersonalInterests() {
       viewport={{ once: false }}
     >
       <Card>
-        <CardHeader>
+        <CardHeader textAlign={'center'}>
           <Heading fontSize="xl" padding={5}>
             My Personal Interests
           </Heading>
@@ -140,7 +140,7 @@ function PersonalInterests() {
                 </CardHeader>
                 <CardBody>
                   <Image
-                    src="/src/assets/titanic.png"
+                    src="/assets/titanic.png"
                     alt="Titanic"
                     borderRadius="lg"
                     boxSize={['sm', 'md', 'lg', 'xl', '2xl']}
@@ -166,7 +166,7 @@ function PersonalInterests() {
                 </CardHeader>
                 <CardBody>
                   <Image
-                    src="/src/assets/outoftheblue.png"
+                    src="/assets/outoftheblue.png"
                     alt="Out Of The Blue"
                     borderRadius="lg"
                     boxSize={['sm', 'md', 'lg', 'xl', '2xl']}
