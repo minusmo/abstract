@@ -14,7 +14,7 @@ function Lines({ points }: ILines) {
     const interval = setInterval(() => {
       if (currentPoints === nOfPoints) return;
       setCurrentPoints(currentPoints + 1);
-    }, 3000);
+    }, 1500);
     return () => clearInterval(interval);
   });
   return (
@@ -34,7 +34,7 @@ function Lines({ points }: ILines) {
             {...lineProp}
             lineWidth={3}
             dashed
-            color="black"
+            color="orange"
           />
         );
       })}
