@@ -33,7 +33,7 @@ const FallbackGreeting: FC = () => {
   const greeting = 'Hi There!';
   const message = "I'm HoJoon Eum, Software Engineer!";
   return (
-    <Center padding={20} textAlign={'center'}>
+    <Center padding={20} textAlign={'center'} id={'section-0'}>
       <VStack>
         <Heading as="h1" fontSize={['lg', 'xl', '2xl', '4xl']}>
           {Array.from(greeting).map((char, index) => (

@@ -6,7 +6,7 @@ import PersonalInterests from './PersonalInterests';
 import TechInterests from './TechInterests';
 
 const Interests: FC = () => (
-  <Center id={'interests'}>
+  <Center id={'section-1'}>
     <VStack spacing={5}>
       <TechInterests />
       <PersonalInterests />

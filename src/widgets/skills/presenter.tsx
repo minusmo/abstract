@@ -28,6 +28,7 @@ const SkillsPresenter: FC = () => (
     viewport={{ once: false }}
   >
     <Center
+      id={'section-2'}
       h={{
         base: 'auto',
         xl: '100vh',

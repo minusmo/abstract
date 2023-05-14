@@ -15,58 +15,10 @@ import {
   Wrap,
   WrapItem,
 } from '@chakra-ui/react';
+import AnimatingCard from './AnimatingCard';
 
 interface IProjects {
   projects: any[];
-}
-interface IAnimatingCard {
-  project: any;
-  index: number;
-}
-function AnimatingCard({ project, index }: IAnimatingCard) {
-  const animationProps = {
-    initial: {
-      y: 50,
-    },
-    animate: {
-      y: 0,
-    },
-    transition: {
-      duration: 0.5,
-      delay: 0.5 * index,
-      type: 'tween',
-      stiffness: 200,
-    },
-  };
-  return (
-    <motion.div {...animationProps}>
-      <Card
-        w={['sm', 'md', 'lg', 'xl', '2xl', '4xl']}
-        boxShadow="xl"
-        borderWidth={1}
-        borderColor="green.300"
-      >
-        <CardHeader>
-          <Heading size="md">{project.title}</Heading>
-        </CardHeader>
-        <CardBody>
-          <Text>{project.description}</Text>
-        </CardBody>
-        <CardFooter>
-          <Button>
-            <Link href={project.link}>See Details</Link>
-          </Button>
-          {project.demo.length > 0 ? (
-            <Button marginLeft={2}>
-              <Link href={project.demo}>See Demo</Link>
-            </Button>
-          ) : (
-            <></>
-          )}
-        </CardFooter>
-      </Card>
-    </motion.div>
-  );
 }
 
 const Projects: FC<IProjects> = ({ projects }: IProjects) => (
@@ -76,7 +28,7 @@ const Projects: FC<IProjects> = ({ projects }: IProjects) => (
     transition={{ duration: 3 }}
     viewport={{ once: false }}
   >
-    <Center padding={5}>
+    <Center padding={5} id={'section-3'}>
       <VStack spacing={30}>
         <Heading as={'h2'} fontSize={'2xl'} padding={10}>
           Projects I've been through

@@ -29,7 +29,7 @@ const GrahpicsPresenter: FC<IGraphicsPresenter> = ({
   const nearDistance = BOUND / 5;
   const farDistance = BOUND;
   return (
-    <Box w="100vw" h="100vh">
+    <Box w="100vw" h="100vh" id={'section-0'}>
       <Canvas
         dpr={window.devicePixelRatio}
         gl={{ antialias: false }}
