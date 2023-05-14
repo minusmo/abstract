@@ -26,19 +26,27 @@ interface IAnimatingCard {
 }
 function AnimatingCard({ project, index }: IAnimatingCard) {
   const animationProps = {
-    animate: {
+    initial: {
       y: 50,
+    },
+    animate: {
+      y: 0,
     },
     transition: {
       duration: 0.5,
       delay: 0.5 * index,
-      type: 'spring',
-      stiffness: 100,
+      type: 'tween',
+      stiffness: 200,
     },
   };
   return (
     <motion.div {...animationProps}>
-      <Card w="100%" boxShadow="xl" borderWidth={1} borderColor="green.300">
+      <Card
+        w={['sm', 'md', 'lg', 'xl', '2xl', '4xl']}
+        boxShadow="xl"
+        borderWidth={1}
+        borderColor="green.300"
+      >
         <CardHeader>
           <Heading size="md">{project.title}</Heading>
         </CardHeader>
@@ -69,9 +77,11 @@ const Projects: FC<IProjects> = ({ projects }: IProjects) => (
     transition={{ duration: 3 }}
     viewport={{ once: false }}
   >
-    <Center width="100vw" height="100vh" verticalAlign="center">
+    <Center padding={5}>
       <VStack spacing={30}>
-        <Heading>Projects I've been through</Heading>
+        <Heading as={'h2'} fontSize={'2xl'} padding={10}>
+          Projects I've been through
+        </Heading>
         <Wrap
           spacing={3}
           flexDirection="row"

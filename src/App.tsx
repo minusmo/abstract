@@ -66,7 +66,7 @@ const App: FC = () => {
   return (
     <Box>
       <NavigationBar />
-      <VStack>
+      <VStack spacing={100}>
         <Greeting />
         <Interests />
         <FeaturedCourses />

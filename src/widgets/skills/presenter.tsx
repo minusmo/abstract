@@ -30,15 +30,22 @@ const SkillsPresenter: FC = () => (
     transition={{ duration: 3 }}
     viewport={{ once: false }}
   >
-    <Center w="100vw" h="100vh">
+    <Center
+      h={{
+        base: 'auto',
+        xl: '100vh',
+      }}
+    >
       <Card>
         <CardHeader>
-          <Heading>Skills I have</Heading>
+          <Heading fontSize={['lg', 'xl', '2xl']}>
+            Skills I have(Just a part)
+          </Heading>
         </CardHeader>
         <CardBody>
-          <Wrap spacing={5}>
+          <Wrap spacing={5} alignItems="center" justify="center">
             <WrapItem>
-              <Card variant="outline" width="100%" h={'100%'}>
+              <Card variant="outline" width="100%" h="100%">
                 <CardHeader>
                   <Heading as="h2" fontSize="3xl">
                     Soft Skills
@@ -54,7 +61,7 @@ const SkillsPresenter: FC = () => (
               </Card>
             </WrapItem>
             <WrapItem>
-              <Card variant="outline" width="100%" h={'100%'}>
+              <Card variant="outline" width="100%" h="100%">
                 <CardHeader>
                   <Heading as="h2" fontSize="3xl">
                     Tech Skills

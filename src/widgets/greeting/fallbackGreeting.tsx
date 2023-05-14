@@ -33,14 +33,14 @@ const FallbackGreeting: FC = () => {
   const greeting = 'Hi There!';
   const message = "I'm HoJoon Eum, Software Engineer!";
   return (
-    <Center>
+    <Center padding={20} textAlign={'center'}>
       <VStack>
-        <Heading as="h1" size="4xl">
+        <Heading as="h1" fontSize={['lg', 'xl', '2xl', '4xl']}>
           {Array.from(greeting).map((char, index) => (
             <AnimatingChar char={char} index={index} />
           ))}
         </Heading>
-        <Heading as="h1" size="4xl">
+        <Heading as="h1" fontSize={['lg', 'xl', '2xl', '4xl']}>
           {Array.from(message).map((char, index) => (
             <AnimatingChar char={char} index={greeting.length + index} />
           ))}

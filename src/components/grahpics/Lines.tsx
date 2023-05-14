@@ -34,7 +34,7 @@ function Lines({ points }: ILines) {
             {...lineProp}
             lineWidth={3}
             dashed
-            color="black"
+            color="orange"
           />
         );
       })}

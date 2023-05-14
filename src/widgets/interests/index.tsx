@@ -4,6 +4,7 @@ import React, { FC } from 'react';
 import {
   Card,
   CardBody,
+  CardFooter,
   CardHeader,
   Center,
   Container,
@@ -14,6 +15,7 @@ import {
   Image,
   SimpleGrid,
   Text,
+  VStack,
   Wrap,
   WrapItem,
 } from '@chakra-ui/react';
@@ -29,59 +31,83 @@ function TechInterests() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: false }}
     >
-      <Card variant="outline" width="100%">
+      <Card variant="outline" padding={5}>
         <CardHeader>
-          <Heading>My Technical Interests</Heading>
+          <Heading fontSize="lg">My Technical Interests</Heading>
         </CardHeader>
         <CardBody>
-          <Tag
-            query="Computer Graphics"
-            styles={{
-              px: '2',
-              py: '2',
-              rounded: 'full',
-              fontWeight: 600,
-              boxShadow: 'md',
-              bg: 'teal.100',
-            }}
-            children="Computer Graphics"
-          />
-          <Tag
-            query="Neural Network"
-            styles={{
-              px: '2',
-              py: '2',
-              rounded: 'full',
-              bg: 'red.200',
-              fontWeight: 600,
-              boxShadow: 'md',
-            }}
-            children="Neural Network"
-          />
-          <Tag
-            query="Resilent Services"
-            styles={{
-              px: '2',
-              py: '2',
-              rounded: 'full',
-              bg: 'yellow.300',
-              fontWeight: 600,
-              boxShadow: 'md',
-            }}
-            children="Resilent Services"
-          />
-          <Tag
-            query="Real Challenges"
-            styles={{
-              px: '2',
-              py: '2',
-              rounded: 'full',
-              bg: 'green.300',
-              fontWeight: 600,
-              boxShadow: 'md',
-            }}
-            children="Real Challenges"
-          />
+          <Wrap>
+            <WrapItem>
+              <Tag
+                query="Computer Graphics"
+                styles={{
+                  px: '2',
+                  py: '2',
+                  rounded: 'full',
+                  fontWeight: 600,
+                  boxShadow: 'md',
+                  bg: 'teal.100',
+                }}
+                children="Computer Graphics"
+              />
+            </WrapItem>
+            <WrapItem>
+              <Tag
+                query="Neural Network"
+                styles={{
+                  px: '2',
+                  py: '2',
+                  rounded: 'full',
+                  bg: 'red.200',
+                  fontWeight: 600,
+                  boxShadow: 'md',
+                }}
+                children="Neural Network"
+              />
+            </WrapItem>
+            <WrapItem>
+              <Tag
+                query="Resilent Services"
+                styles={{
+                  px: '2',
+                  py: '2',
+                  rounded: 'full',
+                  bg: 'yellow.300',
+                  fontWeight: 600,
+                  boxShadow: 'md',
+                }}
+                children="Resilent Services"
+              />
+            </WrapItem>
+            <WrapItem>
+              <Tag
+                query="Algorithmic Solutions"
+                styles={{
+                  px: '2',
+                  py: '2',
+                  rounded: 'full',
+                  bg: 'green.300',
+                  fontWeight: 600,
+                  boxShadow: 'md',
+                }}
+                children="Algorithmic Solutions"
+              />
+            </WrapItem>
+            <WrapItem>
+              <Tag
+                query="Distributed System"
+                styles={{
+                  px: '2',
+                  py: '2',
+                  rounded: 'full',
+                  bg: 'blue.300',
+                  fontWeight: 600,
+                  boxShadow: 'md',
+                }}
+                children="Distributed System"
+              />
+            </WrapItem>
+          </Wrap>
         </CardBody>
       </Card>
     </motion.div>
@@ -98,55 +124,65 @@ function PersonalInterests() {
     >
       <Card>
         <CardHeader>
-          <Heading>My Personal Interests</Heading>
+          <Heading fontSize="xl" padding={5}>
+            My Personal Interests
+          </Heading>
         </CardHeader>
         <CardBody>
-          <SimpleGrid columns={2} spacing={5}>
-            <Card variant="outline" width="40vw">
-              <CardHeader>
-                <Heading as="h2">Watching Movies</Heading>
-              </CardHeader>
-              <CardBody>
-                <Wrap>
-                  <WrapItem>
-                    <Image
-                      src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                      alt="Green double couch with wooden legs"
-                      borderRadius="lg"
-                      boxSize="lg"
-                    />
-                  </WrapItem>
-                  <WrapItem>
-                    <Text verticalAlign="top" as="em">
-                      I'd like to watch movies! From the old one to the latest!
-                    </Text>
-                  </WrapItem>
-                </Wrap>
-              </CardBody>
-            </Card>
-            <Card variant="outline" width="40vw">
-              <CardHeader>
-                <Heading as="h2">Listening to Musics</Heading>
-              </CardHeader>
-              <CardBody>
-                <Wrap>
-                  <WrapItem>
-                    <Image
-                      src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                      alt="Green double couch with wooden legs"
-                      borderRadius="lg"
-                      boxSize="lg"
-                    />
-                  </WrapItem>
-                  <WrapItem>
-                    <Text verticalAlign="top" as="em">
-                      I'd love to listen musics! Across all genres.
-                    </Text>
-                  </WrapItem>
-                </Wrap>
-              </CardBody>
-            </Card>
-          </SimpleGrid>
+          <Wrap spacing={5} alignItems="center" justify="center">
+            <WrapItem>
+              <Card
+                variant="outline"
+                width={['sm', 'md', 'lg', 'xl', '2xl']}
+                height="100%"
+              >
+                <CardHeader>
+                  <Heading as="h2" fontSize="xl">
+                    Watching Movies
+                  </Heading>
+                </CardHeader>
+                <CardBody>
+                  <Image
+                    src="/src/assets/titanic.png"
+                    alt="Titanic"
+                    borderRadius="lg"
+                    boxSize={['sm', 'md', 'lg', 'xl', '2xl']}
+                  />
+                </CardBody>
+                <CardFooter>
+                  <Text verticalAlign="top" as="em" fontSize="md">
+                    I'd like to watch movies! From the old one to the latest!
+                  </Text>
+                </CardFooter>
+              </Card>
+            </WrapItem>
+            <WrapItem>
+              <Card
+                variant="outline"
+                width={['sm', 'md', 'lg', 'xl', '2xl']}
+                height="100%"
+              >
+                <CardHeader>
+                  <Heading as="h2" fontSize="xl">
+                    Listening to Musics
+                  </Heading>
+                </CardHeader>
+                <CardBody>
+                  <Image
+                    src="/src/assets/outoftheblue.png"
+                    alt="Out Of The Blue"
+                    borderRadius="lg"
+                    boxSize={['sm', 'md', 'lg', 'xl', '2xl']}
+                  />
+                </CardBody>
+                <CardFooter>
+                  <Text verticalAlign="top" as="em" fontSize="md">
+                    I'd love to listen musics! Across all genres.
+                  </Text>
+                </CardFooter>
+              </Card>
+            </WrapItem>
+          </Wrap>
         </CardBody>
       </Card>
     </motion.div>
@@ -154,11 +190,11 @@ function PersonalInterests() {
 }
 
 const Interests: FC = () => (
-  <Center w="100vw" h="100vh">
-    <SimpleGrid columns={1} spacing={10}>
+  <Center>
+    <VStack spacing={5}>
       <TechInterests />
       <PersonalInterests />
-    </SimpleGrid>
+    </VStack>
   </Center>
 );
 
