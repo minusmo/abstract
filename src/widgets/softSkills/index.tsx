@@ -25,7 +25,7 @@ const SoftSkills: FC<ISoftSkills> = ({ softSkills }: ISoftSkills) => (
         <Stack divider={<StackDivider />} spacing={3}>
           {softSkills.map((softSkill) => (
             <Box>
-              <Title heading={softSkill} tag={'h4'} />
+              <Title heading={softSkill} />
             </Box>
           ))}
         </Stack>

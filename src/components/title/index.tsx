@@ -6,11 +6,9 @@ import TitlePresenter from './presenter';
 
 interface ITitleContainer {
   heading: string;
-  tag: As<any> | undefined;
 }
 const HeadingContainer: FC<ITitleContainer> = ({
   heading,
-  tag,
-}: ITitleContainer) => <TitlePresenter heading={heading} tag={tag} />;
+}: ITitleContainer) => <TitlePresenter heading={heading} />;
 
 export default HeadingContainer;

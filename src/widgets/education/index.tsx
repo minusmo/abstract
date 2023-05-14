@@ -14,8 +14,8 @@ const Education: FC<IEducation> = ({ title, subtitle }: IEducation) => (
       <CardHeader>
         <Heading>My Education</Heading>
       </CardHeader>
-      <Title tag="h1" heading={title} />
-      <Title tag="h2" heading={subtitle} />
+      <Title heading={title} />
+      <Title heading={subtitle} />
     </Card>
   </Container>
 );

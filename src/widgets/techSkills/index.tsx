@@ -24,27 +24,27 @@ const TechSkills: FC<ITechSkills> = ({}: ITechSkills) => (
       <CardBody>
         <Stack divider={<StackDivider />} spacing={3}>
           <Box>
-            <Title heading={'Programming Language'} tag={'h2'} />
+            <Title heading={'Programming Language'} />
             <Text>
               C(fine), C++(fine), Java(fine), Python(fluent), Js(fluent),
               Ts(fluent)
             </Text>
           </Box>
           <Box>
-            <Title heading={'Web'} tag={'h2'} />
+            <Title heading={'Web'} />
             <Text>
               React.js(familiar), Next.js(familiar), Express.js(unfamilar),
               Fastapi(unfamiliar), Django(unfamiliar), GraphQL(unfamiliar)
             </Text>
           </Box>
           <Box>
-            <Title heading={'AI'} tag={'h2'} />
+            <Title heading={'AI'} />
             <Text>
               Pytorch(fine), Scikit-learn(fine), Numpy(fine), Pandas(fine)
             </Text>
           </Box>
           <Box>
-            <Title heading={'DB'} tag={'h2'} />
+            <Title heading={'DB'} />
             <Text>
               MongoDB(familiar), MySQL(unfamiliar), SqLite(unfamiliar)
             </Text>

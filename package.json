@@ -1,10 +1,10 @@
 {
-  "name": "vibrant",
-  "version": "0.0.0",
+  "name": "abstract",
+  "version": "1.0.0",
   "author": {
-    "name": "David Sima",
-    "email": "hello@david-sima.dev",
-    "url": "https://github.com/The24thDS"
+    "name": "HoJoon Eum",
+    "email": "bldolphin96@gmail.com",
+    "url": "https://github.com/minusmo"
   },
   "private": true,
   "license": "MIT",
