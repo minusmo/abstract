@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { CardHeader, Container, Heading, Card } from '@chakra-ui/react';
+import { Card, CardHeader, Container, Heading } from '@chakra-ui/react';
 
 import Title from '../../components/title';
 

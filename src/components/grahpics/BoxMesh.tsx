@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Color } from 'three';
+import React, { useRef, useState } from 'react';
 
 import { useFrame, Vector3 } from '@react-three/fiber';
 

@@ -1,10 +1,12 @@
 import React, { FC } from 'react';
 
+import { As } from '@chakra-ui/react';
+
 import TitlePresenter from './presenter';
 
 interface ITitleContainer {
   heading: string;
-  tag: string;
+  tag: As<any> | undefined;
 }
 const HeadingContainer: FC<ITitleContainer> = ({
   heading,

@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from 'react';
+import React, { FC } from 'react';
 import * as Three from 'three';
 
 import { Box } from '@chakra-ui/react';

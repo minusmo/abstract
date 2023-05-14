@@ -1,18 +1,12 @@
-import { motion } from 'framer-motion';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
-import { Box, Button, Flex, Image, Link, Text, VStack } from '@chakra-ui/react';
-
-import ThemeToggleButton from './components/ThemeToggleButton';
+import { Box, VStack } from '@chakra-ui/react';
 import Contact from './widgets/contact';
-import Education from './widgets/education';
 import FeaturedCourses from './widgets/featuredCourses';
 import Greeting from './widgets/greeting';
 import Interests from './widgets/interests';
 import NavigationBar from './widgets/navigationBar';
 import Projects from './widgets/projects';
-import SoftSkills from './widgets/softSkills';
-import TechSkills from './widgets/techSkills';
 import Skills from './widgets/skills';
 
 const textFontSizes = [16, 18, 24, 30];

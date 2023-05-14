@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import React, { FC } from 'react';
 
-import { Box, Center, Heading, Text, VStack } from '@chakra-ui/react';
+import { Center, Heading, Text, VStack } from '@chakra-ui/react';
 
 interface IAnimatingChar {
   char: string;

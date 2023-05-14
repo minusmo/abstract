@@ -1,16 +1,12 @@
 import React, { FC } from 'react';
-import { AiOutlineMail, BsGithub, BsLinkedin, BsPhone } from 'react-icons/all';
-
-import { EditIcon, PhoneIcon, PlusSquareIcon } from '@chakra-ui/icons';
+import { AiOutlineMail, BsGithub, BsLinkedin } from 'react-icons/all';
 import {
   Center,
-  Container,
   Heading,
   Link,
   List,
   ListIcon,
   ListItem,
-  Text,
   VStack,
 } from '@chakra-ui/react';
 
