@@ -20,9 +20,11 @@ const usePoints = () => {
         ),
     []
   );
-  const ranRotationDirections = new Array(ranVs.length)
-    .fill(1)
-    .map((dir) => randomRotationDirection());
+  const ranRotationDirections = useMemo(
+    () =>
+      new Array(ranVs.length).fill(1).map((dir) => randomRotationDirection()),
+    [ranVs]
+  );
   const [points, setPoints] = useState<number[][]>(ranVs);
   const [colors, setColors] = useState(ranColors);
   const [rotationDirections, setRotationDirections] = useState(
