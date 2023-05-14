@@ -17,6 +17,9 @@ import {
   WrapItem,
 } from '@chakra-ui/react';
 
+import eloImg from '../../assets/outoftheblue.png';
+import titanicImg from '../../assets/titanic.png';
+
 function Tag(tagProps: HighlightProps) {
   return <Highlight {...tagProps} />;
 }
@@ -120,7 +123,7 @@ function PersonalInterests() {
       viewport={{ once: false }}
     >
       <Card>
-        <CardHeader textAlign={'center'}>
+        <CardHeader textAlign="center">
           <Heading fontSize="xl" padding={5}>
             My Personal Interests
           </Heading>
@@ -140,7 +143,7 @@ function PersonalInterests() {
                 </CardHeader>
                 <CardBody>
                   <Image
-                    src="/assets/titanic.png"
+                    src={titanicImg}
                     alt="Titanic"
                     borderRadius="lg"
                     boxSize={['sm', 'md', 'lg', 'xl', '2xl']}
@@ -166,7 +169,7 @@ function PersonalInterests() {
                 </CardHeader>
                 <CardBody>
                   <Image
-                    src="/assets/outoftheblue.png"
+                    src={eloImg}
                     alt="Out Of The Blue"
                     borderRadius="lg"
                     boxSize={['sm', 'md', 'lg', 'xl', '2xl']}

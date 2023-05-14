@@ -16,6 +16,8 @@ import {
   SimpleGrid,
 } from '@chakra-ui/react';
 
+import profileImg from '../../assets/favicon.png';
+
 function BlogMenu() {
   return (
     <Menu>
@@ -38,7 +40,7 @@ const NavigationBar: FC = () => (
   <Box position="sticky" top={0} padding={5} zIndex={100}>
     <Grid templateColumns="repeat(5,1fr)" gap={2}>
       <GridItem colSpan={2}>
-        <Avatar size="lg" name="HoJoon Eum" src="/assets/favicon.png" />
+        <Avatar size="lg" name="HoJoon Eum" src={profileImg} />
       </GridItem>
       <GridItem colStart={8} colEnd={10}>
         <SimpleGrid columns={2} gap={2} alignItems="center">
