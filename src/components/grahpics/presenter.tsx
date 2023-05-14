@@ -8,6 +8,7 @@ import { Canvas } from '@react-three/fiber';
 import { BOUND } from './utils/points';
 import BoxMesh from './BoxMesh';
 import Lines from './Lines';
+import Navigator from '../navigator';
 
 interface IGraphicsPresenter {
   points: number[][];
@@ -53,6 +54,7 @@ const GrahpicsPresenter: FC<IGraphicsPresenter> = ({
         <Lines points={augmentedPoints} />
         <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1} />
       </Canvas>
+      <Navigator />
     </Box>
   );
 };
