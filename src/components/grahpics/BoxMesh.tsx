@@ -26,6 +26,8 @@ function BoxMesh({ position, boxColor, rotationDirection, index }: IBox) {
     <mesh ref={ref} position={position} visible={isRevealed}>
       <boxGeometry args={[0.5, 0.5, 0.5]} />
       <meshStandardMaterial
+        roughness={0.2}
+        metalness={0.5}
         color={rgbToHex(boxColor[0], boxColor[1], boxColor[2])}
       />
     </mesh>
