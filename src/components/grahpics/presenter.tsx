@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import * as Three from 'three';
 
 import { Box } from '@chakra-ui/react';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Text } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 
 import { BOUND } from './utils/points';
@@ -39,10 +39,12 @@ const GrahpicsPresenter: FC<IGraphicsPresenter> = ({
           far: farDistance,
         }}
       >
-        {/*<color attach="background" args={['#d8dee3']} />*/}
         <ambientLight intensity={0.7} />
         <spotLight position={[BOUND, BOUND, BOUND]} angle={0.15} penumbra={1} />
         <pointLight position={[-50, -50, -50]} />
+        <Text anchorX={'center'} anchorY={'middle'} color={'skyblue'}>
+          Connect Each Other
+        </Text>
         {vertices.map((vertex, index) => (
           <BoxMesh
             position={vertex}
