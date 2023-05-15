@@ -75,7 +75,7 @@ const SkillsPresenter: FC = () => (
                       </StatLabel>
                       <StatNumber>
                         <Code colorScheme="blue">
-                          C(-), C++(-), Java(-), Python(⇧), Js(⇧), Ts(⇧), Go(⇩)
+                          C(0), C++(0), Java(0), Python(+), Js(+), Ts(+), Go(-)
                         </Code>
                       </StatNumber>
                     </Stat>
@@ -83,7 +83,7 @@ const SkillsPresenter: FC = () => (
                     <Stat>
                       <StatLabel>
                         <Text as="em" fontSize="2xl">
-                          Experieced Tech Stacks(One For Each)
+                          Experienced Tech Stacks(One For Each)
                         </Text>
                       </StatLabel>
                       <StatNumber>
