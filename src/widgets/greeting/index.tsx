@@ -3,13 +3,14 @@ import React, { FC } from 'react';
 import GrahpicsContainer from '../../components/grahpics';
 
 import FallbackGreeting from './fallbackGreeting';
+import { useDetectGPU } from '@react-three/drei';
 
 interface IGreetingContainer {}
 const GreetingContainer: FC<IGreetingContainer> = ({}: IGreetingContainer) => {
-  const isGLEnabled = document.createElement('canvas').getContext('webgl');
-  if (isGLEnabled !== null) return <GrahpicsContainer />;
+  const GPUTier = useDetectGPU();
+  if (GPUTier.type === 'WEBGL_UNSUPPORTED') return <FallbackGreeting />;
 
-  return <FallbackGreeting />;
+  return <GrahpicsContainer />;
 };
 
 export default GreetingContainer;
