@@ -15,7 +15,7 @@ import {
 function Tag(tagProps: HighlightProps) {
   return <Highlight {...tagProps} />;
 }
-function TechInterests() {
+function TechInterestsPresenter() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -110,4 +110,4 @@ function TechInterests() {
   );
 }
 
-export default TechInterests;
+export default TechInterestsPresenter;

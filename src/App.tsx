@@ -4,12 +4,11 @@ import { Box, VStack } from '@chakra-ui/react';
 import Contact from './widgets/contact';
 import FeaturedCourses from './widgets/featuredCourses';
 import Greeting from './widgets/greeting';
-import Interests from './widgets/interests';
 import NavigationBar from './widgets/navigationBar';
 import Projects from './widgets/projects';
 import Skills from './widgets/skills';
-
-const textFontSizes = [16, 18, 24, 30];
+import TechInterestsContainer from './widgets/techinterests';
+import PersonalinterestsContainer from './widgets/personalinterests';
 
 const App: FC = () => {
   const projects = [
@@ -62,10 +61,11 @@ const App: FC = () => {
       <NavigationBar />
       <VStack spacing={100}>
         <Greeting />
-        <Interests />
+        <TechInterestsContainer />
         <FeaturedCourses />
         <Skills />
         <Projects projects={projects} />
+        <PersonalinterestsContainer />
         <Contact />
       </VStack>
     </Box>
