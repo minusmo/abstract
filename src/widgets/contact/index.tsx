@@ -1,22 +1,19 @@
 import React, { FC } from 'react';
-import { AiOutlineMail, BsGithub, BsLinkedin, BsPhone } from 'react-icons/all';
-
-import { EditIcon, PhoneIcon, PlusSquareIcon } from '@chakra-ui/icons';
+import { AiOutlineMail, BsGithub, BsLinkedin } from 'react-icons/all';
 import {
   Center,
-  Container,
   Heading,
   Link,
   List,
   ListIcon,
   ListItem,
-  Text,
   VStack,
 } from '@chakra-ui/react';
 
 interface IContact {}
+
 const Contact: FC<IContact> = ({}: IContact) => (
-  <Center padding={10} textAlign={'center'}>
+  <Center padding={10} textAlign={'center'} id={'section-5'}>
     <VStack>
       <Heading fontSize={['xl', '2xl', '4xl']} marginBottom={10}>
         Do Something Fun Together!

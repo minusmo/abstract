@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
 import React, { FC } from 'react';
 
-import { Box, Center, Heading, Text, VStack } from '@chakra-ui/react';
+import { Center, Heading, Text, VStack } from '@chakra-ui/react';
 
 interface IAnimatingChar {
   char: string;
   index: number;
 }
+
 function AnimatingChar({ char, index }: IAnimatingChar) {
   const animationProps = {
     initial: {
@@ -29,11 +30,12 @@ function AnimatingChar({ char, index }: IAnimatingChar) {
     </motion.div>
   );
 }
+
 const FallbackGreeting: FC = () => {
   const greeting = 'Hi There!';
   const message = "I'm HoJoon Eum, Software Engineer!";
   return (
-    <Center padding={20} textAlign={'center'}>
+    <Center padding={20} textAlign={'center'} id={'section-0'}>
       <VStack>
         <Heading as="h1" fontSize={['lg', 'xl', '2xl', '4xl']}>
           {Array.from(greeting).map((char, index) => (

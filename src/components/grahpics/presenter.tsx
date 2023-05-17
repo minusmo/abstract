@@ -1,13 +1,14 @@
-import React, { FC, useRef, useState } from 'react';
+import React, { FC } from 'react';
 import * as Three from 'three';
 
 import { Box } from '@chakra-ui/react';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Text } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 
 import { BOUND } from './utils/points';
 import BoxMesh from './BoxMesh';
 import Lines from './Lines';
+import Navigator from '../navigator';
 
 interface IGraphicsPresenter {
   points: number[][];
@@ -28,7 +29,7 @@ const GrahpicsPresenter: FC<IGraphicsPresenter> = ({
   const nearDistance = BOUND / 5;
   const farDistance = BOUND;
   return (
-    <Box w="100vw" h="100vh">
+    <Box w="100vw" h="100vh" id={'section-0'}>
       <Canvas
         dpr={window.devicePixelRatio}
         gl={{ antialias: false }}
@@ -38,10 +39,12 @@ const GrahpicsPresenter: FC<IGraphicsPresenter> = ({
           far: farDistance,
         }}
       >
-        {/*<color attach="background" args={['#d8dee3']} />*/}
         <ambientLight intensity={0.7} />
         <spotLight position={[BOUND, BOUND, BOUND]} angle={0.15} penumbra={1} />
         <pointLight position={[-50, -50, -50]} />
+        <Text anchorX={'center'} anchorY={'middle'} color={'skyblue'}>
+          Connect Each Other
+        </Text>
         {vertices.map((vertex, index) => (
           <BoxMesh
             position={vertex}
@@ -53,6 +56,7 @@ const GrahpicsPresenter: FC<IGraphicsPresenter> = ({
         <Lines points={augmentedPoints} />
         <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1} />
       </Canvas>
+      <Navigator />
     </Box>
   );
 };

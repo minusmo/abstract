@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Vector3 } from 'three';
 
 import { QuadraticBezierLine } from '@react-three/drei';
@@ -6,6 +6,7 @@ import { QuadraticBezierLine } from '@react-three/drei';
 interface ILines {
   points: number[][];
 }
+
 function Lines({ points }: ILines) {
   const nOfPoints = points.length;
   const [currentPoints, setCurrentPoints] = useState(1);
