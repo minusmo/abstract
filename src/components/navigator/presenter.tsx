@@ -1,9 +1,10 @@
 import React, { FC, useEffect, useState } from 'react';
 
 import { TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
-import { Button, IconButton, Link, VStack } from '@chakra-ui/react';
+import { IconButton, Link, VStack } from '@chakra-ui/react';
 
 interface INavigatorPresenter {}
+
 const NavigatorPresenter: FC<
   INavigatorPresenter
 > = ({}: INavigatorPresenter) => {

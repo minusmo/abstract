@@ -15,6 +15,7 @@ import {
 import Title from '../../components/title';
 
 interface ITechSkills {}
+
 const TechSkills: FC<ITechSkills> = ({}: ITechSkills) => (
   <Container centerContent width={'100vw'} height={'100vh'}>
     <Card>

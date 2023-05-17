@@ -8,6 +8,7 @@ interface IEducation {
   title: string;
   subtitle: string;
 }
+
 const Education: FC<IEducation> = ({ title, subtitle }: IEducation) => (
   <Container centerContent width="100vw" height="100vh">
     <Card>

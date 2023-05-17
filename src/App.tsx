@@ -1,14 +1,14 @@
 import { FC } from 'react';
 
 import { Box, VStack } from '@chakra-ui/react';
+
 import Contact from './widgets/contact';
-import FeaturedCourses from './widgets/featuredCourses';
 import Greeting from './widgets/greeting';
 import NavigationBar from './widgets/navigationBar';
+import PersonalinterestsContainer from './widgets/personalinterests';
 import Projects from './widgets/projects';
 import Skills from './widgets/skills';
 import TechInterestsContainer from './widgets/techinterests';
-import PersonalinterestsContainer from './widgets/personalinterests';
 
 const App: FC = () => {
   const projects = [
@@ -62,7 +62,6 @@ const App: FC = () => {
       <VStack spacing={100}>
         <Greeting />
         <TechInterestsContainer />
-        <FeaturedCourses />
         <Skills />
         <Projects projects={projects} />
         <PersonalinterestsContainer />

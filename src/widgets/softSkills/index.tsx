@@ -15,6 +15,7 @@ import Title from '../../components/title';
 interface ISoftSkills {
   softSkills: string[];
 }
+
 const SoftSkills: FC<ISoftSkills> = ({ softSkills }: ISoftSkills) => (
   <Container centerContent width={'100vw'} height={'100vh'}>
     <Card>

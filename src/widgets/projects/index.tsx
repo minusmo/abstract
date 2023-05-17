@@ -1,20 +1,7 @@
 import { motion } from 'framer-motion';
 import React, { FC } from 'react';
 
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Center,
-  Heading,
-  Link,
-  Text,
-  VStack,
-  Wrap,
-  WrapItem,
-} from '@chakra-ui/react';
+import { Center, Heading, VStack, Wrap, WrapItem } from '@chakra-ui/react';
 import AnimatingCard from './AnimatingCard';
 
 interface IProjects {

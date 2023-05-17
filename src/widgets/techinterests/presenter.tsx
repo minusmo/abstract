@@ -15,6 +15,7 @@ import {
 function Tag(tagProps: HighlightProps) {
   return <Highlight {...tagProps} />;
 }
+
 function TechInterestsPresenter() {
   return (
     <motion.div

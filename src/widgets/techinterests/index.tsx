@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { Center, VStack } from '@chakra-ui/react';
+import { Center } from '@chakra-ui/react';
 
 import TechInterestsPresenter from './presenter';
 

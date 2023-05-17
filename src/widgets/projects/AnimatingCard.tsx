@@ -15,6 +15,7 @@ interface IAnimatingCard {
   project: any;
   index: number;
 }
+
 function AnimatingCard({ project, index }: IAnimatingCard) {
   const animationProps = {
     initial: {

@@ -7,6 +7,7 @@ interface IAnimatingChar {
   char: string;
   index: number;
 }
+
 function AnimatingChar({ char, index }: IAnimatingChar) {
   const animationProps = {
     initial: {
@@ -29,6 +30,7 @@ function AnimatingChar({ char, index }: IAnimatingChar) {
     </motion.div>
   );
 }
+
 const FallbackGreeting: FC = () => {
   const greeting = 'Hi There!';
   const message = "I'm HoJoon Eum, Software Engineer!";

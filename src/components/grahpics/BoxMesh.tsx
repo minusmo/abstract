@@ -10,6 +10,7 @@ export interface IBox {
   rotationDirection: number;
   index: number;
 }
+
 function BoxMesh({ position, boxColor, rotationDirection, index }: IBox) {
   const ref = useRef<THREE.Mesh>(null!);
   const [isRevealed, setIsRevealed] = useState(false);

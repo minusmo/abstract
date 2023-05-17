@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 
 interface IContact {}
+
 const Contact: FC<IContact> = ({}: IContact) => (
   <Center padding={10} textAlign={'center'} id={'section-4'}>
     <VStack>

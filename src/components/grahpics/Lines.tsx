@@ -6,6 +6,7 @@ import { QuadraticBezierLine } from '@react-three/drei';
 interface ILines {
   points: number[][];
 }
+
 function Lines({ points }: ILines) {
   const nOfPoints = points.length;
   const [currentPoints, setCurrentPoints] = useState(1);
