@@ -24,7 +24,7 @@ function PersonalInterestsPresenter() {
     >
       <Card>
         <CardHeader textAlign="center">
-          <Heading fontSize="xl" padding={5}>
+          <Heading fontSize="2xl" padding={5}>
             My Personal Interests
           </Heading>
         </CardHeader>

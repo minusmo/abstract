@@ -13,7 +13,7 @@ import {
 interface IContact {}
 
 const Contact: FC<IContact> = ({}: IContact) => (
-  <Center padding={10} textAlign={'center'} id={'section-4'}>
+  <Center padding={10} textAlign={'center'} id={'section-5'}>
     <VStack>
       <Heading fontSize={['xl', '2xl', '4xl']} marginBottom={10}>
         Do Something Fun Together!

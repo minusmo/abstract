@@ -24,11 +24,7 @@ function SimpleCardPresenter({
   footerText,
 }: ISimpleCard) {
   return (
-    <Card
-      variant="outline"
-      width={['sm', 'md', 'lg', 'xl', '2xl']}
-      height="100%"
-    >
+    <Card variant="outline" width={'100%'} height="100%">
       <CardHeader>
         <Heading as="h2" fontSize="xl">
           {headerText}
