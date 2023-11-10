@@ -1,0 +1,22 @@
+---
+import contact from "../data/contact.json";
+---
+<footer id="contact">
+    <a href=`mailto:${contact.email}`><p>e-mail</p></a>
+    <a href={contact.linkedIn}><p>linkedIn</p></a>
+    <a href={contact.github}><p>github</p></a>
+</footer>
+
+<style>
+  #contact {
+    display: flex;
+    flex-flow: row;
+    gap: 5px;
+    width: 100%;
+    height: auto;
+    border-top: 1px solid lightsalmon;
+  }
+  #contact a {
+    text-decoration: none;
+  }
+</style>
