@@ -23,15 +23,7 @@ const { title } = Astro.props;
 
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+    --link-color: hsl(24, 100%, 50%);
 	}
 	html {
 		font-family: system-ui, sans-serif;
@@ -65,7 +57,18 @@ const { title } = Astro.props;
   h4 {
     font-size: 1.1rem;
   }
-  li {
-    
+  a {
+   text-decoration: none;
+   font-style: italic;
+   font-weight: bold;
+   color: var(--link-color);
+  }
+  .fn {
+    font-weight: bolder;
+  }
+  .andOp {
+    font-weight: lighter;
+    font-style: italic;
+    margin: 0 5px;
   }
 </style>
