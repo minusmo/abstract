@@ -1,22 +1,23 @@
 <nav id="nav-bar">
-  <div id="page-title">
-    <p>Introduction to </p>
-    <p>HoJoon Eum</p>
-  </div>
+  <p class="fn">MyPersonalLogo(</p>
+  <img
+    src="./hjeum_profile.png"
+    alt="HoJoon Eum's personal logo"
+    width="30px"
+    height="30px"
+  />
+  <p class="fn">)</p>
+  <p class="andOp">&&</p>
+  <p class="fn">MyWritings(</p>
   <div id="links">
     <a href="https://medium.com/@bldolphin96"><span>📄Tech</span></a>
+    <span>,</span>
     <a href="https://amans-cumulus.tistory.com/"><span>📄Life</span></a>
   </div>
+  <p class="fn">)</p>
 </nav>
 
 <style>
-  #page-title {
-    margin-left: 5px;
-  }
-  #page-title p {
-    margin: 0;
-    font-style: italic;
-  }
   #nav-bar {
     position: sticky;
     top: 0;
@@ -25,17 +26,12 @@
     height: 48px;
     flex-flow: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
     background: white;
     z-index: 5;
-    box-shadow: 0px 4px 4px rgba(0,0,0,.2);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-  }
-  #nav-bar span {
-    margin-left: 5px;
-  }
-  #nav-bar #links {
-    margin-right: 5px;
+    padding: 10px;
   }
   #nav-bar #links a {
     text-decoration: none;
