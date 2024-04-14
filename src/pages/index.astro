@@ -3,15 +3,17 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/footer.astro";
 import Nav from "../components/nav.astro";
 import Divider from "../components/divider.astro";
+import { Image } from "astro:assets";
+import profileImgReal from "../assets/hjeum_profile_real.png";
 ---
 
 <Layout title="Abstract of HoJoon Eum">
   <Nav />
   <main class="noto-sans">
     <section id="introduction">
-      <img
+      <Image
         id="profile-real"
-        src="./hjeum_profile_real.png"
+        src={profileImgReal}
         alt="hojooneum in Hokkaido"
       />
       <h3>Hi, It's HoJoon, Software Engineer.</h3>
@@ -58,7 +60,7 @@ import Divider from "../components/divider.astro";
     </section>
     <Divider />
 
-    <section id="what-i-did">
+    <section id="my-experience">
       <article>
         <div><strong>My experiences</strong><em>with integrity.</em></div>
 
@@ -81,24 +83,6 @@ import Divider from "../components/divider.astro";
         </p>
       </article>
       <Divider />
-      <!-- <article>
-        <h4>As a leader,</h4>
-        <ul id="as-a-leader">
-          <li>
-            I have an experience of growing a student club under 20 members to
-            50 members.
-          </li>
-          <li>
-            I organized internal and external meetups which was informative,
-            collaborative, educative on purpose.
-          </li>
-          <li>I scheduled tasks to achieve a objective.</li>
-          <li>I listen to our members voices.</li>
-          <li>I speak what they need and what I should say.</li>
-          <li>I serve as a collegue of them.</li>
-        </ul>
-      </article> -->
-      <Divider />
       <article>
         <h3>About Programming</h3>
         <p>
@@ -113,20 +97,18 @@ import Divider from "../components/divider.astro";
           Here are What I programmed.
           <ul id="programs">
             <li>
-              <a href="">
+              <a href="/">
                 Converter from csv to markdown.
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="/">
                 Topstermaker
               </a>
             </li>
         </p>
-
       </article>
     </section>
-
     <Divider />
     <section id="what-i-like">
       <h3>I love to</h3>
@@ -145,10 +127,10 @@ import Divider from "../components/divider.astro";
 </Layout>
 
 <style>
-  #what-i-did article h3 {
+  #my-experience article h3 {
     margin-bottom: 0;
   }
-  #what-i-did article div strong {
+  #my-experience article div strong {
     font-size: 1.2rem;
     margin-right: 5px;
   }

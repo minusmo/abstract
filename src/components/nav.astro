@@ -1,17 +1,18 @@
 ---
 import Comma from "./comma.astro";
 import Parenthesis from "./parenthesis.astro";
+import { Image } from "astro:assets";
+import myLogo from "../assets/hjeum_profile.png";
 ---
 
 <nav id="nav-bar">
   <div class="declaration">
-    <p class="fn">MyLogo  </p>
+    <p class="fn">MyLogo</p>
     <Parenthesis>
-      <img
-        src="./hjeum_profile.png"
+      <Image
+        id="my-logo"
+        src={myLogo}
         alt="HoJoon Eum's personal logo"
-        width="30px"
-        height="30px"
       />
     </Parenthesis>
   </div>
@@ -48,5 +49,9 @@ import Parenthesis from "./parenthesis.astro";
   }
   #nav-bar #links a {
     text-decoration: none;
+  }
+  #my-logo {
+    width: 30px;
+    height: 30px;
   }
 </style>
