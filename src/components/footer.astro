@@ -2,26 +2,36 @@
 import contact from "../data/contact.json";
 ---
 <footer id="footer">
-  <p class="fn">Contacts(</p>
-  <a href=`mailto:${contact.email}`><p>e-mail</p></a>
-  <p>,</p>
-  <a href={contact.linkedIn}><p>linkedIn</p></a>
-  <p>,</p>
-  <a href={contact.github}><p>github</p></a>
-  <p>)</p>
+  <div>  
+    <p class="fn">Contacts(</p>
+    <a href=`mailto:${contact.email}`><p>e-mail</p></a>
+    <p>,</p>
+    <a href={contact.linkedIn}><p>linkedIn</p></a>
+    <p>,</p>
+    <a href={contact.github}><p>github</p></a>
+    <p>)</p>
+  </div>
+  <p id="design-system">Designed by TuneUpStudio</p>
 </footer>
 
 <style>
   #footer {
     display: flex;
-    flex-flow: row;
+    flex-flow: wrap;
+    justify-content: space-between;
     margin: auto;
     gap: 5px;
     width: 99%;
     height: auto;
     padding: calc(var(--Thickness-Thin)*1px);
     border-radius: calc(var(--Curve-Lighter)*1px);
-    /* border-top: calc(var(--Thickness-Thiner)*1px) solid rgba(0,0,0,.2); */
+  }
+  #footer div {
+    display: flex;
+    flex-flow: row;
+  }
+  #design-system {
+    color: var(--Tones-neutral-2);
   }
   #footer a {
     text-decoration: none;

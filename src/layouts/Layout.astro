@@ -16,6 +16,9 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/png" href="/hjeum_profile.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<slot />
@@ -76,5 +79,8 @@ const { title } = Astro.props;
     font-weight: lighter;
     font-style: italic;
     margin: 0 5px;
+  }
+  .noto-sans {
+    
   }
 </style>
