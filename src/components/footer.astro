@@ -1,7 +1,7 @@
 ---
 import contact from "../data/contact.json";
 ---
-<footer id="contact">
+<footer id="footer">
   <p class="fn">Contacts(</p>
   <a href=`mailto:${contact.email}`><p>e-mail</p></a>
   <p>,</p>
@@ -12,17 +12,18 @@ import contact from "../data/contact.json";
 </footer>
 
 <style>
-  #contact {
+  #footer {
     display: flex;
     flex-flow: row;
+    margin: auto;
     gap: 5px;
-    width: 100%;
+    width: 99%;
     height: auto;
-    padding: 1rem;
-    border-radius: 5px;
-    border-top: 1px solid rgba(0,0,0,.2);
+    padding: calc(var(--Thickness-Thin)*1px);
+    border-radius: calc(var(--Curve-Lighter)*1px);
+    /* border-top: calc(var(--Thickness-Thiner)*1px) solid rgba(0,0,0,.2); */
   }
-  #contact a {
+  #footer a {
     text-decoration: none;
   }
 </style>

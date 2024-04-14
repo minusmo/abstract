@@ -15,7 +15,7 @@ import Parenthesis from "./parenthesis.astro";
       />
     </Parenthesis>
   </div>
-  <p class="andOp">&&</p>
+  <p class="and-operator">&&</p>
   <div class="declaration">
     <p class="fn">MyWritings</p>
     <Parenthesis>
@@ -31,19 +31,20 @@ import Parenthesis from "./parenthesis.astro";
 <style>
   #nav-bar {
     position: sticky;
-    top: 0;
+    top: 1px;
+    left: .5%;
     display: flex;
-    width: 100%;
+    width: 99%;
     height: auto;
     flex-flow: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: start;
     background: white;
-    z-index: 5;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    padding: 10px;
+    z-index: calc(var(--Depth-Lobby)*1px);
+    box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.2);
+    border-radius: calc(var(--Curve-Lighter)*1px);
+    padding: calc(var(--Thickness-Thin)*1px);
   }
   #nav-bar #links a {
     text-decoration: none;
