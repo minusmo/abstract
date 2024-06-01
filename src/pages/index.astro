@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/footer.astro";
 import Nav from "../components/nav.astro";
 import Divider from "../components/divider.astro";
+import SectionContainer from "../components/sectioncontainer.astro";
 import { Image } from "astro:assets";
 import profileImgReal from "../assets/hjeum_profile_real.png";
 ---
@@ -19,7 +20,7 @@ import profileImgReal from "../assets/hjeum_profile_real.png";
       <h3>Hi, It's HoJoon, Software Engineer. I think myself as a Builder.</h3>
     </section>
     <Divider />
-    <div class="section-container">
+    <SectionContainer>
       <section id="my-philosophy">
         <article>
           <h3>As a man,</h3>
@@ -105,7 +106,7 @@ import profileImgReal from "../assets/hjeum_profile_real.png";
             </p>
           </article>
         </section>
-      </div>
+      </SectionContainer>
         <Divider />
         <section id="what-i-like">
           <h3>I love to</h3>
@@ -152,21 +153,5 @@ import profileImgReal from "../assets/hjeum_profile_real.png";
   }
   #introduction img {
     border-radius: calc(var(--Curve-Full)*1px);
-  }
-  .section-container {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: start;
-    align-items: stretch;
-  }
-  .section-container section {
-    flex: 1;
-    min-width: 10ch;
-    max-width: 200ch;
-  }
-  @media screen and (max-width: 750px) {
-    .section-container {
-      flex-direction: column;
-    }
   }
 </style>

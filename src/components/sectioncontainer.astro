@@ -1,0 +1,22 @@
+<section>
+  <slot />
+</section>
+
+<style>
+  section{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: stretch;
+    gap: 1em;
+  }
+  section :global(section) {
+    flex: 1;
+    min-width: 10ch;
+  }
+  @media screen and (max-width: 750px) {
+    section{
+      flex-direction: column;
+    }
+  }
+</style>
