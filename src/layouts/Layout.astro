@@ -12,14 +12,15 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="It's about HoJoon Eum!" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href="/abstract/hjeum_profile.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<link rel="icon" type="image/png" href="/abstract/hjeum_profile.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	</head>
-	<body>
+	<body class="noto-sans">
 		<slot />
 	</body>
 </html>
@@ -60,11 +61,14 @@ const { title } = Astro.props;
   a {
    text-decoration: none;
    font-style: italic;
-   font-weight: bold;
+   font-weight: 600;
    color: var(--Color-BLUE);
   }
   a:hover {
     color: var(--Tints-blue-3);
+  }
+  .bold {
+    font-weight: bold;
   }
   .declaration {
     display: flex;
@@ -82,8 +86,14 @@ const { title } = Astro.props;
   .noto-sans {
     font-family: "Noto Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-weight: 400;
     font-style: normal;
     font-variation-settings: "wdth" 100;
+  }
+  .roboto-condensed {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
   }
 </style>

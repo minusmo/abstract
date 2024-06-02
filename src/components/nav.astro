@@ -1,38 +1,26 @@
 ---
-import Comma from "./comma.astro";
-import Parenthesis from "./parenthesis.astro";
 import { Image } from "astro:assets";
 import myLogo from "../assets/hjeum_profile.png";
 ---
 
 <nav id="nav-bar">
-  <div class="declaration">
-    <p class="fn">MyLogo</p>
-    <Parenthesis>
-      <Image
-        id="my-logo"
-        src={myLogo}
-        alt="HoJoon Eum's personal logo"
-      />
-    </Parenthesis>
+  <a href="/abstract"><h1 id="myname" class="roboto-condensed bold">HJEum</h1></a>
+  <div id="links">
+    <a href="https://medium.com/@bldolphin96">TechBlog</a>
+    /
+    <a href="https://amans-cumulus.tistory.com/">LifeBlog</a>
   </div>
-  <p class="and-operator">&&</p>
-  <div class="declaration">
-    <p class="fn">MyWritings</p>
-    <Parenthesis>
-      <div id="links">
-        <a href="https://medium.com/@bldolphin96"><span>📄Tech</span></a>
-        <Comma />
-        <a href="https://amans-cumulus.tistory.com/"><span>📄Life</span></a>
-      </div>
-    </Parenthesis>
-  </div>
+  <Image
+    id="my-logo"
+    src={myLogo}
+    alt="HoJoon Eum's personal logo"
+  />
 </nav>
 
 <style>
   #nav-bar {
     position: sticky;
-    top: 1px;
+    top: 0;
     left: .5%;
     display: flex;
     width: 99%;
@@ -40,18 +28,27 @@ import myLogo from "../assets/hjeum_profile.png";
     flex-flow: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: start;
+    justify-content: space-between;
     background: white;
     z-index: calc(var(--Depth-Lobby)*1px);
-    box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.2);
-    border-radius: calc(var(--Curve-Lighter)*1px);
     padding: calc(var(--Thickness-Thin)*1px) calc(var(--Thickness-Thicker)*1px);
+  }
+  #nav-bar #links {
+    font-size: calc(1rem + .5vw);
   }
   #nav-bar #links a {
     text-decoration: none;
   }
+  #nav-bar #links a:hover {
+    text-decoration: underline;
+  }
+  #myname {
+    font-weight: 800;
+    font-style: normal;
+    font-size: calc(1.2rem + 1vw);
+  }
   #my-logo {
-    width: 30px;
-    height: 30px;
+    width: calc(30px + 1vw);
+    height: calc(30px + 1vw);
   }
 </style>
