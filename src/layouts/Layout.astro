@@ -44,11 +44,28 @@ const { title } = Astro.props;
     list-style: none;
   }
 	html {
-		font-family: system-ui, sans-serif;
+    --light-bg: var(--Tints-neutral-0);
+    --dark-bg: var(--Tints-neutral-9);
+    --light-color-normal: var(--Palette-neutral-0);
+    --dark-color-normal: var(--Palette-neutral-5);
+    font-family: system-ui, sans-serif;
 		background: #ffffff0a;
 	}
   body {
+    color-scheme: light dark;
     margin: 1px;
+  }
+  @media (prefers-color-scheme: light) {
+    body {
+      background-color: var(--light-bg);
+      color: var(--light-color-normal);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: var(--dark-bg);
+      color: var(--dark-color-normal);
+    }
   }
   main {
     padding: 10px;
