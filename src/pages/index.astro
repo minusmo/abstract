@@ -13,7 +13,7 @@ import profileImgReal from "../assets/hjeum_profile_real.png";
   <main>
     <section id="who-am-i">
       <article class="description">
-        <h3>Hi, It's HoJoon.</h3>
+        <h2>Hi, It's HoJoon.</h2>
         <p>
           Software Engineer. I think myself as a Builder.<br>
           I am not a methodologist, but I found methodologies very useful in many situations.<br>
@@ -71,6 +71,7 @@ import profileImgReal from "../assets/hjeum_profile_real.png";
         <header>
           <h2>What I've done?</h2>
         </header>
+        <Divider />
         <article>
           <p>I built somethings may found useful.</p>
           <p>And did somethings may inspire people.</p>
@@ -96,26 +97,33 @@ import profileImgReal from "../assets/hjeum_profile_real.png";
   .card article {
     text-align: start;
   }
-  #profile-real {
-    max-width: 100%;
-    min-width: 30px;
-    width: 10%;
-    height: auto;
-  }
   #who-am-i {
     display: flex;
     flex-flow: wrap;
-    gap: 1rem;
     justify-content: center;
-    align-items: start;
+    align-items: stretch;
     padding: unset;
   }
   #who-am-i .description {
     flex: 3;
+    text-align: start;
+    margin: auto;
+    max-width: 60%;
     padding: calc(var(--Thickness-Thicker)*1px);
+  }
+  @media screen and (max-width: 750px) {
+    #who-am-i {
+      flex-direction: column;
+    }
+    #who-am-i .description {
+      margin: unset;
+    }
   }
   #who-am-i img {
     flex: 1;
+    max-width: 100%;
+    min-width: 30px;
+    height: auto;
     border-radius: 0 calc(var(--Curve-Lighter)*1px) calc(var(--Curve-Lighter)*1px) 0;
   }
 </style>
