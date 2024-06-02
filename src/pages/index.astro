@@ -10,148 +10,130 @@ import profileImgReal from "../assets/hjeum_profile_real.png";
 
 <Layout title="Abstract of HoJoon Eum">
   <Nav />
-  <main class="noto-sans">
-    <section id="introduction">
+  <main>
+    <section id="who-am-i">
+      <article class="description">
+        <h3>Hi, It's HoJoon.</h3>
+        <p>
+          Software Engineer. I think myself as a Builder.<br>
+          I am not a methodologist, but I found methodologies very useful in many situations.<br>
+          So I try to establish my own methodologies in life.
+        </p>
+      </article>
       <Image
         id="profile-real"
         src={profileImgReal}
         alt="hojooneum in Hokkaido"
       />
-      <h3>Hi, It's HoJoon, Software Engineer. I think myself as a Builder.</h3>
     </section>
-    <Divider />
     <SectionContainer>
-      <section id="my-philosophy">
+      <section id="what-i-do" class="card">
+        <header>
+          <h2>What I do?</h2>
+          <p>
+            I usually build Web application server program.<br>
+            Also I enjoy building client programs.<br>
+          </p>  
+        </header>
+        <Divider />
         <article>
-          <h3>As a man,</h3>
-          <p>
-            "I am always thinking about what I should do; 
-            I find myself becoming a philosopher. 
-            When deeply contemplating something, especially abstract or complex concepts, 
-            I try to define it with a few words. 
-            Describing something concisely may be perceived as making details ambiguous. 
-            However, in some cases, using words with definite meanings can make 
-            the essence of the whole problem explicit. What I usually ponder is something like <em
-            >"So, what is really important?"</em
-            > or <em>"What is really going on now?"</em>
-            or <em>"How to resolve this problem in nice way?"</em>.
-          </p>
-          <p>
-            I'd love to deliver rich and helpful words to audience, listen to
-            various stories, speeches.
-          </p>
-          <Divider />
-          <h3>As a teammate,</h3>
-          <p>
-            "Here I am, ready to serve as a teammate, friend, colleague, or coworker. 
-            I can act as a supporter and backup. 
-            I have experienced various situations in teams, projects, studies, and communities."
-          </p>
-          <Divider />
-          <h3>As a leader,</h3>
-          <p>
-            "When there is a position that demands high responsibility 
-            and the duty of showing the way forward while embracing others, 
-            I am ready to serve in that capacity."
-          </p>
+          <!-- @todo add links for each word. -->
+          <h3>My first options are,</h3>
+          <p>Java with Junit, Gradle for server programs.</p>
+          <p>Typescript with Jest, NPM for client programs.</p>
         </article>
+        <footer>
+          <a href="/abstract/what-i-do">And more</a>
+        </footer>
       </section>
       
-      <section id="my-experience">
-        <article>
-          <div><strong>My experiences</strong><em>with integrity.</em></div>
-          
-          <p>I majored in Physics, Cyber Security at Chungang University.</p>
-          <p>I served as Republic Of Korea Army.</p>
+      <section id="how-i-work" class="card">
+        <header>
+          <h2>How I work?</h2>
           <p>
-            I was at some student clubs.
-            <ul id="student-clubs">
-              <li>
-                Student Club for studying Machine Learning, CUAI as a basic course
-                member.
-              </li>
-              <li>
-                Student Club for Developers, GDSC(Google Developer Student Clubs)
-                Chungang University as a lead.
-              </li>
-            </ul>
-            <p>I am a GDG(Google Developer Groups) Seoul Organizer.</p>
-            <p>I won a prize in 2022 Seoul IoT PublicData Hackathon with my friend.</p>
+            Basically, I try to follow the <italic>Agile Manifesto.</italic><br>
+            And "principles" for myself and team.
           </p>
-        </article>
+        </header>
         <Divider />
         <article>
-          <h3>About Programming</h3>
-          <p>
-            Coding is good method of writing my thoughts in structured manner.
-            Machine can be a good worker for humanity.
-          </p>
-          <p>
-            I usually work with Java and Go.
-          </p>
-          
-          <p>
-            Here are What I made.
-            <ul id="programs">
-              <li>
-                <a href="/">
-                  Converter from csv to markdown.
-                </a>
-              </li>
-              <li>
-                <a href="/">
-                  Topstermaker
-                </a>
-              </li>
-            </p>
-          </article>
+          <!-- @todo add links for each word -->
+          <h3>The principles are,</h3>
+          <p>My steps to design a system for myself.</p>
+          <p>Shared rules for team play.</p>
+        </article>
+        <footer>
+          <a href="/abstract/how-i-work">And more</a>
+        </footer>
         </section>
       </SectionContainer>
-        <Divider />
-        <section id="what-i-like">
-          <h3>I love to</h3>
-          <p>
-        talk about <em
-          >life, art, philosophy, and other things so complex to resolve that
-          need figure out nice apporach.</em>
-      </p>
-      <p>
-        I'm looking for something new and interesting, inspiring. 
-        <strong>Where are they?</strong>
-      </p>
-    </section>
+      <section id="what-ive-done" class="card">
+        <header>
+          <h2>What I've done?</h2>
+        </header>
+        <article>
+          <p>I built somethings may found useful.</p>
+          <p>And did somethings may inspire people.</p>
+        </article>
+        <footer>
+          <a href="/abstract/what-ive-done">Checkout them</a>
+        </footer>
+      </section>
   </main>
   <Footer />
 </Layout>
 
 <style>
-  #my-experience article h3 {
+  .card {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    padding: calc(var(--Thickness-Thicker)*1px);
+  }
+  .card article {
+    text-align: start;
+  }
+  ul {
+    margin-top: -1rem;
+    margin-left: -2rem;
+  }
+  /* #how-i-work article h3 {
     margin-bottom: 0;
   }
-  #my-experience article div strong {
+  #how-i-work article div strong {
     font-size: 1.2rem;
     margin-right: 5px;
-  }
-  #student-clubs li::before {
+  } */
+  /* #student-clubs li::before {
     content: "🏫";
-  }
-  #programs li::before {
+  } */
+  /* #programs li::before {
     content: "💾";
-  }
+  } */
   #profile-real {
     max-width: 100%;
     min-width: 30px;
     width: 10%;
     height: auto;
   }
-  #introduction {
+  #who-am-i {
     display: flex;
     flex-flow: wrap;
-    gap: calc(1em + .5vw);
-    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    align-items: start;
+    padding: unset;
+    /* padding: calc(var(--Thickness-Thicker)*2px); */
+  }
+  #who-am-i .description {
+    flex: 3;
     padding: calc(var(--Thickness-Thicker)*1px);
   }
-  #introduction img {
-    border-radius: calc(var(--Curve-Full)*1px);
+  #who-am-i img {
+    flex: 1;
+    border-radius: 0 calc(var(--Curve-Lighter)*1px) calc(var(--Curve-Lighter)*1px) 0;
+    /* border-radius: calc(var(--Curve-Lighter)*2.5px);
+    border-color: var(--Tones-yellow-8);
+    border-width: .5rem;
+    border-style: solid; */
   }
 </style>

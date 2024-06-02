@@ -1,17 +1,28 @@
 ---
+import { Image } from "astro:assets";
 import contact from "../data/contact.json";
+import TULogo from "../assets/tune-up-studio-logo.png";
 ---
 <footer id="footer">
-  <div>  
-    <p class="fn">Contacts(</p>
-    <a href=`mailto:${contact.email}`><p>e-mail</p></a>
+  <div id="contacts">  
+    <a href=`mailto:${contact.email}`><span>e-mail</span></a>
+    /
+    <a href={contact.linkedIn}><span>linkedIn</span></a>
+    /
+    <a href={contact.github}><span>github</span></a>
+    <!-- <p class="fn">Contacts(</p>
     <p>,</p>
-    <a href={contact.linkedIn}><p>linkedIn</p></a>
     <p>,</p>
-    <a href={contact.github}><p>github</p></a>
-    <p>)</p>
+    <p>)</p> -->
   </div>
-  <p id="design-system-mark">Designed by TuneUpStudio</p>
+  <p id="design-system-mark">
+    Designed by
+    <Image
+      id={'tune-up-studio-logo'}
+      src={TULogo}
+      alt={'TuneUpStudio'}
+    />
+  </p>
 </footer>
 
 <style>
@@ -19,6 +30,7 @@ import contact from "../data/contact.json";
     display: flex;
     flex-flow: wrap;
     justify-content: space-between;
+    align-items: center;
     margin: auto;
     gap: 5px;
     width: 99%;
@@ -26,11 +38,21 @@ import contact from "../data/contact.json";
     padding: calc(var(--Thickness-Thin)*1px);
     border-radius: calc(var(--Curve-Lighter)*1px);
   }
-  #footer div {
+  #footer #contacts {
     display: flex;
     flex-flow: row;
+    gap: 10px;
+    color: var(--Tints-green-8);
   }
   #design-system-mark {
-    color: var(--Tones-neutral-2);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+    color: var(--Tones-red-3);
+  }
+  #tune-up-studio-logo {
+    width: 50px;
+    height: 50px;
   }
 </style>
