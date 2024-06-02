@@ -1,0 +1,14 @@
+.astro
+.github
+.vsxcode
+dist
+node_modules
+public
+**/assets
+**/data
+.gitignore
+package.json
+package-lock.json
+README.md
+astro.config.mjs
+**/env.d.ts
