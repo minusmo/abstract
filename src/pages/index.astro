@@ -1,181 +1,138 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Footer from "../components/footer.astro";
-import Nav from "../components/nav.astro";
-import Divider from "../components/divider.astro";
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/footer.astro';
+import Nav from '../components/nav.astro';
+import Divider from '../components/divider.astro';
+import SectionContainer from '../components/sectioncontainer.astro';
+import { Image } from 'astro:assets';
+import profileImgReal from '../assets/hjeum_profile_real.png';
 ---
 
-<Layout title="Abstract of HoJoon Eum">
+<Layout title='Abstract of HoJoon Eum'>
   <Nav />
   <main>
-    <section id="introduction">
-      <h3>Hello, I am HoJoon Eum.</h3>
-      <p>
-        I am a Problem Solver, Definer, Speaker, Listener, Partner, Finder,
-        Coder and Leader.
-      </p>
-    </section>
-    <Divider />
-    <section id="my-philosophy">
-      <article>
-        <h3>As a person,</h3>
+    <section id='who-am-i'>
+      <article class='description'>
+        <h2>Hi, It's HoJoon.</h2>
         <p>
-          "I am always thinking about what I should do; 
-          I find myself becoming a philosopher. 
-          When deeply contemplating something, especially abstract or complex concepts, 
-          I try to define it with a few words. 
-          Describing something concisely may be perceived as making details ambiguous. 
-          However, in some cases, using words with definite meanings can make 
-          the essence of the whole problem explicit. What I usually ponder is something like <em
-            >"So, what is really important?"</em
-          > or <em>"What is really going on now?"</em>
-           or <em>"How to resolve this problem in nice way?"</em>.
-        </p>
-        <p>
-          I'd love to deliver rich and helpful words to audience, listen to
-          various stories, speeches.
-        </p>
-        <Divider />
-        <h3>Looking for a good partner?</h3>
-        <p>
-          "Here I am, ready to serve as a teammate, friend, colleague, or coworker. 
-          I can act as a supporter and backup. 
-          I have experienced various situations in teams, projects, studies, and communities."
-        </p>
-        <Divider />
-        <h3>Not afraid of being a leader.</h3>
-        <p>
-          "When there is a position that demands high responsibility 
-          and the duty of showing the way forward while embracing others, 
-          I am ready to serve in that capacity."
+          Software Engineer. I think myself as a Builder.<br />
+          I am not a methodologist, but I found methodologies very useful in many
+          situations.<br />
+          So I try to establish my own methodologies in life.
         </p>
       </article>
+      <Image
+        id='profile-real'
+        src={profileImgReal}
+        alt='hojooneum in Hokkaido'
+      />
     </section>
-    <Divider />
+    <SectionContainer>
+      <section
+        id='what-i-do'
+        class='card'>
+        <header>
+          <h2>What I do?</h2>
+          <p>
+            I usually build Web application server program.<br />
+            Also I enjoy building client programs.<br />
+          </p>
+        </header>
+        <Divider />
+        <article>
+          <!-- @todo add links for each word. -->
+          <h3>My first options are,</h3>
+          <p>Java with Junit, Gradle for server programs.</p>
+          <p>Typescript with Jest, NPM for client programs.</p>
+        </article>
+        <footer>
+          <a href='/abstract/303'>And more</a>
+        </footer>
+      </section>
 
-    <section id="what-i-did">
-      <article>
-        <div><strong>What I did</strong><em>with integrity.</em></div>
-
-        <p>I studied Physics, Computer Science at University.</p>
-        <p>I served as Republic Of Korea Army.</p>
-        <p>
-          I was at some student clubs.
-          <ul id="student-clubs">
-            <li>
-              Student Club for studying Machine Learning, CUAI as a basic course
-              member.
-            </li>
-            <li>
-              Student Club for Developers, GDSC(Google Developer Student Clubs)
-              Chungang University as a lead.
-            </li>
-          </ul>
-          <p>I am a GDG(Google Developer Groups) Seoul Organizer.</p>
-          <p>I experienced hackathon with my friend.</p>
-        </p>
-      </article>
+      <section
+        id='how-i-work'
+        class='card'>
+        <header>
+          <h2>How I work?</h2>
+          <p>
+            Basically, I try to follow the <italic>Agile Manifesto.</italic><br
+            />
+            And "principles" for myself and team.
+          </p>
+        </header>
+        <Divider />
+        <article>
+          <!-- @todo add links for each word -->
+          <h3>The principles are,</h3>
+          <p>My steps to design a system for myself.</p>
+          <p>Shared rules for team play.</p>
+        </article>
+        <footer>
+          <a href='/abstract/303'>And more</a>
+        </footer>
+      </section>
+    </SectionContainer>
+    <section
+      id='what-ive-done'
+      class='card'>
+      <header>
+        <h2>What I've done?</h2>
+      </header>
       <Divider />
       <article>
-        <h4>As a leader,</h4>
-        <ul id="as-a-leader">
-          <li>
-            I have an experience of growing a student club under 20 members to
-            50 members.
-          </li>
-          <li>
-            I organized internal and external meetups which was informative,
-            collaborative, educative on purpose.
-          </li>
-          <li>I scheduled tasks to achieve a objective.</li>
-          <li>I listen to our members voices.</li>
-          <li>I speak what they need and what I should say.</li>
-          <li>I serve as a collegue of them.</li>
-        </ul>
+        <p>I built somethings may found useful.</p>
+        <p>And did somethings may inspire people.</p>
       </article>
-      <Divider />
-      <article>
-        <h3>I code programs on purpose.</h3>
-        <p>
-          Coding is good method of writing my thoughts in structured manner.
-          Machine can be a good worker for humanity.
-        </p>
-        <p>
-          I experienced <em
-            >C, C++, Java, Python3, Javascript, Typescript, Go</em
-          > among the programming languages. I experienced <em
-            >Html, Css, Markdown, Yaml</em
-          > and other configuration files.
-        </p>
-
-        <p>
-          Here are What I programmed.
-          <ul id="programs">
-            <li>
-              Node.js web application server with express on serverless service.
-            </li>
-            <li>
-              Node.js web application server with http module, GraphQl, MongoDB.
-            </li>
-            <li> Go tcp socket application server with Go built-in modules.</li>
-            <li>
-              Python application program converting csv file to markdown file.
-            </li>
-            <li>
-              Javascript single page application with no dependency on Github
-              Pages(self-hosted-runner).
-            </li>
-            <li>
-              <a href="https://topstermaker.tuneup-studio.com/">
-                Typescript single page application with create-react-app(now
-                vite), Mobx(now jotai), react-query, react-router-dom on AWS
-                Amplify(with Route53).
-              </a>
-            </li>
-            <li>
-              Typescript Next.js static and dynamic web site with webgl on
-              vercel.
-            </li>
-            <li> Dart Flutter mobile application with BLOC.</li>
-          </ul>
-        </p>
-
-        <p>As a developer, I don't like over engineering.</p>
-      </article>
-    </section>
-
-    <Divider />
-    <section id="what-i-like">
-      <h3>I love to</h3>
-      <p>
-        talk about <em
-          >life, art, philosophy, and other things so complex to resolve that
-          need figure out nice apporach.</em>
-      </p>
-      <p>
-        I'm looking for something new and interesting, inspiring. 
-        <strong>Where are they?</strong>
-      </p>
+      <footer>
+        <a href='/abstract/303'>Checkout them</a>
+      </footer>
     </section>
   </main>
   <Footer />
 </Layout>
 
 <style>
-  #what-i-did article h3 {
-    margin-bottom: 0;
+  ul {
+    margin-top: -1rem;
+    margin-left: -2rem;
   }
-  #what-i-did article div strong {
-    font-size: 1.2rem;
-    margin-right: 5px;
+  .card {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    padding: calc(var(--Thickness-Thicker) * 1px);
   }
-  #student-clubs li::before {
-    content: "🏫";
+  .card article {
+    text-align: start;
   }
-  #as-a-leader li::before {
-    content: "⛵️";
+  #who-am-i {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: stretch;
+    padding: unset;
   }
-  #programs li::before {
-    content: "💾";
+  #who-am-i .description {
+    flex: 3;
+    text-align: start;
+    margin: auto;
+    max-width: 60%;
+    padding: calc(var(--Thickness-Thicker) * 1px);
+  }
+  @media screen and (max-width: 750px) {
+    #who-am-i {
+      flex-direction: column;
+    }
+    #who-am-i .description {
+      margin: unset;
+    }
+  }
+  #who-am-i img {
+    flex: 1;
+    max-width: 100%;
+    min-width: 30px;
+    height: auto;
+    border-radius: 0 calc(var(--Curve-Lighter) * 1px)
+      calc(var(--Curve-Lighter) * 1px) 0;
   }
 </style>

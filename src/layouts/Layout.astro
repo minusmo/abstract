@@ -1,67 +1,186 @@
 ---
+import '@tune-up-studio/figures/css/designtokens.css';
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Description of HoJoon Eum" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href="/hjeum_profile.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta
+      name='description'
+      content="It's about HoJoon Eum!"
+    />
+    <meta
+      name='viewport'
+      content='width=device-width'
+    />
+    <meta
+      name='generator'
+      content={Astro.generator}
+    />
+    <title>{title}</title>
+    <link
+      rel='icon'
+      type='image/png'
+      href='/abstract/hjeum_profile.png'
+    />
+    <link
+      rel='preconnect'
+      href='https://fonts.googleapis.com'
+    />
+    <link
+      rel='preconnect'
+      href='https://fonts.gstatic.com'
+      crossorigin
+    />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap'
+      rel='stylesheet'
+    />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap'
+      rel='stylesheet'
+    />
+  </head>
+  <body class='noto-sans'>
+    <slot />
+  </body>
 </html>
 
 <style is:global>
-	:root {
-    --link-color: hsl(24, 100%, 50%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #ffffff0a;
-	}
-  body {
-    margin: 1px;
-  }
   * {
     box-sizing: border-box;
     list-style: none;
+  }
+  html {
+    --light-bg: var(--Tints-neutral-0);
+    --dark-bg: var(--Tints-neutral-9);
+    --light-color-normal: var(--Palette-neutral-0);
+    --dark-color-normal: var(--Palette-neutral-5);
+    --h1-fontsize-desktop: calc(var(--TypoScaleMap-PerfectFourth) * 2em);
+    --h2-fontsize-desktop: calc(var(--TypoScaleMap-PerfectFourth) * 1.5em);
+    --h3-fontsize-desktop: calc(var(--TypoScaleMap-PerfectFourth) * 1.17em);
+    --h4-fontsize-desktop: calc(var(--TypoScaleMap-PerfectFourth) * 1em);
+    --h5-fontsize-desktop: calc(var(--TypoScaleMap-PerfectFourth) * 0.83em);
+    --h6-fontsize-desktop: calc(var(--TypoScaleMap-PerfectFourth) * 0.67em);
+    --p-fontsize-desktop: calc(var(--TypoScaleMap-PerfectFourth) * 0.5em);
+
+    --boxShadow-color: var(--Tints-neutral-1);
+    font-family: system-ui, sans-serif;
+    background: #ffffff0a;
+  }
+  body {
+    color-scheme: light dark;
+    margin: 0;
+  }
+  @media (prefers-color-scheme: light) {
+    body {
+      background-color: var(--light-bg);
+      color: var(--light-color-normal);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: var(--dark-bg);
+      color: var(--dark-color-normal);
+    }
   }
   main {
     padding: 10px;
   }
   section {
+    color-scheme: light dark;
     margin: 10px 0;
     padding: 10px;
-    box-shadow: 3px 3px 3px rgba(0,0,0,.5);
-    border-radius: 5px;
+    border-radius: calc(var(--Curve-Lighter) * 1px);
+  }
+  @media (prefers-color-scheme: light) {
+    section {
+      box-shadow: 0 4px 4px 1px var(--Tints-neutral-1);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    section {
+      box-shadow: 0 4px 2px 1px var(--Tones-neutral-8);
+    }
   }
   article {
     margin: 5px 0;
   }
+  h1 {
+    font-size: calc(var(--h1-fontsize-desktop) + 0.5vw);
+  }
   h2 {
+    font-size: calc(var(--h2-fontsize-desktop) + 0.5vw);
     margin: 5px;
   }
   h3 {
-    font-size: 1.2rem;
+    font-size: calc(var(--h3-fontsize-desktop) + 0.5vw);
   }
   h4 {
-    font-size: 1.1rem;
+    font-size: calc(var(--h4-fontsize-desktop) + 0.5vw);
+  }
+  h5 {
+    font-size: calc(var(--h5-fontsize-desktop) + 0.5vw);
+  }
+  p {
+    font-size: calc(var(--p-fontsize-desktop) + 0.5vw);
   }
   a {
-   text-decoration: none;
-   font-style: italic;
-   font-weight: bold;
-   color: var(--link-color);
+    text-decoration: none;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--Color-BLUE);
+  }
+  a:hover {
+    color: var(--Tints-blue-3);
+    text-decoration: underline;
+  }
+  .noto-sans {
+    font-family: 'Noto Sans', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: 'wdth' 100;
+  }
+  .roboto-condensed {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .bold {
+    font-weight: bold;
+  }
+  .declaration {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .fn {
+    font-weight: bolder;
+  }
+  .and-operator {
+    font-weight: lighter;
+    font-style: italic;
+    margin: 0 5px;
+  }
+  .fullscreen-centered {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+  a {
+    text-decoration: none;
+    font-style: italic;
+    font-weight: bold;
+    color: var(--link-color);
   }
   .fn {
     font-weight: bolder;
