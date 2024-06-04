@@ -1,17 +1,23 @@
 ---
-import { Image } from "astro:assets";
-import ProfileLogo from "../assets/hjeum_profile.png";
+import { Image } from 'astro:assets';
+import ProfileLogo from '../assets/hjeum_profile.png';
 ---
 
-<nav id="nav-bar">
-  <a href="/abstract"><h1 id="myname" class="roboto-condensed bold">HJEum</h1></a>
-  <div id="links">
-    <a href="https://medium.com/@bldolphin96">TechBlog</a>
+<nav id='nav-bar'>
+  <a href='/abstract'
+    ><h1
+      id='myname'
+      class='roboto-condensed bold'>
+      HJEum
+    </h1></a
+  >
+  <div id='links'>
+    <a href='https://medium.com/@bldolphin96'>TechBlog</a>
     /
-    <a href="https://amans-cumulus.tistory.com/">LifeBlog</a>
+    <a href='https://amans-cumulus.tistory.com/'>LifeBlog</a>
   </div>
   <Image
-    id="my-logo"
+    id='my-logo'
     src={ProfileLogo}
     alt="HoJoon Eum's personal logo"
   />
@@ -21,7 +27,7 @@ import ProfileLogo from "../assets/hjeum_profile.png";
   #nav-bar {
     position: sticky;
     top: 0;
-    left: .5%;
+    left: 0.5%;
     display: flex;
     width: 99%;
     height: auto;
@@ -29,12 +35,23 @@ import ProfileLogo from "../assets/hjeum_profile.png";
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    background: white;
-    z-index: calc(var(--Depth-Lobby)*1px);
-    padding: calc(var(--Thickness-Thin)*1px) calc(var(--Thickness-Thicker)*1px);
+    z-index: calc(var(--Depth-Lobby) * 1px);
+    padding: calc(var(--Thickness-Thin) * 1px)
+      calc(var(--Thickness-Thicker) * 1px);
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: light) {
+    #nav-bar {
+      background-color: var(--Tints-neutral-0);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    #nav-bar {
+      background-color: var(--Tints-neutral-9);
+    }
   }
   #nav-bar #links {
-    font-size: calc(1rem + .5vw);
+    font-size: calc(1rem + 0.5vw);
   }
   #myname {
     font-weight: 800;
