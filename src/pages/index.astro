@@ -1,39 +1,42 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Footer from "../components/footer.astro";
-import Nav from "../components/nav.astro";
-import Divider from "../components/divider.astro";
-import SectionContainer from "../components/sectioncontainer.astro";
-import { Image } from "astro:assets";
-import profileImgReal from "../assets/hjeum_profile_real.png";
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/footer.astro';
+import Nav from '../components/nav.astro';
+import Divider from '../components/divider.astro';
+import SectionContainer from '../components/sectioncontainer.astro';
+import { Image } from 'astro:assets';
+import profileImgReal from '../assets/hjeum_profile_real.png';
 ---
 
-<Layout title="Abstract of HoJoon Eum">
+<Layout title='Abstract of HoJoon Eum'>
   <Nav />
   <main>
-    <section id="who-am-i">
-      <article class="description">
+    <section id='who-am-i'>
+      <article class='description'>
         <h2>Hi, It's HoJoon.</h2>
         <p>
-          Software Engineer. I think myself as a Builder.<br>
-          I am not a methodologist, but I found methodologies very useful in many situations.<br>
+          Software Engineer. I think myself as a Builder.<br />
+          I am not a methodologist, but I found methodologies very useful in many
+          situations.<br />
           So I try to establish my own methodologies in life.
         </p>
       </article>
       <Image
-        id="profile-real"
+        id='profile-real'
         src={profileImgReal}
-        alt="hojooneum in Hokkaido"
+        alt='hojooneum in Hokkaido'
       />
     </section>
     <SectionContainer>
-      <section id="what-i-do" class="card">
+      <section
+        id='what-i-do'
+        class='card'>
         <header>
           <h2>What I do?</h2>
           <p>
-            I usually build Web application server program.<br>
-            Also I enjoy building client programs.<br>
-          </p>  
+            I usually build Web application server program.<br />
+            Also I enjoy building client programs.<br />
+          </p>
         </header>
         <Divider />
         <article>
@@ -43,15 +46,18 @@ import profileImgReal from "../assets/hjeum_profile_real.png";
           <p>Typescript with Jest, NPM for client programs.</p>
         </article>
         <footer>
-          <a href="/abstract/303">And more</a>
+          <a href='/abstract/303'>And more</a>
         </footer>
       </section>
-      
-      <section id="how-i-work" class="card">
+
+      <section
+        id='how-i-work'
+        class='card'>
         <header>
           <h2>How I work?</h2>
           <p>
-            Basically, I try to follow the <italic>Agile Manifesto.</italic><br>
+            Basically, I try to follow the <italic>Agile Manifesto.</italic><br
+            />
             And "principles" for myself and team.
           </p>
         </header>
@@ -63,23 +69,25 @@ import profileImgReal from "../assets/hjeum_profile_real.png";
           <p>Shared rules for team play.</p>
         </article>
         <footer>
-          <a href="/abstract/303">And more</a>
-        </footer>
-        </section>
-      </SectionContainer>
-      <section id="what-ive-done" class="card">
-        <header>
-          <h2>What I've done?</h2>
-        </header>
-        <Divider />
-        <article>
-          <p>I built somethings may found useful.</p>
-          <p>And did somethings may inspire people.</p>
-        </article>
-        <footer>
-          <a href="/abstract/303">Checkout them</a>
+          <a href='/abstract/303'>And more</a>
         </footer>
       </section>
+    </SectionContainer>
+    <section
+      id='what-ive-done'
+      class='card'>
+      <header>
+        <h2>What I've done?</h2>
+      </header>
+      <Divider />
+      <article>
+        <p>I built somethings may found useful.</p>
+        <p>And did somethings may inspire people.</p>
+      </article>
+      <footer>
+        <a href='/abstract/303'>Checkout them</a>
+      </footer>
+    </section>
   </main>
   <Footer />
 </Layout>
@@ -92,7 +100,7 @@ import profileImgReal from "../assets/hjeum_profile_real.png";
   .card {
     display: grid;
     grid-template-rows: auto auto 1fr auto;
-    padding: calc(var(--Thickness-Thicker)*1px);
+    padding: calc(var(--Thickness-Thicker) * 1px);
   }
   .card article {
     text-align: start;
@@ -109,7 +117,7 @@ import profileImgReal from "../assets/hjeum_profile_real.png";
     text-align: start;
     margin: auto;
     max-width: 60%;
-    padding: calc(var(--Thickness-Thicker)*1px);
+    padding: calc(var(--Thickness-Thicker) * 1px);
   }
   @media screen and (max-width: 750px) {
     #who-am-i {
@@ -124,6 +132,7 @@ import profileImgReal from "../assets/hjeum_profile_real.png";
     max-width: 100%;
     min-width: 30px;
     height: auto;
-    border-radius: 0 calc(var(--Curve-Lighter)*1px) calc(var(--Curve-Lighter)*1px) 0;
+    border-radius: 0 calc(var(--Curve-Lighter) * 1px)
+      calc(var(--Curve-Lighter) * 1px) 0;
   }
 </style>

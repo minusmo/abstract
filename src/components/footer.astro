@@ -1,21 +1,19 @@
 ---
-import { Image } from "astro:assets";
-import contact from "../data/contact.json";
-import TULogo from "../assets/tune-up-studio-logo.png";
+import { Image } from 'astro:assets';
+import contact from '../data/contact.json';
+import TULogo from '../assets/tune-up-studio-logo-bgremoved.png';
+import pkgJson from '../../package.json';
 ---
-<footer id="footer">
-  <div id="contacts">  
+
+<footer id='footer'>
+  <div id='contacts'>
     <a href=`mailto:${contact.email}`><span>e-mail</span></a>
     /
     <a href={contact.linkedIn}><span>linkedIn</span></a>
     /
     <a href={contact.github}><span>github</span></a>
-    <!-- <p class="fn">Contacts(</p>
-    <p>,</p>
-    <p>,</p>
-    <p>)</p> -->
   </div>
-  <p id="design-system-mark">
+  <p id='design-system-mark'>
     Designed by
     <Image
       id={'tune-up-studio-logo'}
@@ -23,28 +21,34 @@ import TULogo from "../assets/tune-up-studio-logo.png";
       alt={'TuneUpStudio'}
     />
   </p>
+  <div id='version'>{pkgJson.version}</div>
 </footer>
 
 <style>
   #footer {
     display: flex;
     flex-flow: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin: auto;
     gap: 5px;
     width: 99%;
     height: auto;
-    padding: calc(var(--Thickness-Thin)*1px);
-    border-radius: calc(var(--Curve-Lighter)*1px);
+    padding: calc(var(--Thickness-Thin) * 1px);
+    border-radius: calc(var(--Curve-Lighter) * 1px);
   }
   #footer #contacts {
     display: flex;
     flex-flow: row;
-    gap: 10px;
+    gap: calc(var(--Thickness-Thiner) * 1px);
     color: var(--Tints-green-8);
   }
+  #footer #version {
+    display: grid;
+    place-items: center;
+  }
   #design-system-mark {
+    font-size: var(--p-fontsize-desktop);
     display: flex;
     flex-wrap: nowrap;
     justify-content: start;
