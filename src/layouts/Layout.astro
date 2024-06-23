@@ -97,17 +97,7 @@ const { title } = Astro.props;
     color-scheme: light dark;
     margin: 10px 0;
     padding: 10px;
-    border-radius: calc(var(--Curve-Lighter) * 1px);
-  }
-  @media (prefers-color-scheme: light) {
-    section {
-      box-shadow: 0 4px 4px 1px var(--Tints-neutral-1);
-    }
-  }
-  @media (prefers-color-scheme: dark) {
-    section {
-      box-shadow: 0 4px 2px 1px var(--Tones-neutral-8);
-    }
+    border: 5px solid black;
   }
   article {
     margin: 5px 0;
