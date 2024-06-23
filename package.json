@@ -2,7 +2,7 @@
   "name": "abstract",
   "repository": "https://github.com/minusmo/abstract/",
   "type": "module",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
