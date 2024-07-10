@@ -27,27 +27,28 @@ import ProfileLogo from '../assets/hjeum_profile.png';
   #nav-bar {
     position: sticky;
     top: 0;
-    left: 0.5%;
     display: flex;
-    width: 99%;
+    width: 100vw;
     height: auto;
     flex-flow: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     z-index: calc(var(--Depth-Lobby) * 1px);
-    padding: calc(var(--Thickness-Thin) * 1px)
-      calc(var(--Thickness-Thicker) * 1px);
+    padding: 0 calc(var(--Thickness-Thicker) * 2px);
     color-scheme: light dark;
+    border-bottom: 5px solid var(--Tints-neutral-7);
   }
   @media (prefers-color-scheme: light) {
     #nav-bar {
       background-color: var(--Tints-neutral-0);
+      border-bottom: 5px solid var(--Tints-red-7);
     }
   }
   @media (prefers-color-scheme: dark) {
     #nav-bar {
-      background-color: var(--Tints-neutral-9);
+      background-color: var(--Shades-neutral-0);
+      border-bottom: 5px solid var(--Tints-green-7);
     }
   }
   #nav-bar #links {
@@ -61,5 +62,20 @@ import ProfileLogo from '../assets/hjeum_profile.png';
   #my-logo {
     width: calc(30px + 1vw);
     height: calc(30px + 1vw);
+    background-color: white;
+    border-radius: 50%;
+    border-color: var(--Tints-neutral-8);
+    border-width: 2px;
+    border-style: solid;
+  }
+  @media (prefers-color-scheme: light) {
+    #my-logo {
+      border-color: var(--Tints-red-8);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    #my-logo {
+      border-color: var(--Tints-green-8);
+    }
   }
 </style>

@@ -5,7 +5,7 @@ import Nav from '../components/nav.astro';
 import Divider from '../components/divider.astro';
 import SectionContainer from '../components/sectioncontainer.astro';
 import { Image } from 'astro:assets';
-import profileImgReal from '../assets/hjeum_profile_real.png';
+import ProfileImgReal from '../assets/hjeum_profile_real.png';
 ---
 
 <Layout title='Abstract of HoJoon Eum'>
@@ -23,7 +23,7 @@ import profileImgReal from '../assets/hjeum_profile_real.png';
       </article>
       <Image
         id='profile-real'
-        src={profileImgReal}
+        src={ProfileImgReal}
         alt='hojooneum in Hokkaido'
       />
     </section>
@@ -79,7 +79,6 @@ import profileImgReal from '../assets/hjeum_profile_real.png';
       <header>
         <h2>What I've done?</h2>
       </header>
-      <Divider />
       <article>
         <p>I built somethings may found useful.</p>
         <p>And did somethings may inspire people.</p>
@@ -106,11 +105,15 @@ import profileImgReal from '../assets/hjeum_profile_real.png';
     text-align: start;
   }
   #who-am-i {
+    width: 90%;
+    align-self: center;
     display: flex;
     flex-flow: wrap;
     justify-content: center;
     align-items: stretch;
     padding: unset;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
   }
   #who-am-i .description {
     flex: 3;
@@ -119,20 +122,35 @@ import profileImgReal from '../assets/hjeum_profile_real.png';
     max-width: 60%;
     padding: calc(var(--Thickness-Thicker) * 1px);
   }
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 600px) {
     #who-am-i {
-      flex-direction: column;
+      flex-direction: column-reverse;
+      align-items: center;
     }
     #who-am-i .description {
       margin: unset;
+      max-width: 100%;
+    }
+    #who-am-i img {
+      padding: 5px;
     }
   }
   #who-am-i img {
     flex: 1;
-    max-width: 100%;
+    max-width: 300px;
     min-width: 30px;
     height: auto;
-    border-radius: 0 calc(var(--Curve-Lighter) * 1px)
-      calc(var(--Curve-Lighter) * 1px) 0;
+    aspect-ratio: 1 / 1;
+  }
+  #what-ive-done {
+    border-bottom: 2px solid black;
+  }
+  #what-i-do {
+    border-bottom: 2px solid black;
+    border-right: 4px solid black;
+  }
+  #how-i-work {
+    border-bottom: 2px solid black;
+    border-right: 4px solid black;
   }
 </style>
