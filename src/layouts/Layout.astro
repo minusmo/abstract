@@ -73,10 +73,14 @@ const { title } = Astro.props;
     --boxShadow-color: var(--Tints-neutral-1);
     font-family: system-ui, sans-serif;
     background: #ffffff0a;
+    font-size: 16px;
+
+    scrollbar-width: thin;
   }
   body {
     color-scheme: light dark;
     margin: 0;
+    min-height: 100vh;
   }
   @media (prefers-color-scheme: light) {
     body {
@@ -91,23 +95,34 @@ const { title } = Astro.props;
     }
   }
   main {
+    margin: auto;
     padding: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+    gap: 2ch;
+  }
+  @media screen and (min-width: 1650px) {
+    main {
+      width: 65vw;
+    }
+  }
+  @media screen and (min-width: 1200px) and (max-width: 1650px) {
+    main {
+      width: 80vw;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    main {
+      width: 100vw;
+    }
   }
   section {
     color-scheme: light dark;
     margin: 10px 0;
     padding: 10px;
-    border-radius: calc(var(--Curve-Lighter) * 1px);
-  }
-  @media (prefers-color-scheme: light) {
-    section {
-      box-shadow: 0 4px 4px 1px var(--Tints-neutral-1);
-    }
-  }
-  @media (prefers-color-scheme: dark) {
-    section {
-      box-shadow: 0 4px 2px 1px var(--Tones-neutral-8);
-    }
   }
   article {
     margin: 5px 0;
@@ -117,10 +132,12 @@ const { title } = Astro.props;
   }
   h2 {
     font-size: calc(var(--h2-fontsize-desktop) + 0.5vw);
+    font-weight: 400;
     margin: 5px;
   }
   h3 {
     font-size: calc(var(--h3-fontsize-desktop) + 0.5vw);
+    font-weight: 400;
   }
   h4 {
     font-size: calc(var(--h4-fontsize-desktop) + 0.5vw);
@@ -135,7 +152,6 @@ const { title } = Astro.props;
     text-decoration: none;
     font-style: italic;
     font-weight: 600;
-    color: var(--Color-BLUE);
   }
   a:hover {
     color: var(--Tints-blue-3);
