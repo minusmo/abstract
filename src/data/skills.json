@@ -1,0 +1,110 @@
+[
+    {
+        "name": "Java",
+        "version": "^8",
+        "purpose": "General Program",
+        "level": ""
+    },
+    {
+        "name": "Typescript",
+        "version": "1.8",
+        "purpose": "Client Program",
+        "level": "Expert"
+    },
+    {
+        "name": "Python",
+        "version": "1.8",
+        "purpose": "Client Program",
+        "level": "Expert"
+    },
+    {
+        "name": "C++",
+        "version": "1.8",
+        "purpose": "Client Program",
+        "level": "Expert"
+    },
+    {
+        "name": "Spring Boot",
+        "version": "1.8",
+        "purpose": "Server Program",
+        "level": "Expert"
+    },
+    {
+        "name": "React",
+        "version": "1.8",
+        "purpose": "Client Program",
+        "level": "Expert"
+    },
+    {
+        "name": "Next.js",
+        "version": "1.8",
+        "purpose": "Client Program",
+        "level": "Expert"
+    },
+    {
+        "name": "Node.js",
+        "version": "1.8",
+        "purpose": "Client Program",
+        "level": "Expert"
+    },
+    {
+        "name": "Docker",
+        "version": "1.8",
+        "purpose": "Server Program",
+        "level": "Expert"
+    },
+    {
+        "name": "MySql",
+        "version": "1.8",
+        "purpose": "Server Program",
+        "level": "Expert"
+    },
+    {
+        "name": "MongoDB",
+        "version": "1.8",
+        "purpose": "Server Program",
+        "level": "Expert"
+    },
+    {
+        "name": "Git",
+        "version": "1.8",
+        "purpose": "Server Program",
+        "level": "Expert"
+    },
+    {
+        "name": "AWS",
+        "version": "1.8",
+        "purpose": "Server Program",
+        "level": "Expert"
+    },
+    {
+        "name": "JPA",
+        "version": "1.8",
+        "purpose": "Server Program",
+        "level": "Expert"
+    },
+    {
+        "name": "JUnit",
+        "version": "1.8",
+        "purpose": "Server Program",
+        "level": "Expert"
+    },
+    {
+        "name": "Gradle",
+        "version": "1.8",
+        "purpose": "Server Program",
+        "level": "Expert"
+    },
+    {
+        "name": "Jest",
+        "version": "1.8",
+        "purpose": "Client Program",
+        "level": "Expert"
+    },
+    {
+        "name": "NPM",
+        "version": "1.8",
+        "purpose": "Client Program",
+        "level": "Expert"
+    }
+]
