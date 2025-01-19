@@ -2,7 +2,7 @@
   "name": "abstract",
   "repository": "https://github.com/minusmo/abstract/",
   "type": "module",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@tune-up-studio/figures": "^0.0.6",
-    "astro": "^4.11.5",
+    "astro": "^5.1.1",
     "npm": "^10.5.2"
   },
   "devDependencies": {

@@ -6,21 +6,7 @@ import pkgJson from '../../package.json';
 ---
 
 <footer id='footer'>
-  <div id='contacts'>
-    <a href=`mailto:${contact.email}`><span>e-mail</span></a>
-    /
-    <a href={contact.linkedIn}><span>linkedIn</span></a>
-    /
-    <a href={contact.github}><span>github</span></a>
-  </div>
-  <p id='design-system-mark'>
-    Designed by
-    <Image
-      id={'tune-up-studio-logo'}
-      src={TULogo}
-      alt={'TuneUpStudio'}
-    />
-  </p>
+  <p id='design-system-mark'>Designed by HoJoon Eum, © Allright Reserved.</p>
   <div id='version'>{pkgJson.version}</div>
 </footer>
 
@@ -32,10 +18,9 @@ import pkgJson from '../../package.json';
     align-items: center;
     margin: auto;
     gap: 2rem;
-    width: 99%;
     height: auto;
     padding: calc(var(--Thickness-Thin) * 1px);
-    border-radius: calc(var(--Curve-Lighter) * 1px);
+    background-color: black;
   }
   #footer #contacts {
     display: flex;

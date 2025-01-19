@@ -1,0 +1,148 @@
+---
+import Image from 'astro/components/Image.astro';
+import contact from '../data/contact.json';
+import ProfileLogo from '../assets/hjeum_profile.png';
+import LinkedInIcon from '../assets/linkedin-icon.svg';
+import BlueskyLogo from '../assets/bluesky-logo.svg';
+---
+
+<div id='business-card'>
+  <div>
+    <div id='business-card-names'>
+      <p class='businesscard-name'>음호준</p>
+      <p class='businesscard-name'>HoJoon Eum</p>
+      <p class='businesscard-name'>陰昊俊（ウムホジュン）</p>
+      <p class='businesscard-job'>Software Engineer</p>
+    </div>
+    <div id='sns'>
+      <a href={contact.linkedIn}>
+        <Image
+          width={10}
+          height={10}
+          src={LinkedInIcon}
+          alt='LinkedIn'
+        />
+      </a>
+      /
+      <a
+        href={contact.github}
+        id='github-link'>
+      </a>
+      /
+      <a href={contact.bluesky}>
+        <Image
+          width={10}
+          height={10}
+          src={BlueskyLogo}
+          alt='Bluesky'
+        />
+      </a>
+    </div>
+  </div>
+  <div>
+    <div id='businesscard-logo-container'>
+      <Image
+        id='my-logo'
+        src={ProfileLogo}
+        alt="HoJoon Eum's personal logo"
+      />
+    </div>
+    <div id='business-card-details'>
+      <p id='email'>bldolphin96@gmail.com</p>
+      <p id='address'>서울특별시 강남구 압구정로</p>
+      <p id='web-address'>minusmo.github.io/abstract/</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  #business-card {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    width: 80%;
+    max-width: 600px;
+    aspect-ratio: 16 / 9;
+    background-color: white;
+    color: black;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  }
+  #business-card div {
+    padding: 5px;
+  }
+  #business-card > div:nth-of-type(1) {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  #business-card > div:nth-of-type(2) {
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
+    justify-content: start;
+  }
+  #business-card div#business-card-names {
+    padding-top: 40px;
+  }
+  #business-card .businesscard-name {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  .businesscard-job {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  #business-card #sns {
+    display: flex;
+    flex-flow: row;
+    gap: 1rem;
+  }
+  #github-link::after {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-size: 10px 10px;
+    background-image: url('../assets/github-mark.svg');
+  }
+  #businesscard-logo-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: end;
+  }
+  #business-card #my-logo {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid black;
+  }
+  #business-card #business-card-details {
+    padding-top: 30px;
+  }
+  #business-card #business-card-details > p {
+    margin: 2px 0;
+    font-size: small;
+  }
+  #email::before {
+    content: 'E-Mail: ';
+    font-weight: bold;
+  }
+  #address::before {
+    content: 'Address: ';
+    font-weight: bold;
+  }
+  #web-address::before {
+    content: 'Web: ';
+    font-weight: bold;
+  }
+  #business-card:hover {
+    scale: 1.1;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+  }
+</style>

@@ -1,0 +1,14 @@
+{
+    "projects": [
+        {
+            "title": "TopsterMaker",
+            "description": "좋아하는 앨범의 컬렉션을 만들고 소장하세요.",
+            "link": "https://topstermaker.tuneup-studio.com"
+        },
+        {
+            "title": "Spring Boot Practice",
+            "description": "초심자를 위한 스프링부트 연습 프로젝트입니다.",
+            "link": "https://github.com/minusmo/springboot-practice"
+        }
+    ]
+}

@@ -2,10 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/footer.astro';
 import Nav from '../components/nav.astro';
-import Divider from '../components/divider.astro';
-import SectionContainer from '../components/sectioncontainer.astro';
 import { Image } from 'astro:assets';
 import ProfileImgReal from '../assets/hjeum_profile_real.png';
+import CanvasBusinessCard from '../components/canvasBusinessCard.astro';
+import projects from '../data/projects.json';
+import skills from '../data/skills.json';
 ---
 
 <Layout title='Abstract of HoJoon Eum'>
@@ -13,12 +14,14 @@ import ProfileImgReal from '../assets/hjeum_profile_real.png';
   <main>
     <section id='who-am-i'>
       <article class='description'>
-        <h2>Hi, It's HoJoon.</h2>
         <p>
-          Software Engineer. I think myself as a Builder.<br />
-          I am not a methodologist, but I found methodologies very useful in many
-          situations.<br />
-          So I try to establish my own methodologies in life.
+          안녕하세요, 음호준이라고 합니다. 소프트웨어 엔지니어링을 하고있습니다.
+          이 웹사이트는, 저의 테크 블로그, 취미 블로그와는 다른 형식으로
+          이야기를 전하기 위해 만들었습니다. 테크 블로그에서는 기술 혹은 기술과
+          관련된 개념적인 이야기를 하고있습니다. 취미 블로그에서는 저의 취미
+          활동에 대해 이야기하고있습니다. 이 곳에서는, 저의 경험이나, 전하고
+          싶은 생각을 단순 블로그 시스템으로 표현할 수 없는, 웹페이지를 직접
+          만드는 방법으로 전하고 있습니다.
         </p>
       </article>
       <Image
@@ -27,66 +30,52 @@ import ProfileImgReal from '../assets/hjeum_profile_real.png';
         alt='hojooneum in Hokkaido'
       />
     </section>
-    <SectionContainer>
+    <CanvasBusinessCard />
+    <div>
       <section
         id='what-i-do'
         class='card'>
-        <header>
-          <h2>What I do?</h2>
-          <p>
-            I usually build Web application server program.<br />
-            Also I enjoy building client programs.<br />
-          </p>
-        </header>
-        <Divider />
-        <article>
-          <!-- @todo add links for each word. -->
-          <h3>My first options are,</h3>
-          <p>Java with Junit, Gradle for server programs.</p>
-          <p>Typescript with Jest, NPM for client programs.</p>
-        </article>
-        <footer>
-          <a href='/abstract/303'>And more</a>
-        </footer>
+        <div>
+          <h3>Projects</h3>
+          <div id='projects'>
+            {
+              projects.projects.map((project) => (
+                <div class='project-card'>
+                  <h4>{project.title}</h4>
+                  <p>{project.description}</p>
+                  <a href={project.link}>
+                    <button>Browse Project</button>
+                  </a>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <!-- <article id="skills-container">
+          <h3>이런 기술을 사용할 수 있어요.</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>이름</th>
+                <th>버전</th>
+                <th>사용 목적</th>
+                <th>숙련도</th>
+              </tr>
+            </thead>
+            <tbody>
+              {skills.map((skill) => (
+                <tr>
+                  <td>{skill.name}</td>
+                  <td>{skill.version}</td>
+                  <td>{skill.purpose}</td>
+                  <td>{skill.level}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </article> -->
       </section>
-
-      <section
-        id='how-i-work'
-        class='card'>
-        <header>
-          <h2>How I work?</h2>
-          <p>
-            Basically, I try to follow the <italic>Agile Manifesto.</italic><br
-            />
-            And "principles" for myself and team.
-          </p>
-        </header>
-        <Divider />
-        <article>
-          <!-- @todo add links for each word -->
-          <h3>The principles are,</h3>
-          <p>My steps to design a system for myself.</p>
-          <p>Shared rules for team play.</p>
-        </article>
-        <footer>
-          <a href='/abstract/303'>And more</a>
-        </footer>
-      </section>
-    </SectionContainer>
-    <section
-      id='what-ive-done'
-      class='card'>
-      <header>
-        <h2>What I've done?</h2>
-      </header>
-      <article>
-        <p>I built somethings may found useful.</p>
-        <p>And did somethings may inspire people.</p>
-      </article>
-      <footer>
-        <a href='/abstract/303'>Checkout them</a>
-      </footer>
-    </section>
+    </div>
   </main>
   <Footer />
 </Layout>
@@ -99,33 +88,32 @@ import ProfileImgReal from '../assets/hjeum_profile_real.png';
   .card {
     display: grid;
     grid-template-rows: auto auto 1fr auto;
-    padding: calc(var(--Thickness-Thicker) * 1px);
+    padding: calc(var(--Thickness-Thick) * 1px);
   }
   .card article {
     text-align: start;
   }
   #who-am-i {
-    width: 90%;
-    align-self: center;
+    width: 100%;
     display: flex;
     flex-flow: wrap;
     justify-content: center;
     align-items: stretch;
-    padding: unset;
-    border-top: 5px solid black;
-    border-bottom: 5px solid black;
+    padding-bottom: 2px;
+    border-bottom: 2px solid black;
+    margin-bottom: 2rem;
   }
   #who-am-i .description {
     flex: 3;
     text-align: start;
     margin: auto;
-    max-width: 60%;
-    padding: calc(var(--Thickness-Thicker) * 1px);
+    padding: calc(var(--Thickness-Thick) * 1px);
   }
   @media screen and (max-width: 600px) {
     #who-am-i {
       flex-direction: column-reverse;
       align-items: center;
+      margin-bottom: 2rem;
     }
     #who-am-i .description {
       margin: unset;
@@ -136,21 +124,61 @@ import ProfileImgReal from '../assets/hjeum_profile_real.png';
     }
   }
   #who-am-i img {
-    flex: 1;
-    max-width: 300px;
+    max-width: 200px;
     min-width: 30px;
     height: auto;
     aspect-ratio: 1 / 1;
   }
-  #what-ive-done {
-    border-bottom: 2px solid black;
+  #projects {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
   }
-  #what-i-do {
-    border-bottom: 2px solid black;
-    border-right: 4px solid black;
+  .project-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 1rem;
+    color: black;
+    background-color: white;
   }
-  #how-i-work {
-    border-bottom: 2px solid black;
-    border-right: 4px solid black;
+  .project-card h4 {
+    font-weight: 400;
+    margin: 1rem 0;
+  }
+  .project-card button {
+    padding: 0.5rem 1rem;
+    background-color: orange;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .project-card button:hover {
+    background-color: #ff8c00;
+  }
+  #skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  table,
+  th,
+  td {
+    border: 1px solid black;
+  }
+  th,
+  td {
+    padding: 0.5rem;
+  }
+  th {
+    background-color: #f0f0f0;
   }
 </style>
