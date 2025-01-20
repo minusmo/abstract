@@ -15,12 +15,12 @@ import LinkedInIcon from '../assets/linkedin-icon.svg';
     max-width: 800px;
   }
   canvas:hover {
-    transition: .5s ease-in-out;
+    transition: 0.5s ease-in-out;
     transform: scale(1.05);
   }
 </style>
 
-<script >
+<script>
   const canvas = document.getElementById('businessCard');
   if (canvas instanceof HTMLCanvasElement) {
     const ctx = canvas.getContext('2d');
@@ -35,12 +35,12 @@ import LinkedInIcon from '../assets/linkedin-icon.svg';
       const height = width * 0.5625;
       canvas.width = width * dpr;
       canvas.height = height * dpr;
-      
+
       // 스케일 팩터 계산
       const scaleFactor = width / BASE_WIDTH;
-      
+
       ctx.scale(dpr * scaleFactor, dpr * scaleFactor);
-      
+
       // Function to load image and return a promise
       function loadImage(src) {
         return new Promise((resolve, reject) => {
@@ -50,7 +50,7 @@ import LinkedInIcon from '../assets/linkedin-icon.svg';
           img.src = src;
         });
       }
-      
+
       async function drawBusinessCard(renderingCtx) {
         // 기본 위치값 설정 (BASE_WIDTH 기준)
         const leftAlignBasePosX = 50;
@@ -61,69 +61,119 @@ import LinkedInIcon from '../assets/linkedin-icon.svg';
         // Clear canvas - 스케일 팩터로 나누어 실제 영역 계산
         renderingCtx.fillStyle = '#ffffff';
         renderingCtx.fillRect(0, 0, BASE_WIDTH, BASE_HEIGHT);
-        
+
         // 폰트 크기를 스케일 팩터와 독립적으로 설정
         renderingCtx.fillStyle = '#000000';
         renderingCtx.font = 'bold 16px sans-serif';
         renderingCtx.fillText('음호준', leftAlignBasePosX, baseY + 60);
-        
+
         renderingCtx.font = '16px sans-serif';
         renderingCtx.fillText('HoJoon Eum', leftAlignBasePosX, baseY + 80);
-        
+
         renderingCtx.font = '16px sans-serif';
-        renderingCtx.fillText('陰昊俊 ( ウムホジュン )', leftAlignBasePosX, baseY + 100);
-        
+        renderingCtx.fillText(
+          '陰昊俊 ( ウムホジュン )',
+          leftAlignBasePosX,
+          baseY + 100
+        );
+
         renderingCtx.font = '19px sans-serif';
-        renderingCtx.fillText('Software Engineer', leftAlignBasePosX, baseY + 140);
-        
+        renderingCtx.fillText(
+          'Software Engineer',
+          leftAlignBasePosX,
+          baseY + 140
+        );
+
         // Contact information
         renderingCtx.font = '13px sans-serif';
         renderingCtx.textAlign = 'left';
-        
+
         renderingCtx.font = 'bold 13px sans-serif';
         renderingCtx.fillText('E-Mail: ', rightAlignBasePosX, baseY + 100);
         renderingCtx.font = '13px sans-serif';
-        renderingCtx.fillText(' hojoon.eum@gmail.com', rightAlignBasePosX + renderingCtx.measureText('E-Mail:').width, baseY + 100);
+        renderingCtx.fillText(
+          ' hojoon.eum@gmail.com',
+          rightAlignBasePosX + renderingCtx.measureText('E-Mail:').width,
+          baseY + 100
+        );
 
         renderingCtx.font = 'bold 13px sans-serif';
         renderingCtx.fillText('Address: ', rightAlignBasePosX, baseY + 120);
         renderingCtx.font = '13px sans-serif';
-        renderingCtx.fillText(' 서울특별시 강남구 압구정로', rightAlignBasePosX + renderingCtx.measureText('Address:').width, baseY + 120);
+        renderingCtx.fillText(
+          ' 서울특별시 강남구 압구정로',
+          rightAlignBasePosX + renderingCtx.measureText('Address:').width,
+          baseY + 120
+        );
 
         renderingCtx.font = 'bold 13px sans-serif';
         renderingCtx.fillText('Web: ', rightAlignBasePosX, baseY + 140);
         renderingCtx.font = '13px sans-serif';
-        renderingCtx.fillText(' minusmo.github.io/abstract/', rightAlignBasePosX + renderingCtx.measureText('Web:').width, baseY + 140);
-        
+        renderingCtx.fillText(
+          ' minusmo.github.io/abstract/',
+          rightAlignBasePosX + renderingCtx.measureText('Web:').width,
+          baseY + 140
+        );
+
         try {
           // Social icons at bottom
-          const linkedinIcon = await loadImage('./abstract/linkedin-icon.svg');
-          const githubIcon = await loadImage('./abstract/github-mark.svg');
-          const blueskyIcon = await loadImage('./abstract/bluesky-logo.svg');
-          const graphIcon = await loadImage('./abstract/hjeum_profile.png');
-          
+          const linkedinIcon = await loadImage('/abstract/linkedin-icon.svg');
+          const githubIcon = await loadImage('/abstract/github-mark.svg');
+          const blueskyIcon = await loadImage('/abstract/bluesky-logo.svg');
+          const graphIcon = await loadImage('/abstract/hjeum_profile.png');
+
           // 고정된 아이콘 크기 설정
           const iconSize = 20;
           const startY = BASE_HEIGHT - 60;
-          renderingCtx.drawImage(linkedinIcon, leftAlignBasePosX, startY, iconSize, iconSize);
-          renderingCtx.fillText('/', leftAlignBasePosX+25, startY + 15);
-          renderingCtx.drawImage(githubIcon, leftAlignBasePosX+40, startY, iconSize, iconSize);
-          renderingCtx.fillText('/', leftAlignBasePosX+65, startY + 15);
-          renderingCtx.drawImage(blueskyIcon, leftAlignBasePosX+80, startY, iconSize, iconSize);
-          
+          renderingCtx.drawImage(
+            linkedinIcon,
+            leftAlignBasePosX,
+            startY,
+            iconSize,
+            iconSize
+          );
+          renderingCtx.fillText('/', leftAlignBasePosX + 25, startY + 15);
+          renderingCtx.drawImage(
+            githubIcon,
+            leftAlignBasePosX + 40,
+            startY,
+            iconSize,
+            iconSize
+          );
+          renderingCtx.fillText('/', leftAlignBasePosX + 65, startY + 15);
+          renderingCtx.drawImage(
+            blueskyIcon,
+            leftAlignBasePosX + 80,
+            startY,
+            iconSize,
+            iconSize
+          );
+
           // 프로필 아이콘
           const profileIconSize = 80;
           const profileIconPosX = BASE_WIDTH - 100;
           const profileIconPosY = 40;
-          renderingCtx.drawImage(graphIcon, profileIconPosX, profileIconPosY, profileIconSize, profileIconSize);
-          
+          renderingCtx.drawImage(
+            graphIcon,
+            profileIconPosX,
+            profileIconPosY,
+            profileIconSize,
+            profileIconSize
+          );
+
           // 원 그리기
           const radius = profileIconSize / 2;
           const lineWidth = 2;
           renderingCtx.beginPath();
           const profileIconsCenterX = profileIconPosX + profileIconSize / 2;
           const profileIconsCenterY = profileIconPosY + profileIconSize / 2;
-          renderingCtx.arc(profileIconsCenterX, profileIconsCenterY, radius, 0, Math.PI * 2);
+          renderingCtx.arc(
+            profileIconsCenterX,
+            profileIconsCenterY,
+            radius,
+            0,
+            Math.PI * 2
+          );
           renderingCtx.strokeStyle = '#000000';
           renderingCtx.lineWidth = lineWidth;
           renderingCtx.stroke();
@@ -131,7 +181,7 @@ import LinkedInIcon from '../assets/linkedin-icon.svg';
           console.error('Error loading images:', error);
         }
       }
-    
+
       // Initialize the drawing
       drawBusinessCard(ctx);
     }
