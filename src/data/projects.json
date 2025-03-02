@@ -1,14 +1,52 @@
 {
     "projects": [
         {
-            "title": "TopsterMaker",
-            "description": "좋아하는 앨범의 컬렉션을 만들고 소장하세요.",
-            "link": "https://topstermaker.tuneup-studio.com"
+            "title": "TopsterMaker(トップスターメーカー)",
+            "description": "好きな音楽のアルバムカバーのコラージュを作って大事にしてみましょう。",
+            "techStack": ["React.js", "Jotai", "Next.js", "MantineUI", "AWS", "Typescript", "Node.js"],
+            "problemAndSolution": "従来のWEBサイトではできなかったモバイルインタフェースの支援ともっと便利なユーザインタフェースの提供",
+            "link": "",
+            "demo": "https://topstermaker.tuneup-studio.com"
         },
         {
-            "title": "Spring Boot Practice",
-            "description": "초심자를 위한 스프링부트 연습 프로젝트입니다.",
-            "link": "https://github.com/minusmo/springboot-practice"
+            "title": "Spring Boot Practice(スプリングブート練習)",
+            "description": "初心者のためのspring boot練習プロジェクトです。",
+            "techStack": ["HTML", "CSS", "SpringBoot", "Java", "Thymeleaf", "MySQL", "JPA"],
+            "problemAndSolution": "SpringBootを初めて学ぶ人のための練習問題",
+            "link": "https://github.com/minusmo/springboot-practice",
+            "demo": ""
+        },
+        {
+            "title": "Tokens-to(トークンズーツ)",
+            "description": "Javascriptのオブジェクトで定義されたCSSトークンをCSSに変換するライブラリです。",
+            "techStack": ["glob.js", "commander.js", "Jest", "Typescript", "Node.js"],
+            "problemAndSolution": "Javascriptのオブジェクトで定義されたCSSトークンをCSSに変換する課程をCLIで自動化。",
+            "link": "https://github.com/minusmo/tokens-to",
+            "demo": ""
+        },
+        {
+            "title": "Kanji-Study(漢字スタディ)",
+            "description": "日本語学習のためのWEBアプリケーション",
+            "techStack": ["React.js", "Vite", "MantineUI"],
+            "problemAndSolution": "日本語を覚える時に楽に繰り返す方法をどこにも使えるWEBアプリに具現。",
+            "link": "",
+            "demo": "https://minusmo.github.io/kanji-study/"
+        },
+        {
+            "title": "Seoul-Ro(ソウルー露)",
+            "description": "観光客の不便さと不快な旅行経験を改善するためのスマートフォンアプリケーションです。",
+            "techStack": ["Flutter", "Dart"],
+            "problemAndSolution": "外国人の観光客の人口密集による不快感をコンピューティングアルゴリズムを活用して解決。",
+            "link": "https://github.com/SeoulRo/SeoulRo",
+            "demo": ""
+        },
+        {
+            "title": "YouTube-Quick-Search(ユーチューブクイックサーチ)",
+            "description": "ユーチューブに接続せずに、すぐに検索できる機能をクロムに追加",
+            "techStack": ["HTML", "CSS", "Javascript"],
+            "problemAndSolution": "ユーチューブで動画を検索する必要が多い人に、youtube.comにアクセスせずに検索できる機能を提供。",
+            "link": "https://github.com/minusmo/YouTube-Quick-Search-Chrome-Extension",
+            "demo": ""
         }
     ]
 }

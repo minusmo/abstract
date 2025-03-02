@@ -15,13 +15,9 @@ import skills from '../data/skills.json';
     <section id='who-am-i'>
       <article class='description'>
         <p>
-          안녕하세요, 음호준이라고 합니다. 소프트웨어 엔지니어링을 하고있습니다.
-          이 웹사이트는, 저의 테크 블로그, 취미 블로그와는 다른 형식으로
-          이야기를 전하기 위해 만들었습니다. 테크 블로그에서는 기술 혹은 기술과
-          관련된 개념적인 이야기를 하고있습니다. 취미 블로그에서는 저의 취미
-          활동에 대해 이야기하고있습니다. 이 곳에서는, 저의 경험이나, 전하고
-          싶은 생각을 단순 블로그 시스템으로 표현할 수 없는, 웹페이지를 직접
-          만드는 방법으로 전하고 있습니다.
+          こんにちは、陰昊俊（ウムホジュン）と申します。ソフトウェアエンジニアとして活動しております。
+          このウェブサイトは、私のテックブログや趣味ブログとは異なる形式で、自分の考えを伝えるために作成しました。テックブログでは、技術や技術に関連する概念的な話題について発信しています。また、趣味ブログでは、私の趣味活動について紹介しています。
+          しかし、ここでは単なるブログシステムでは表現できない内容を、ウェブページを直接作成することで伝えたいと考えています。私の経験や伝えたい思いを、より自由な形で表現する場として、このサイトを運営しております。どうぞよろしくお願いいたします。
         </p>
       </article>
       <Image
@@ -36,44 +32,83 @@ import skills from '../data/skills.json';
         id='what-i-do'
         class='card'>
         <div>
-          <h3>Projects</h3>
+          <h3>プロジェクト</h3>
+          <p>
+            *今サービス中ですので、ソースコードの公開ができないプロジェクトは、demo(デモ)をご覧ください。
+          </p>
           <div id='projects'>
             {
               projects.projects.map((project) => (
                 <div class='project-card'>
                   <h4>{project.title}</h4>
                   <p>{project.description}</p>
-                  <a href={project.link}>
-                    <button>Browse Project</button>
-                  </a>
+                  <p>
+                    <strong>技術スタック:</strong>{' '}
+                    {project.techStack.join(', ')}
+                  </p>
+                  <p>
+                    <strong>課題と解決策:</strong> {project.problemAndSolution}
+                  </p>
+
+                  <div class='buttons'>
+                    {project.link ? (
+                      <a
+                        href={project.link}
+                        target='_blank'>
+                        <button>詳細</button>
+                      </a>
+                    ) : (
+                      <button disabled>詳細</button>
+                    )}
+
+                    {project.demo ? (
+                      <a
+                        href={project.demo}
+                        target='_blank'>
+                        <button>デモ</button>
+                      </a>
+                    ) : (
+                      <button disabled>デモ</button>
+                    )}
+                  </div>
                 </div>
               ))
             }
           </div>
         </div>
-        <!-- <article id="skills-container">
-          <h3>이런 기술을 사용할 수 있어요.</h3>
+        <article id='skills-container'>
+          <h3>スキル</h3>
+          <span class='skill-notation'
+            >最上:上級の技術の中で最も自信がある技術</span
+          >
+          <span class='skill-notation'
+            >上:専門知識があり、多数の使用経験がある</span
+          >
+          <span class='skill-notation'>中:専門知識があり、使用経験がある</span>
+          <span class='skill-notation'>下:使用法がわかり、専門知識はない</span>
           <table>
             <thead>
               <tr>
-                <th>이름</th>
-                <th>버전</th>
-                <th>사용 목적</th>
-                <th>숙련도</th>
+                <th>名前</th>
+                <th>バージョン</th>
+                <th>目的</th>
+                <th>レベル</th>
               </tr>
             </thead>
             <tbody>
-              {skills.map((skill) => (
-                <tr>
-                  <td>{skill.name}</td>
-                  <td>{skill.version}</td>
-                  <td>{skill.purpose}</td>
-                  <td>{skill.level}</td>
-                </tr>
-              ))}
+              {
+                skills.map((skill) => (
+                  <tr>
+                    <td>{skill.name}</td>
+                    <td>{skill.version}</td>
+                    <td>{skill.purpose}</td>
+                    <td>{skill.level}</td>
+                  </tr>
+                ))
+              }
             </tbody>
           </table>
-        </article> -->
+        </article>
       </section>
     </div>
   </main>
@@ -130,20 +165,26 @@ import skills from '../data/skills.json';
     aspect-ratio: 1 / 1;
   }
   #projects {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+    align-items: stretch;
   }
   .project-card {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: start;
+    width: 100%;
+    height: 100%;
+    min-height: 350px; /* 카드의 최소 높이 지정 */
+    max-width: 400px; /* 카드의 최대 너비 지정 */
     padding: 1rem;
     color: black;
     background-color: white;
-    border: 2px solid black;
+    border: 1px solid darkgrey;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
   }
   .project-card h4 {
     font-weight: 400;
@@ -161,10 +202,13 @@ import skills from '../data/skills.json';
     background-color: #ff8c00;
   }
   #skills-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
     width: 100%;
+  }
+  #skills-container > .skill-notation {
+    font-size: 0.8rem;
+    width: fit-content;
+    display: block;
+    margin: 5px;
   }
   table {
     width: 100%;
@@ -179,7 +223,52 @@ import skills from '../data/skills.json';
   td {
     padding: 0.5rem;
   }
-  th {
-    background-color: #f0f0f0;
+
+  .project-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 1rem;
+    color: black;
+    background-color: white;
+    border: 1px solid darkgrey;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-card h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-card p {
+    margin: 0.2rem 0;
+  }
+
+  .project-card .buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .project-card button {
+    padding: 0.5rem 1rem;
+    background-color: orange;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+
+  .project-card button:hover {
+    background-color: #ff8c00;
+  }
+
+  .project-card button:disabled {
+    background-color: lightgray;
+    color: #666;
+    cursor: not-allowed;
   }
 </style>
