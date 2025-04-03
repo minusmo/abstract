@@ -11,9 +11,14 @@
     "format": "npx prettier . --write"
   },
   "dependencies": {
-    "@tune-up-studio/figures": "^0.0.6",
+    "@astrojs/react": "^4.2.2",
+    "@tune-up-studio/figures": "^0.1.1",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
     "astro": "^5.5.5",
-    "npm": "^10.5.2"
+    "npm": "^10.5.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "prettier": "3.3.0"

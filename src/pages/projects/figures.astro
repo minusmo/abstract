@@ -1,0 +1,127 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Footer from '../../components/Footer.astro';
+import Nav from '../../components/Nav.astro';
+import {
+  TypescriptPill,
+  NodePill,
+  Github,
+  NPMPill,
+  TokensToPill,
+} from '../../components/TechStackPills.tsx';
+import { Image } from 'astro:assets';
+import HighLevelArchitecture from '../../assets/highlevel-architecture-figures.png';
+---
+
+<Layout title='Abstract of HoJoon Eum'>
+  <Nav />
+  <main>
+    <div id='outer-container'>
+      <h1>プロジェクトのご説明</h1>
+
+      <section class='project-intro'>
+        <h1>Figures</h1>
+        <h2>(フイギャス)</h2>
+        <p>
+          自分のデザインスタイルを色々なJavascript、Typescriptのプロジェクトに簡単に適用！
+          さらに、ライブラリ化による再使用生の向上！
+        </p>
+      </section>
+
+      <section class='project-details'>
+        <h2>プロジェクトの詳細</h2>
+        <p>
+          このプロジェクトは、曲率、厚さ、色、テキストのフォントなどのデザイン要素を事前に
+          定義して、同じデザインの再使用と適用ができるようにします。
+          事前に"タイプ安全に"と定義されたデザイントークンを作成した後、Tokens-Toを利用して、CSSとしても使えるように変換します。
+        </p>
+      </section>
+
+      <section class='project-purpose'>
+        <h2>プロジェクトの目的</h2>
+        JavaScript、TypeScriptを使用したフロントエンドプロジェクトで、統一性のあるデザインを適用するために開始されました。
+        事前に定義されたデザイン オブジェクトとトークンをライブラリとして使用できます。
+      </section>
+
+      <section class='project-tech'>
+        <h2>活用した技術</h2>
+        <TypescriptPill />
+        <NodePill />
+        <TokensToPill />
+        <NPMPill />
+        <Github />
+      </section>
+
+      <section class='project-architecture'>
+        <h2>ハイレベルアーキテクチャ</h2>
+        <Image
+          id='highlevel-architecture'
+          src={HighLevelArchitecture}
+          alt={'high level architecture'}
+        />
+      </section>
+
+      <!-- <section class='project-preview'>
+        <h2>プロジェクトのプレビュー</h2>
+      </section> -->
+      <section class='project-point'>
+        <h2>プロジェクトのポイントと学んだこと</h2>
+        <p>
+          このプロジェクトは、複数の個人開発プロジェクトにおいて、JavaScriptやTypeScriptを活用したフロントエンド開発に一貫したデザインを適用するための小さな「デザインシステム」を構築することを目的としたプロジェクトです。
+          事前に定義されたデザインの値が存在しない場合、デザインを適用するたびに処理がプログラム的になりやすく、型安全性も保証できないという課題があります。
+          このような問題を解決するためには、コードで定義されたデザインシステムを導入することが効果的です。
+          本プロジェクトでは、デザインシステムを設計し、ライブラリとして整備することで、デザインの一貫性と再利用性を高めることを目指しました。
+        </p>
+      </section>
+
+      <section class='project-links'>
+        <h3>プロジェクトにおけるリンク</h3>
+        <div>
+          <a
+            id='npm-link'
+            href='https://www.npmjs.com/package/@tune-up-studio/figures'
+            target='_blank'
+            >NPMライブラリー</a
+          >
+        </div>
+        <div>
+          <a
+            href='https://github.com/Tune-Up-Studio/figures'
+            target='_blank'
+            >GitHubのリポジトリ</a
+          >
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  #npm-link {
+    color: var(--Swatches-red-tints-7);
+  }
+  #outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  .project-intro {
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+  .project-intro > h1 {
+    margin: 0 auto;
+  }
+  #live-service-link {
+    color: var(--Swatches-green-tones-6);
+  }
+  #highlevel-architecture {
+    width: 80%;
+    height: auto;
+  }
+</style>

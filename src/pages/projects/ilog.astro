@@ -1,0 +1,144 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Footer from '../../components/Footer.astro';
+import Nav from '../../components/Nav.astro';
+import {
+  Github,
+  CSSPill,
+  HTMLPill,
+  JavascriptPill,
+  JQueryPill,
+  SpringBootPill,
+  SpringSecurityPill,
+  MySQLPill,
+  MongoDBPill,
+  OpenAIPill,
+  H2Pill,
+  ThymeleafPill,
+} from '../../components/TechStackPills.tsx';
+import { Image } from 'astro:assets';
+import HighLevelArchitecture from '../../assets/highlevel-architecture-ilog.png';
+---
+
+<Layout title='Abstract of HoJoon Eum'>
+  <Nav />
+  <main>
+    <div id='outer-container'>
+      <h1>プロジェクトのご説明</h1>
+
+      <section class='project-intro'>
+        <h1>iLog</h1>
+        <h2>(アイログ)</h2>
+        <p>意思疎通が難しい子供とその保護者のためのWEBアプリケーション。</p>
+      </section>
+
+      <section class='project-details'>
+        <h2>プロジェクトの詳細</h2>
+        <p>
+          意思疎通が難しい乳幼児、家庭環境が不如意な乳幼児と、その保護者のために、より子供の感情をよく理解し、成長に応じて子供の状態を追跡、観察できるウェブアプリケーションです。
+          Spring Boot、Spring
+          Securityを利用してウェブアプリケーションサーバーを構築し、Thymeleaf、JQueryを利用してフロントエンドを構成しました。
+          MySQL、MongoDBを利用してデータに合うデータベースを構築しました。
+          OpenAIのAPIと連携してAI感情分析を処理します。
+        </p>
+      </section>
+
+      <section class='project-purpose'>
+        <h2>プロジェクトの目的</h2>
+        幼い子どもたちは、自分の感情を言葉で表現するのが難しく、不快な気持ちや悲しさをうまく伝えられないことがあります。そのため、保護者や先生は子どもの気持ちを正確に把握するのが難しく、観察に頼った主観的な判断に留まることが多くなります。
+        従来の感情把握手法（会話、行動観察、心理検査）は、それぞれに限界があり、リアルタイムかつ継続的な感情分析が困難です。
+        そこで、AIを活用して子どもの感情を定量的に分析・可視化するWebサービス「iLog」を企画しました。
+        iLogでは、子どもがアップロードした絵や文章、表情を含む写真をAIが分析し、
+        • 保護者や先生が感情状態を視覚的に把握できるようサポートし • 状況に応じた対応ガイドラインを提案し
+        • 保護者と先生が同じデータを共有して一貫した支援ができる仕組みを提供します。
+        このサービスを通じて、子どもは自分の感情を理解し表現する力を育み、保護者や先生はより的確に子どもの心のサポートを行えるようになります。
+      </section>
+
+      <section class='project-tech'>
+        <h2>活用した技術</h2>
+        <HTMLPill />
+        <CSSPill />
+        <JavascriptPill />
+        <JQueryPill />
+        <ThymeleafPill />
+        <SpringBootPill />
+        <SpringSecurityPill />
+        <H2Pill />
+        <MySQLPill />
+        <MongoDBPill />
+        <OpenAIPill />
+        <Github />
+      </section>
+
+      <section class='project-architecture'>
+        <h2>ハイレベルアーキテクチャ</h2>
+        <Image
+          id='highlevel-architecture'
+          src={HighLevelArchitecture}
+          alt={'high level architecture'}
+        />
+      </section>
+
+      <!-- <section class='project-preview'>
+        <h2>プロジェクトのプレビュー</h2>
+      </section> -->
+      <section class='project-point'>
+        <h2>プロジェクトのポイントと学んだこと</h2>
+        <p>
+          このプロジェクトで特に注目すべき点は、子ども・保護者・先生という複雑なドメイン関係を適切に分析し、それに基づいてユーザー体験を設計し、データベースを構築した点です。
+          子どもの心理分析に使用される写真や絵には、単に対象だけでなく、同行者や天気などの付随情報も必要となることが多く、これらを一貫して扱えるデータ設計が求められました。
+          また、長期間にわたる心理データを一目で把握するためには、情報を適切に変換し、グラフなどで視覚化する仕組みも必要でした。
+          たとえば、AIによる感情分析結果のようなドメインエンティティは、感情の対象、分析された感情結果、その結果に対するメモや評価など、多くの関連エンティティを持つ構造になっています。そこで、エンティティの正規化を適切に行い、整合性を高めつつ、クエリのパフォーマンス向上を実現しました。
+          また、心理アンケートデータについては、構造がRDBに適さず、一度生成されると更新・削除が少なく、主に読み取り中心の特性を持つため、NoSQLデータベースを導入しました。これにより、システム全体の構造をシンプルに保ちつつ、拡張性も確保することができました。
+          さらに、Spring
+          AIを活用してメディアと一緒に送ったpromptからの生成AIの応答を安定的に所定のデータ形式へとパースし、実用的に利用する技術も習得できました。
+        </p>
+      </section>
+
+      <section class='project-links'>
+        <h3>プロジェクトにおけるリンク</h3>
+        <!-- <div id='live-service-link'>
+          <a
+            href='https://topstermaker.tuneup-studio.com'
+            target='_blank'
+            >ライブサービス</a
+          >
+        </div> -->
+        <li>
+          <a
+            href='https://github.com/SCIT46-A-4/backend'
+            target='_blank'
+            >GitHubのリポジトリ</a
+          >
+        </li>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  #outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  .project-intro {
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+  .project-intro > h1 {
+    margin: 0 auto;
+  }
+  #live-service-link {
+    color: var(--Swatches-green-tones-6);
+  }
+  #highlevel-architecture {
+    width: 80%;
+    height: auto;
+  }
+</style>

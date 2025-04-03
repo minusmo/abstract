@@ -15,7 +15,6 @@ import {
   Github,
 } from '../../components/TechStackPills.tsx';
 import { Image } from 'astro:assets';
-import HighLevelArchitecture from '../../assets/highlevel-architecture-topstermaker.png';
 ---
 
 <Layout title='Abstract of HoJoon Eum'>
@@ -41,13 +40,6 @@ import HighLevelArchitecture from '../../assets/highlevel-architecture-topsterma
           FMからアルバム情報を
           照会して、ウェブブラウザでコラージュを構成した後、画像ファイルにダウンロード
           します。
-          WebアプリケーションサーバはNext.jsにビルドされ、部分的にReact.jsを使用してWebクライアントを作成しました。
-          MantineUIを利用して、あらかじめ定義されたコンポーネントを利用して開発生産性を向上させました。
-          わかりやすく軽い状態管理ライブラリであるJotaiを使用して、アプリケーションの状態をグローバルに管理します。
-          AWS Route53を利用してドメインサービスと接続し、AWS
-          Amplifyを利用してCI/CDパイプラインを統合および配布しました。
-          ユーザーエクスペリエンスを測定するためにGoogle
-          Analyticsを適用しました。
         </p>
       </section>
 
@@ -74,24 +66,16 @@ import HighLevelArchitecture from '../../assets/highlevel-architecture-topsterma
       <section class='project-architecture'>
         <h2>ハイレベルアーキテクチャ</h2>
         <!-- 이곳에는 고수준 아키텍처 이미지를 삽입 -->
-        <Image
-          id='highlevel-architecture'
-          src={HighLevelArchitecture}
-          alt={'high level architecture'}
-        />
+        <!-- <Image
+        src={TopsterMakerArchitecture}
+        width={500}
+        height={300}
+        alt={'Topstermaker high level architecture'}
+        /> -->
       </section>
 
-      <!-- <section class='project-preview'>
+      <section class='project-preview'>
         <h2>プロジェクトのプレビュー</h2>
-      </section> -->
-      <section class='project-point'>
-        <h2>プロジェクトのポイントと学んだこと</h2>
-        <p>
-          このプロジェクトは、企画・デザインから開発・デプロイまでをすべて自分で担当したものであり、Webサービス開発全体のプロセスを深く理解し、実装力を高める良い機会となりました。
-          特に、既存のサービスよりも便利で使いやすい機能を提供することを目指し、リリース後も継続的に機能改善とユーザー体験の向上に取り組みました。
-          開発過程で最も困難だったのは、HTML要素を画像として変換し、ダウンロードできる機能の実装でした。ページのレンダリングコンテキストをブロックしないように、HTMLノードをコピーする際には、DFS（深さ優先探索）アルゴリズムを用いて、必要最小限のプロパティだけを抽出・コピーし、それを元にレンダリング用のノードツリーを再構築する手法を採用しました。
-          このように、実際の課題に対してコンピューティングアルゴリズムを応用して解決に導いた、非常に意義のある経験となりました。
-        </p>
       </section>
 
       <section class='project-links'>
@@ -135,9 +119,5 @@ import HighLevelArchitecture from '../../assets/highlevel-architecture-topsterma
   }
   #live-service-link {
     color: var(--Swatches-green-tones-6);
-  }
-  #highlevel-architecture {
-    width: 80%;
-    height: auto;
   }
 </style>

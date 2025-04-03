@@ -1,0 +1,122 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Footer from '../../components/Footer.astro';
+import Nav from '../../components/Nav.astro';
+import {
+  ReactPill,
+  VitePill,
+  PythonPill,
+  MantineUIPill,
+  TypescriptPill,
+  Github,
+} from '../../components/TechStackPills.tsx';
+import { Image } from 'astro:assets';
+import HighLevelArchitecture from '../../assets/highlevel-architecture-kanji-study.png';
+---
+
+<Layout title='Abstract of HoJoon Eum'>
+  <Nav />
+  <main>
+    <div id='outer-container'>
+      <h1>プロジェクトのご説明</h1>
+
+      <section class='project-intro'>
+        <h1>Kanji-Study</h1>
+        <h2>(漢字スタディ)</h2>
+        <p>WEBで簡単に日本語の単語と常用漢字を閲覧して、すぐ 覚えましょう！</p>
+      </section>
+
+      <section class='project-details'>
+        <h2>プロジェクトの詳細</h2>
+        <p>
+          インターネットでクロールして集めた常用漢字と、仕様書によく使われる漢字を
+          インターネットのつながりがある場所ならどこでも簡単い覚えられるようにする
+          WEB単語帳でございます。
+          このウェブアプリケーションは、React.js、MantineUIを使用し、Vite.jsにビルドされました。
+          漢字データはPythonを利用して自動化され、ウェブから収集され、GitHub-Pagesを利用して簡単にデプロイされました。
+        </p>
+      </section>
+
+      <section class='project-purpose'>
+        <h2>プロジェクトの目的</h2>
+        こちらのサービスは、従来の漢字の覚え方は、ただ辞書やプリントアウトされた漢字を
+        ノートなどに何度も書くだけでいた。しかし、それでは、多い漢字を自分で一つ一つ
+        書くことで時間が過ぎてしまいます。そして、移動する中覚えにくいです。この問題を解決するために、データ化した
+        漢字をWEBアプリでどこでも覚えられるようにしました。
+      </section>
+
+      <section class='project-tech'>
+        <h2>活用した技術</h2>
+        <ReactPill />
+        <TypescriptPill />
+        <VitePill />
+        <MantineUIPill />
+        <PythonPill />
+        <Github />
+      </section>
+
+      <section class='project-architecture'>
+        <h2>ハイレベルアーキテクチャ</h2>
+        <Image
+          id='highlevel-architecture'
+          src={HighLevelArchitecture}
+          alt={'high level architecture'}
+        />
+      </section>
+
+      <!-- <section class='project-preview'>
+        <h2>プロジェクトのプレビュー</h2>
+      </section> -->
+      <section class='project-point'>
+        <h2>プロジェクトのポイントと学んだこと</h2>
+        <p>
+          このプロジェクトで注目すべき点は、「目的に基づいた迅速な開発」です。
+          アイデアが思い浮かんだ直後、まず常用漢字と使用書中の漢字の収集から始めました。
+          常用漢字については、Pythonスクリプトを使ってHTMLを解析・パースし、ウェブサイト上の漢字データから必要な情報だけを抽出してデータベース化しました。
+          一方、使用書に掲載されている漢字は、OCR技術を活用して紙面の文字を認識し、データ化した上で同様にデータベースに整理しました。
+          このデータをもとに、React.jsを使って素早くWebアプリケーションを開発し、GitHub
+          Pagesを用いて簡易的にデプロイしました。
+          この一連のプロセスを通じて、私は「課題にフォーカスし、ソフトウェア技術を活用して迅速に解決へ導く」開発姿勢を実践的に身につけることができました。
+        </p>
+      </section>
+
+      <section class='project-links'>
+        <h3>プロジェクトにおけるリンク</h3>
+        <div id='live-service-link'>
+          <a
+            href='https://minusmo.github.io/kanji-study/'
+            target='_blank'
+            >ライブサービス</a
+          >
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  #outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  .project-intro {
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+  .project-intro > h1 {
+    margin: 0 auto;
+  }
+  #live-service-link {
+    color: var(--Swatches-green-tones-6);
+  }
+  #highlevel-architecture {
+    width: 80%;
+    height: auto;
+  }
+</style>

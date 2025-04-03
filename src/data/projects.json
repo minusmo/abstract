@@ -1,52 +1,79 @@
 {
     "projects": [
         {
-            "title": "TopsterMaker(トップスターメーカー)",
+            "title": "TopsterMaker",
+            "titleJp": "トップスターメーカー",
             "description": "好きな音楽のアルバムカバーのコラージュを作って大事にしてみましょう。",
-            "techStack": ["React.js", "Jotai", "Next.js", "MantineUI", "AWS", "Typescript", "Node.js"],
+            "techStack": ["React.js", "Jotai", "Next.js", "MantineUI", "AWS Amplify", "AWS Route 53", "Github", "Typescript", "Node.js"],
             "problemAndSolution": "従来のWEBサイトではできなかったモバイルインタフェースの支援ともっと便利なユーザインタフェースの提供",
-            "link": "",
-            "demo": "https://topstermaker.tuneup-studio.com"
+            "link": "/abstract/projects/topster-maker",
+            "service": "https://topstermaker.tuneup-studio.com"
         },
         {
-            "title": "Spring Boot Practice(スプリングブート練習)",
-            "description": "初心者のためのspring boot練習プロジェクトです。",
-            "techStack": ["HTML", "CSS", "SpringBoot", "Java", "Thymeleaf", "MySQL", "JPA"],
-            "problemAndSolution": "SpringBootを初めて学ぶ人のための練習問題",
-            "link": "https://github.com/minusmo/springboot-practice",
-            "demo": ""
-        },
-        {
-            "title": "Tokens-to(トークンズーツ)",
+            "title": "Tokens-to",
+            "titleJp": "トークンズーツ",
             "description": "Javascriptのオブジェクトで定義されたCSSトークンをCSSに変換するライブラリです。",
             "techStack": ["glob.js", "commander.js", "Jest", "Typescript", "Node.js"],
             "problemAndSolution": "Javascriptのオブジェクトで定義されたCSSトークンをCSSに変換する課程をCLIで自動化。",
-            "link": "https://github.com/minusmo/tokens-to",
-            "demo": ""
+            "link": "/abstract/projects/tokens-to",
+            "service": ""
         },
         {
-            "title": "Kanji-Study(漢字スタディ)",
+            "title": "figures",
+            "titleJp": "フイギャス",
+            "description": "Javascript, Typescript, CSSで　使える　デザインライブラリです。",
+            "techStack": ["Typescript", "Node.js", "tokens-to"],
+            "problemAndSolution": "Typescriptで定義されたデザインのライブラリ化による再使用生の増加。",
+            "link": "/abstract/projects/figures",
+            "service": ""
+        },
+        {
+            "title": "Kanji-Study",
+            "titleJp": "漢字スタディ",
             "description": "日本語学習のためのWEBアプリケーション",
-            "techStack": ["React.js", "Vite", "MantineUI"],
+            "techStack": ["React.js", "Vite", "MantineUI", "Github-Pages"],
             "problemAndSolution": "日本語を覚える時に楽に繰り返す方法をどこにも使えるWEBアプリに具現。",
-            "link": "",
-            "demo": "https://minusmo.github.io/kanji-study/"
+            "link": "/abstract/projects/kanji-study",
+            "service": "https://minusmo.github.io/kanji-study/"
         },
         {
-            "title": "Seoul-Ro(ソウルー露)",
+            "title": "Seoul-Ro",
+            "titleJp": "ソウルー露",
             "description": "観光客の不便さと不快な旅行経験を改善するためのスマートフォンアプリケーションです。",
-            "techStack": ["Flutter", "Dart"],
+            "techStack": ["Flutter", "Dart", "FastAPI", "Python", "AWS"],
             "problemAndSolution": "外国人の観光客の人口密集による不快感をコンピューティングアルゴリズムを活用して解決。",
-            "link": "https://github.com/SeoulRo/SeoulRo",
-            "demo": ""
+            "link": "/abstract/projects/seoul-ro",
+            "service": ""
         },
         {
-            "title": "YouTube-Quick-Search(ユーチューブクイックサーチ)",
-            "description": "ユーチューブに接続せずに、すぐに検索できる機能をクロムに追加",
+            "title": "YouTube-Quick-Search",
+            "titleJp": "ユーチューブクイックサーチ",
+            "description": "ユーチューブに接続せずに、すぐに検索できる機能をクロムに追加。",
             "techStack": ["HTML", "CSS", "Javascript"],
             "problemAndSolution": "ユーチューブで動画を検索する必要が多い人に、youtube.comにアクセスせずに検索できる機能を提供。",
-            "link": "https://github.com/minusmo/YouTube-Quick-Search-Chrome-Extension",
-            "demo": ""
+            "link": "/abstract/projects/youtube-quick-search",
+            "service": ""
+        },
+        {
+            "title": "iLog",
+            "titleJp": "アイログ",
+            "description": "意思疎通が難しい子供とその保護者のためのWEBアプリケーション。",
+            "techStack": [
+              "HTML", 
+              "CSS", 
+              "Javascript", 
+              "Thymeleaf", 
+              "Jquery", 
+              "SpringBoot", 
+              "Spring Security",
+              "SpringAI",
+              "OpenFeign",
+              "MySQL",
+              "MongoDB"
+            ],
+            "problemAndSolution": "意思疎通が難しい子供をもっと上手く育てたい保護者と自分の思いと感情が上手く伝えない子供、両方のためのソリューション。",
+            "link": "/abstract/projects/ilog",
+            "service": ""
         }
     ]
 }
