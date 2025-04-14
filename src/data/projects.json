@@ -38,7 +38,7 @@
         },
         {
             "title": "Seoul-Ro",
-            "titleJp": "ソウルー露",
+            "titleJp": "ソウル路",
             "description": "観光客の不便さと不快な旅行経験を改善するためのスマートフォンアプリケーションです。",
             "techStack": ["Flutter", "Dart", "FastAPI", "Python", "AWS"],
             "problemAndSolution": "外国人の観光客の人口密集による不快感をコンピューティングアルゴリズムを活用して解決。",

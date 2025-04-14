@@ -98,11 +98,6 @@ import skills from '../data/skills.json';
 
         <article id='skills-container'>
           <h3>スキル</h3>
-          <a
-            href='/スキルシート＿陰昊俊.xlsx'
-            download='スキルシート＿陰昊俊(ウムホジュン).xlsx'
-            >スキルシートをダウンロード</a
-          >
           <span class='skill-notation'
             >最上:上級の技術の中で最も自信がある技術</span
           >
@@ -147,6 +142,12 @@ import skills from '../data/skills.json';
                 <div class='skill-category'>
                   <h3>{categoryTitle}</h3>
                   <table>
+                    <colgroup>
+                      <col style='width: 10%;' />
+                      <col style='width: 10%;' />
+                      <col style='width: 70%;' />
+                      <col style='width: 10%;' />
+                    </colgroup>
                     <thead class='skills-thead'>
                       <tr>
                         <th>技術名</th>
@@ -313,6 +314,7 @@ import skills from '../data/skills.json';
   table {
     width: 100%;
     border-collapse: collapse;
+    /* table-layout: fixed; */
   }
 
   table,
