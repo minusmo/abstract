@@ -1,5 +1,5 @@
 ---
-import '@tune-up-studio/figures/css/designtokens.css';
+import '@tune-up-studio/figures/designtokens.css';
 interface Props {
   title: string;
 }
@@ -8,7 +8,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang='jp'>
   <head>
     <meta charset='UTF-8' />
     <meta
@@ -58,10 +58,10 @@ const { title } = Astro.props;
     list-style: none;
   }
   html {
-    --light-bg: var(--Tints-neutral-0);
-    --dark-bg: var(--Tints-neutral-9);
-    --light-color-normal: var(--Palette-neutral-0);
-    --dark-color-normal: var(--Palette-neutral-5);
+    --light-bg: var(--SimpleSwatch-neutral-5);
+    --dark-bg: var(--SimpleSwatch-neutral-1);
+    --light-color-normal: var(--Swatches-neutral-shades-1);
+    --dark-color-normal: var(--Swatches-neutral-tints-1);
     --h1-fontsize-desktop: calc(var(--TypoScaleMap-PerfectFourth) * 2em);
     --h2-fontsize-desktop: calc(var(--TypoScaleMap-PerfectFourth) * 1.5em);
     --h3-fontsize-desktop: calc(var(--TypoScaleMap-PerfectFourth) * 1.17em);
@@ -70,7 +70,15 @@ const { title } = Astro.props;
     --h6-fontsize-desktop: calc(var(--TypoScaleMap-PerfectFourth) * 0.67em);
     --p-fontsize-desktop: calc(var(--TypoScaleMap-PerfectFourth) * 0.5em);
 
-    --boxShadow-color: var(--Tints-neutral-1);
+    --project-card-on-service-color: var(--Swatches-green-tints-7);
+
+    --boxShadow-color: var(--Swatches-green-tints-3);
+    --btn-success-color: var(--Swatches-green-tints-5);
+    --btn-success-hover-color: var(--Swatches-green-tints-1);
+    --btn-details-color: var(--Swatches-yellow-tints-6);
+    --btn-details-hover-color: var(--Swatches-yellow-3);
+    --btn-disabled-color: var(--Swatches-neutral-tints-3);
+
     font-family: system-ui, sans-serif;
     background: #ffffff0a;
     font-size: 16px;

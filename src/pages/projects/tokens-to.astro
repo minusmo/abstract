@@ -1,0 +1,141 @@
+---
+import {
+  GlobJSPill,
+  CommanderJSPIll,
+  NodePill,
+  Github,
+  NPMPill,
+} from '../../components/TechStackPills.tsx';
+import { Image } from 'astro:assets';
+import HighLevelArchitecture from '../../assets/highlevel-architecture-tokens-to.webp';
+import Footer from '../../components/SharedFooter.astro';
+import Nav from '../../components/SharedNav.astro';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title='Abstract of HoJoon Eum'>
+  <Nav />
+  <main>
+    <div id='outer-container'>
+      <h1>プロジェクトのご説明</h1>
+
+      <section class='project-intro'>
+        <h1>Tokens-To</h1>
+        <h2>(トークンズ・トゥー)</h2>
+        <p>
+          Typescript、Javascriptのオブジェクトとして定義されたデザイントークンをCSS変数に簡単に変換！
+        </p>
+      </section>
+
+      <section class='project-details'>
+        <h2>プロジェクトの詳細</h2>
+        <p>
+          Typescript、Javascriptのオブジェクトとして定義されたデザイントークンをCSS変数に簡単に変換し、簡単に他のHTML、CSSにimportして使用できるようにします。
+          Typescriptで作成されたら、
+          まずすべてのソースコードをJavascriptにトランスファイリングした後、
+          プロジェクトのルートを基準にDFSアルゴリズムを活用してデザイントークンが定義されたすべての対象ディレクトリを探索し、
+          JavascriptオブジェクトをCSSトークンに変換してCSSファイルに書きます。
+        </p>
+      </section>
+
+      <section class='project-purpose'>
+        <h2>プロジェクトの目的</h2>
+        Typescript、Javascriptのオブジェクトとして定義されたデザイントークンは、Typescript、Javascriptプログラムでは簡単に、そしてタイプ安全に(Typescriptの場合)使用できますが、場合によってはCSSファイルだけが必要な場合もかなり多いです。
+        このような場合、膨大なデザイントークンをいちいちCSS変数に変換するのは時間がかかります。
+        このような問題を解決するために、Typescript、Javascript ObjectをCSSに変換するコマンドラインプログラムを作成しました。
+      </section>
+
+      <section class='project-tech'>
+        <h2>活用した技術</h2>
+        <GlobJSPill />
+        <CommanderJSPIll />
+        <NodePill />
+        <NPMPill />
+        <Github />
+      </section>
+
+      <section class='project-architecture'>
+        <h2>ハイレベルアーキテクチャ</h2>
+        <!-- 이곳에는 고수준 아키텍처 이미지를 삽입 -->
+        <Image
+          id='highlevel-architecture'
+          src={HighLevelArchitecture}
+          alt={'high level architecture'}
+        />
+      </section>
+
+      <!-- <section class='project-preview'>
+        <h2>プロジェクトのプレビュー</h2>
+      </section> -->
+      <section class='project-point'>
+        <h2>プロジェクトのポイントと学んだこと</h2>
+        <p>
+          このプロジェクトは実際に私が開発しながら経験した問題を解決し、その解決策を他の人と共有するための実戦プロジェクトでした。
+          フロントエンドを開発しながら、定義した数多くのデザイントークンを、CSSで使用する必要がありますが、いちいちCSS変数で再定義することはほとんど無理です。
+          そこで、ユーザーが指定した設定に従って、対象位置のTypescript、あるいはJavaScriptトークンオブジェクトをCSSファイルに変換します。
+          これは、デザイン
+          トークンの再利用性を高め、移植を容易にするという利点があります。
+          さらに、変換する過程でファイルシステムを自然に探索する過程で、グラフ探索アルゴリズムおよびパターンマッチングアルゴリズムを適用して問題を解決し、Node.jsモジュールの基本も理解するようになりました。
+          また、このプロジェクトの中で、テストを作成することで、ただテストを作成するだけでなく、テストの対象になるコードから依存性を低くして、自然いもっとしやすいテストを
+          作る方法と、堅固なコードを作る方法を学びました。
+        </p>
+      </section>
+
+      <section class='project-links'>
+        <h3>プロジェクトにおけるリンク</h3>
+        <!-- <div id='live-service-link'>
+          <a
+            href=''
+            target='_blank'
+            >ライブサービス</a
+          >
+        </div> -->
+        <div>
+          <a
+            id='npm-link'
+            href='https://www.npmjs.com/package/tokens-to'
+            target='_blank'
+            >NPMのリポジトリ</a
+          >
+        </div>
+        <div>
+          <a
+            href='https://github.com/minusmo/tokens-to/blob/main/README_JP.md'
+            target='_blank'
+            >GitHubのリポジトリ</a
+          >
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  #outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  .project-intro {
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+  .project-intro > h1 {
+    margin: 0 auto;
+  }
+  #live-service-link {
+    color: var(--Swatches-green-tones-6);
+  }
+  #highlevel-architecture {
+    width: 80%;
+    height: auto;
+  }
+  #npm-link {
+    color: var(--Swatches-red-tints-7);
+  }
+</style>

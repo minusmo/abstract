@@ -2,13 +2,78 @@
     "projects": [
         {
             "title": "TopsterMaker",
-            "description": "좋아하는 앨범의 컬렉션을 만들고 소장하세요.",
-            "link": "https://topstermaker.tuneup-studio.com"
+            "titleJp": "トップスターメーカー",
+            "description": "好きな音楽のアルバムカバーのコラージュを作って大事にしてみましょう。",
+            "techStack": ["React.js", "Jotai", "Next.js", "MantineUI", "AWS Amplify", "AWS Route 53", "Github", "Typescript", "Node.js"],
+            "problemAndSolution": "従来のWEBサイトではできなかったモバイルインタフェースの支援ともっと便利なユーザインタフェースの提供",
+            "link": "/abstract/projects/topster-maker",
+            "service": "https://topstermaker.tuneup-studio.com"
         },
         {
-            "title": "Spring Boot Practice",
-            "description": "초심자를 위한 스프링부트 연습 프로젝트입니다.",
-            "link": "https://github.com/minusmo/springboot-practice"
+            "title": "Tokens-to",
+            "titleJp": "トークンズ・トゥー",
+            "description": "Javascriptのオブジェクトで定義されたCSSトークンをCSSに変換するライブラリです。",
+            "techStack": ["glob.js", "commander.js", "Jest", "Typescript", "Node.js"],
+            "problemAndSolution": "Javascriptのオブジェクトで定義されたCSSトークンをCSSに変換する課程をCLIで自動化。",
+            "link": "/abstract/projects/tokens-to",
+            "service": ""
+        },
+        {
+            "title": "figures",
+            "titleJp": "フイギャス",
+            "description": "Javascript, Typescript, CSSで　使える　デザインライブラリです。",
+            "techStack": ["Typescript", "Node.js", "tokens-to"],
+            "problemAndSolution": "Typescriptで定義されたデザインのライブラリ化による再使用生の増加。",
+            "link": "/abstract/projects/figures",
+            "service": ""
+        },
+        {
+            "title": "Kanji-Study",
+            "titleJp": "漢字スタディ",
+            "description": "日本語学習のためのWEBアプリケーション",
+            "techStack": ["React.js", "Vite", "MantineUI", "Github-Pages"],
+            "problemAndSolution": "日本語を覚える時に楽に繰り返す方法をどこにも使えるWEBアプリに具現。",
+            "link": "/abstract/projects/kanji-study",
+            "service": "https://minusmo.github.io/kanji-study/"
+        },
+        {
+            "title": "Seoul-Ro",
+            "titleJp": "ソウル路",
+            "description": "観光客の不便さと不快な旅行経験を改善するためのスマートフォンアプリケーションです。",
+            "techStack": ["Flutter", "Dart", "FastAPI", "Python", "AWS"],
+            "problemAndSolution": "外国人の観光客の人口密集による不快感をコンピューティングアルゴリズムを活用して解決。",
+            "link": "/abstract/projects/seoul-ro",
+            "service": ""
+        },
+        {
+            "title": "YouTube-Quick-Search",
+            "titleJp": "ユーチューブクイックサーチ",
+            "description": "ユーチューブに接続せずに、すぐに検索できる機能をクロムに追加。",
+            "techStack": ["HTML", "CSS", "Javascript"],
+            "problemAndSolution": "ユーチューブで動画を検索する必要が多い人に、youtube.comにアクセスせずに検索できる機能を提供。",
+            "link": "/abstract/projects/youtube-quick-search",
+            "service": ""
+        },
+        {
+            "title": "iLog",
+            "titleJp": "アイログ",
+            "description": "意思疎通が難しい子供とその保護者のためのWEBアプリケーション。",
+            "techStack": [
+              "HTML", 
+              "CSS", 
+              "Javascript", 
+              "Thymeleaf", 
+              "Jquery", 
+              "SpringBoot", 
+              "Spring Security",
+              "SpringAI",
+              "OpenFeign",
+              "MySQL",
+              "MongoDB"
+            ],
+            "problemAndSolution": "意思疎通が難しい子供をもっと上手く育てたい保護者と自分の思いと感情が上手く伝えない子供、両方のためのソリューション。",
+            "link": "/abstract/projects/ilog",
+            "service": ""
         }
     ]
 }

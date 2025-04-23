@@ -1,0 +1,184 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+import { Image } from 'astro:assets';
+import ProfileImgReal from '../../assets/hjeum_profile_real.png';
+import projects from '../../data/projects.json';
+import skills from '../../data/skills.json';
+import Footer from '../../components/SharedFooter.astro';
+import Nav from '../../components/SharedNav.astro';
+---
+
+<Layout title='Abstract of HoJoon Eum'>
+  <Nav />
+  <main>
+    <section id='who-am-i'>
+      <article class='description'>
+        <p>
+          안녕하세요, 음호준이라고 합니다. 소프트웨어 엔지니어링을 하고있습니다.
+          이 웹사이트는, 저의 테크 블로그, 취미 블로그와는 다른 형식으로
+          이야기를 전하기 위해 만들었습니다. 테크 블로그에서는 기술 혹은 기술과
+          관련된 개념적인 이야기를 하고있습니다. 취미 블로그에서는 저의 취미
+          활동에 대해 이야기하고있습니다. 이 곳에서는, 저의 경험이나, 전하고
+          싶은 생각을 단순 블로그 시스템으로 표현할 수 없는, 웹페이지를 직접
+          만드는 방법으로 전하고 있습니다.
+        </p>
+      </article>
+      <Image
+        id='profile-real'
+        src={ProfileImgReal}
+        alt='hojooneum in Hokkaido'
+      />
+    </section>
+    <div>
+      <section
+        id='what-i-do'
+        class='card'>
+        <div>
+          <h3>Projects</h3>
+          <div id='projects'>
+            {
+              projects.projects.map((project) => (
+                <div class='project-card'>
+                  <h4>{project.title}</h4>
+                  <p>{project.description}</p>
+                  <a href={project.link}>
+                    <button>Browse Project</button>
+                  </a>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <!-- <article id="skills-container">
+          <h3>이런 기술을 사용할 수 있어요.</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>이름</th>
+                <th>버전</th>
+                <th>사용 목적</th>
+                <th>숙련도</th>
+              </tr>
+            </thead>
+            <tbody>
+              {skills.map((skill) => (
+                <tr>
+                  <td>{skill.name}</td>
+                  <td>{skill.version}</td>
+                  <td>{skill.purpose}</td>
+                  <td>{skill.level}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </article> -->
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  ul {
+    margin-top: -1rem;
+    margin-left: -2rem;
+  }
+  .card {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    padding: calc(var(--Thickness-Thick) * 1px);
+  }
+  .card article {
+    text-align: start;
+  }
+  #who-am-i {
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: stretch;
+    padding-bottom: 2px;
+    border-bottom: 2px solid black;
+    margin-bottom: 2rem;
+  }
+  #who-am-i .description {
+    flex: 3;
+    text-align: start;
+    margin: auto;
+    padding: calc(var(--Thickness-Thick) * 1px);
+  }
+  @media screen and (max-width: 600px) {
+    #who-am-i {
+      flex-direction: column-reverse;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    #who-am-i .description {
+      margin: unset;
+      max-width: 100%;
+    }
+    #who-am-i img {
+      padding: 5px;
+    }
+  }
+  #who-am-i img {
+    max-width: 200px;
+    min-width: 30px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+  #projects {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  .project-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 1rem;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+  }
+  .project-card h4 {
+    font-weight: 400;
+    margin: 1rem 0;
+  }
+  .project-card button {
+    padding: 0.5rem 1rem;
+    background-color: orange;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .project-card button:hover {
+    background-color: #ff8c00;
+  }
+  #skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  table,
+  th,
+  td {
+    border: 1px solid black;
+  }
+  th,
+  td {
+    padding: 0.5rem;
+  }
+  th {
+    background-color: #f0f0f0;
+  }
+</style>

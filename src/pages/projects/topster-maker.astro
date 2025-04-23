@@ -1,0 +1,143 @@
+---
+import {
+  ReactPill,
+  NextPill,
+  JotaiPill,
+  MantineUIPill,
+  AWSAmplifyPill,
+  AWSRoute53Pill,
+  TypescriptPill,
+  NodePill,
+  GoogleAnalyticsPill,
+  Github,
+} from '../../components/TechStackPills.tsx';
+import { Image } from 'astro:assets';
+import HighLevelArchitecture from '../../assets/highlevel-architecture-topstermaker.png';
+import Footer from '../../components/SharedFooter.astro';
+import Nav from '../../components/SharedNav.astro';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title='Abstract of HoJoon Eum'>
+  <Nav />
+  <main>
+    <div id='outer-container'>
+      <h1>プロジェクトのご説明</h1>
+
+      <section class='project-intro'>
+        <h1>TopsterMaker</h1>
+        <h2>(トップスターメーカー)</h2>
+        <p>
+          好きな音楽のアルバムカバーのコラージュを作って大事にしてみましょう。
+        </p>
+      </section>
+
+      <section class='project-details'>
+        <h2>プロジェクトの詳細</h2>
+        <p>
+          このプロジェクトは、自分の好きな音楽アルバムのカバーイメージを望む形で
+          構成してコラージュを作り、ダウンロードして所蔵できるウェブ
+          アプリケーションです。 英国の音楽サービス企業であるLast
+          FMからアルバム情報を
+          照会して、ウェブブラウザでコラージュを構成した後、画像ファイルにダウンロード
+          します。
+          WebアプリケーションサーバはNext.jsにビルドされ、部分的にReact.jsを使用してWebクライアントを作成しました。
+          MantineUIを利用して、あらかじめ定義されたコンポーネントを利用して開発生産性を向上させました。
+          わかりやすく軽い状態管理ライブラリであるJotaiを使用して、アプリケーションの状態をグローバルに管理します。
+          AWS Route53を利用してドメインサービスと接続し、AWS
+          Amplifyを利用してCI/CDパイプラインを統合および配布しました。
+          ユーザーエクスペリエンスを測定するためにGoogle
+          Analyticsを適用しました。
+        </p>
+      </section>
+
+      <section class='project-purpose'>
+        <h2>プロジェクトの目的</h2>
+        こちらのサービスは、従来提供されていたトップスターメーカーウェブサービスのモバイルビュー未支援、
+        ビューサイズの変化、未支援などの不便さを改善するために開発されました。
+      </section>
+
+      <section class='project-tech'>
+        <h2>活用した技術</h2>
+        <ReactPill />
+        <NextPill />
+        <JotaiPill />
+        <TypescriptPill />
+        <NodePill />
+        <MantineUIPill />
+        <AWSAmplifyPill />
+        <AWSRoute53Pill />
+        <GoogleAnalyticsPill />
+        <Github />
+      </section>
+
+      <section class='project-architecture'>
+        <h2>ハイレベルアーキテクチャ</h2>
+        <!-- 이곳에는 고수준 아키텍처 이미지를 삽입 -->
+        <Image
+          id='highlevel-architecture'
+          src={HighLevelArchitecture}
+          alt={'high level architecture'}
+        />
+      </section>
+
+      <!-- <section class='project-preview'>
+        <h2>プロジェクトのプレビュー</h2>
+      </section> -->
+      <section class='project-point'>
+        <h2>プロジェクトのポイントと学んだこと</h2>
+        <p>
+          このプロジェクトは、企画・デザインから開発・デプロイまでをすべて自分で担当したものであり、Webサービス開発全体のプロセスを深く理解し、実装力を高める良い機会となりました。
+          特に、既存のサービスよりも便利で使いやすい機能を提供することを目指し、リリース後も継続的に機能改善とユーザー体験の向上に取り組みました。
+          開発過程で最も困難だったのは、HTML要素を画像として変換し、ダウンロードできる機能の実装でした。ページのレンダリングコンテキストをブロックしないように、HTMLノードをコピーする際には、DFS（深さ優先探索）アルゴリズムを用いて、必要最小限のプロパティだけを抽出・コピーし、それを元にレンダリング用のノードツリーを再構築する手法を採用しました。
+          このように、実際の課題に対してコンピューティングアルゴリズムを応用して解決に導いた、非常に意義のある経験となりました。
+        </p>
+      </section>
+
+      <section class='project-links'>
+        <h3>プロジェクトにおけるリンク</h3>
+        <div id='live-service-link'>
+          <a
+            href='https://topstermaker.tuneup-studio.com'
+            target='_blank'
+            >ライブサービス</a
+          >
+        </div>
+        <!-- <li>
+          <a
+          href='GitHub 리포지토리 URL'
+          target='_blank'
+          >GitHubのリポジトリ</a
+          >
+          </li> -->
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  #outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  .project-intro {
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+  .project-intro > h1 {
+    margin: 0 auto;
+  }
+  #live-service-link {
+    color: var(--Swatches-green-tones-6);
+  }
+  #highlevel-architecture {
+    width: 80%;
+    height: auto;
+  }
+</style>

@@ -19,12 +19,10 @@ import BlueskyLogo from '../assets/bluesky-logo.svg';
   <h4
     id='myname'
     class='roboto-condensed'>
-    음호준 / 陰昊俊（ウムホジュン） / HoJoonEum
+    陰昊俊(ウム・ホジュン) / 음호준 / HoJoon Eum
   </h4>
   <div id='links'>
-    <a href='https://medium.com/@bldolphin96'>techblog</a>
-    /
-    <a href='https://amans-cumulus.tistory.com/'>hobbyblog</a>
+    <a href='https://medium.com/@bldolphin96'>techblog</a>@medium
   </div>
   <div id='contacts'>
     <a href=`mailto:${contact.email}`>@email</a>
@@ -69,23 +67,22 @@ import BlueskyLogo from '../assets/bluesky-logo.svg';
     padding: calc(var(--Thickness-Thin) * 1px)
       calc(var(--Thickness-Thicker) * 2px);
     color-scheme: light dark;
-    border-bottom: 5px solid var(--Tints-neutral-7);
+    border-bottom: 5px solid var(--SimpleSwatch-neutral-0);
   }
   @media (prefers-color-scheme: light) {
     #nav-bar {
-      background-color: var(--Tints-neutral-0);
-      border-bottom: 5px solid var(--Tints-red-7);
+      background-color: var(--Swatches-neutral-tints-0);
+      border-bottom: 5px solid var(--SimpleSwatch-blue-2);
     }
   }
   @media (prefers-color-scheme: dark) {
     #nav-bar {
-      background-color: var(--Shades-neutral-0);
-      border-bottom: 5px solid var(--Tints-green-7);
+      background-color: var(--Swatches-neutral-shades-4);
+      border-bottom: 5px solid var(--Swatches-yellow-tints-9);
     }
   }
-  #nav-bar #links > a {
-    font-size: small;
-    font-weight: 200;
+  #nav-bar #links > a:hover {
+    color: var();
   }
   #home-link {
     display: flex;

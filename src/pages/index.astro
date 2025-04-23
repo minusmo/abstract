@@ -1,10 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Footer from '../components/footer.astro';
-import Nav from '../components/nav.astro';
+import Footer from '../components/SharedFooter.astro';
+import Nav from '../components/SharedNav.astro';
 import { Image } from 'astro:assets';
 import ProfileImgReal from '../assets/hjeum_profile_real.png';
-import CanvasBusinessCard from '../components/canvasBusinessCard.astro';
+import CanvasBusinessCard from '../components/ResponsiveBusinessCard.astro';
 import projects from '../data/projects.json';
 import skills from '../data/skills.json';
 ---
@@ -15,84 +15,203 @@ import skills from '../data/skills.json';
     <section id='who-am-i'>
       <article class='description'>
         <p>
-          안녕하세요, 음호준이라고 합니다. 소프트웨어 엔지니어링을 하고있습니다.
-          이 웹사이트는, 저의 테크 블로그, 취미 블로그와는 다른 형식으로
-          이야기를 전하기 위해 만들었습니다. 테크 블로그에서는 기술 혹은 기술과
-          관련된 개념적인 이야기를 하고있습니다. 취미 블로그에서는 저의 취미
-          활동에 대해 이야기하고있습니다. 이 곳에서는, 저의 경험이나, 전하고
-          싶은 생각을 단순 블로그 시스템으로 표현할 수 없는, 웹페이지를 직접
-          만드는 방법으로 전하고 있습니다.
+          こんにちは、陰昊俊(ウム・ホジュン)と申します。ソフトウェアエンジニアとして活動しております。
+          このウェブサイトは、私のテックブログや趣味ブログとは異なる形式で、自分の考えを伝えるために作成しました。テックブログでは、技術や技術に関連する概念的な話題について発信しています。また、趣味ブログでは、私の趣味活動について紹介しています。
+          しかし、ここでは単なるブログシステムでは表現できない内容を、ウェブページを直接作成することで伝えたいと考えています。私の経験や伝えたい思いを、より自由な形で表現する場として、このサイトを運営しております。どうぞよろしくお願いいたします。
         </p>
       </article>
-      <Image
-        id='profile-real'
-        src={ProfileImgReal}
-        alt='hojooneum in Hokkaido'
-      />
+      <figure>
+        <Image
+          id='profile-real'
+          src={ProfileImgReal}
+          alt='hojooneum in Hokkaido'
+        />
+        <figcaption>北海道､美瑛町</figcaption>
+      </figure>
     </section>
-    <CanvasBusinessCard />
     <div>
       <section
         id='what-i-do'
         class='card'>
         <div>
-          <h3>Projects</h3>
+          <h3>プロジェクト</h3>
+          <p>
+            *今サービス中ですので、ソースコードの公開ができないプロジェクトは、Live
+            Service(ライブサービス)をご覧ください。
+          </p>
           <div id='projects'>
             {
-              projects.projects.map((project) => (
-                <div class='project-card'>
-                  <h4>{project.title}</h4>
-                  <p>{project.description}</p>
-                  <a href={project.link}>
-                    <button>Browse Project</button>
-                  </a>
-                </div>
-              ))
+              projects.projects.map((project) => {
+                const projectCardClass = 'project-card';
+                return (
+                  <div class={projectCardClass}>
+                    <header>
+                      <h4 class='project-title'>{project.title}</h4>
+                      <h4>{project.titleJp}</h4>
+                      <p class='project-description'>{project.description}</p>
+                    </header>
+                    <section>
+                      <p>
+                        <strong>技術スタック:</strong>
+                        <p class='project-techStack'>
+                          {project.techStack.join(', ')}
+                        </p>
+                      </p>
+                      <p>
+                        <strong>課題と解決策:</strong>
+                        <p class='problem-and-solution'>
+                          {project.problemAndSolution}
+                        </p>
+                      </p>
+                    </section>
+                    <div class='project-card-footer'>
+                      <div class='buttons'>
+                        {project.link ? (
+                          <a href={project.link}>
+                            <button class='btn-details-active'>詳細</button>
+                          </a>
+                        ) : (
+                          <button
+                            class='btn-details-disabled'
+                            disabled>
+                            詳細
+                          </button>
+                        )}
+
+                        {project.service && (
+                          <a href={project.service}>
+                            <button class='btn-service-active'>
+                              ライブサービス
+                            </button>
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })
             }
           </div>
         </div>
-        <!-- <article id="skills-container">
-          <h3>이런 기술을 사용할 수 있어요.</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>이름</th>
-                <th>버전</th>
-                <th>사용 목적</th>
-                <th>숙련도</th>
-              </tr>
-            </thead>
-            <tbody>
-              {skills.map((skill) => (
-                <tr>
-                  <td>{skill.name}</td>
-                  <td>{skill.version}</td>
-                  <td>{skill.purpose}</td>
-                  <td>{skill.level}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </article> -->
+
+        <hr class='divider' />
+
+        <article id='skills-container'>
+          <h3>スキル</h3>
+          <span class='skill-notation'
+            >最上:上級の技術の中で最も自信がある技術</span
+          >
+          <span class='skill-notation'
+            >上:専門知識があり、多数の使用経験がある</span
+          >
+          <span class='skill-notation'>中:専門知識があり、使用経験がある</span>
+          <span class='skill-notation'>下:使用法がわかり、専門知識はない</span>
+
+          {
+            Object.entries(skills).map(([category, skillList]) => {
+              if (!skillList || skillList.length === 0) return null;
+
+              const categoryTitle = category
+                .split(/(?=[A-Z])/)
+                .map((word, index) => {
+                  const translations = {
+                    programming: 'プログラミング',
+                    language: '言語',
+                    framework: 'フレームワーク',
+                    database: 'データベース',
+                    orm: 'オブジェクト関係マッピング',
+                    frontend: 'フロントエンド',
+                    os: 'オペレーティングシステム',
+                    cloud: 'クラウド',
+                    service: 'サービス',
+                    test: 'テスト',
+                    version: 'バージョン',
+                    control: '管理',
+                    containerization: 'コンテナー化',
+                    package: 'パッケージ',
+                    management: '管理',
+                    build: 'ビルド',
+                    tools: 'ツール',
+                    cicd: 'CI/CD',
+                  };
+                  return translations[word.toLowerCase()] || word;
+                })
+                .join('');
+
+              return (
+                <div class='skill-category'>
+                  <h3>{categoryTitle}</h3>
+                  <table>
+                    <colgroup>
+                      <col style='width: 10%;' />
+                      <col style='width: 10%;' />
+                      <col style='width: 70%;' />
+                      <col style='width: 10%;' />
+                    </colgroup>
+                    <thead class='skills-thead'>
+                      <tr>
+                        <th>技術名</th>
+                        <th>バージョン</th>
+                        <th>目的</th>
+                        <th>レベル</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {skillList.map((skill) => (
+                        <tr>
+                          <td>{skill.name}</td>
+                          <td>{skill.version}</td>
+                          <td>{skill.purpose}</td>
+                          <td>{skill.level}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              );
+            })
+          }
+        </article>
       </section>
     </div>
+    <hr class='divider' />
   </main>
+  <div id='canvas-business-card'>
+    <h2>どうぞよろしくお願い致します！</h2>
+    <CanvasBusinessCard />
+  </div>
   <Footer />
 </Layout>
 
 <style>
+  #canvas-business-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    min-height: 500px;
+  }
+
+  #canvas-business-card > h2 {
+    padding: 1rem;
+  }
+
   ul {
     margin-top: -1rem;
     margin-left: -2rem;
   }
+
   .card {
     display: grid;
     grid-template-rows: auto auto 1fr auto;
     padding: calc(var(--Thickness-Thick) * 1px);
   }
+
   .card article {
     text-align: start;
   }
+
   #who-am-i {
     width: 100%;
     display: flex;
@@ -103,12 +222,14 @@ import skills from '../data/skills.json';
     border-bottom: 2px solid black;
     margin-bottom: 2rem;
   }
+
   #who-am-i .description {
     flex: 3;
     text-align: start;
     margin: auto;
     padding: calc(var(--Thickness-Thick) * 1px);
   }
+
   @media screen and (max-width: 600px) {
     #who-am-i {
       flex-direction: column-reverse;
@@ -123,62 +244,181 @@ import skills from '../data/skills.json';
       padding: 5px;
     }
   }
+
   #who-am-i img {
     max-width: 200px;
     min-width: 30px;
     height: auto;
     aspect-ratio: 1 / 1;
   }
+
   #projects {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-  }
-  .project-card {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
     justify-content: center;
-    align-items: start;
-    padding: 1rem;
-    color: black;
-    background-color: white;
+    align-items: stretch;
   }
+
+  @keyframes blink-background-success {
+    0% {
+      background-color: #69e562;
+    }
+    50% {
+      background-color: var(--Swatches-green-tints-8);
+    }
+    100% {
+      background-color: #69e562;
+    }
+  }
+
+  .divider {
+    width: 100%;
+    height: 4px;
+    background-color: var(--Swatches-neutral-tones-4);
+    margin: 10px auto;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
   .project-card h4 {
     font-weight: 400;
     margin: 1rem 0;
   }
-  .project-card button {
-    padding: 0.5rem 1rem;
-    background-color: orange;
-    color: #000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .project-card button:hover {
-    background-color: #ff8c00;
-  }
-  #skills-container {
+
+  .project-card-footer {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: auto; /* 카드의 하단에 위치하도록 설정 */
+    padding-top: 1rem;
+    border-top: 1px solid #ccc; /* 카드의 상단에 구분선 추가 */
+  }
+
+  #skills-container {
     width: 100%;
   }
+
+  #skills-container > .skill-notation {
+    font-size: 0.8rem;
+    width: fit-content;
+    display: block;
+    margin: 5px;
+  }
+
   table {
     width: 100%;
     border-collapse: collapse;
+    /* table-layout: fixed; */
   }
+
   table,
   th,
   td {
     border: 1px solid black;
   }
+
   th,
   td {
     padding: 0.5rem;
   }
-  th {
-    background-color: #f0f0f0;
+
+  .skills-thead {
+    background-color: var(--Swatches-reefTeal-tints-7);
+  }
+
+  @media (prefers-color-scheme: light) {
+    .skills-thead {
+      background-color: var(--Swatches-reefTeal-tints-7);
+      color: var(--SimpleSwatch-neutral-5);
+    }
+    .divider {
+      background-color: var(--Swatches-neutral-tones-4);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .skills-thead {
+      background-color: var(--Swatches-reefTeal-tints-1);
+      color: var(--Swatches-neutral-shades-7);
+    }
+    .divider {
+      background-color: var(--Swatches-neutral-tints-0);
+    }
+  }
+
+  .project-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: 1rem;
+    color: black;
+    background-color: white;
+    border: 1px solid darkgrey;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-card h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-card p {
+    margin: 0.2rem 0;
+  }
+
+  .project-card .buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .btn-service-active {
+    padding: 0.5rem 1rem;
+    background-color: var(--btn-success-color);
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    animation: blink-background-success 3s infinite;
+  }
+
+  .btn-service-active:hover {
+    background-color: var(--btn-success-hover-color);
+  }
+
+  .btn-service-disabled {
+    padding: 0.5rem 1rem;
+    background-color: var(--btn-disabled-color);
+    border: none;
+    border-radius: 5px;
+    cursor: not-allowed;
+  }
+
+  .btn-details-active {
+    padding: 0.5rem 1rem;
+    background-color: var(--btn-details-color);
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  .btn-details-active:hover {
+    background-color: var(--btn-details-hover-color);
+  }
+  .btn-details-disabled {
+    padding: 0.5rem 1rem;
+    background-color: var(--btn-disabled-color);
+    border: none;
+    border-radius: 5px;
+    cursor: not-allowed;
   }
 </style>

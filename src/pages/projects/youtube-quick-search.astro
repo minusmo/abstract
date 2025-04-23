@@ -1,0 +1,117 @@
+---
+import {
+  Github,
+  CSSPill,
+  HTMLPill,
+  JavascriptPill,
+} from '../../components/TechStackPills.tsx';
+import { Image } from 'astro:assets';
+import HighLevelArchitecture from '../../assets/highlevel-architecture-youtube-quick-search.webp';
+import Footer from '../../components/SharedFooter.astro';
+import Nav from '../../components/SharedNav.astro';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title='Abstract of HoJoon Eum'>
+  <Nav />
+  <main>
+    <div id='outer-container'>
+      <h1>プロジェクトのご説明</h1>
+
+      <section class='project-intro'>
+        <h1>Youtube-Quick-Search</h1>
+        <h2>(ユーチューブクイックサーチ)</h2>
+        <p>どのタブでも、すばやく簡単にYouTubeで動画を検索しましょう！</p>
+      </section>
+
+      <section class='project-details'>
+        <h2>プロジェクトの詳細</h2>
+        <p>
+          Chromeブラウザにこの拡張プログラムをインストールすると、ブラウザのどのウィンドウ、タブでも簡単にショートカットキーだけでミニYouTube検索ウィンドウを開き、YouTubeで動画を検索することができます。
+          HTML、CSS、Javascriptを利用した簡単なクローム拡張プログラムです。
+        </p>
+      </section>
+
+      <section class='project-purpose'>
+        <h2>プロジェクトの目的</h2>
+        ますます動画を通じて情報を検索することが多くなり、その動画のほとんどはユーチューブにアップロードされています。
+        でも、探したい動画があるたびにいちいちユーチューブのウェブサイトにアクセスして検索するのはとても不便です。
+        これらの問題を解決するために、この拡張プログラムを開発しました。
+      </section>
+
+      <section class='project-tech'>
+        <h2>活用した技術</h2>
+        <HTMLPill />
+        <CSSPill />
+        <JavascriptPill />
+        <Github />
+      </section>
+
+      <section class='project-architecture'>
+        <h2>ハイレベルアーキテクチャ</h2>
+        <Image
+          id='highlevel-architecture'
+          src={HighLevelArchitecture}
+          alt={'high level architecture'}
+        />
+      </section>
+
+      <!-- <section class='project-preview'>
+        <h2>プロジェクトのプレビュー</h2>
+      </section> -->
+      <section class='project-point'>
+        <h2>プロジェクトのポイントと学んだこと</h2>
+        <p>
+          このプロジェクトは、増え続けるYouTube動画の検索リクエストによりスムーズに対応するために開発されました。
+          自分自身が動画を検索する中で感じた不便さを解消し、そのソリューションを共有する目的で、Chrome拡張機能を開発し、Chromeウェブストアに公開しました。
+          大規模で難易度の高いプログラムではありませんが、明確な目的を持ち、実際の課題を解決するための実用的なツールです。
+        </p>
+      </section>
+
+      <section class='project-links'>
+        <h3>プロジェクトにおけるリンク</h3>
+        <!-- <div id='live-service-link'>
+          <a
+            href='https://topstermaker.tuneup-studio.com'
+            target='_blank'
+            >ライブサービス</a
+          >
+        </div> -->
+        <li>
+          <a
+            href='https://github.com/minusmo/YouTube-Quick-Search-Chrome-Extension/blob/master/README_JP.md'
+            target='_blank'
+            >GitHubのリポジトリ</a
+          >
+        </li>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  #outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  .project-intro {
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+  .project-intro > h1 {
+    margin: 0 auto;
+  }
+  #live-service-link {
+    color: var(--Swatches-green-tones-6);
+  }
+  #highlevel-architecture {
+    width: 80%;
+    height: auto;
+  }
+</style>

@@ -1,110 +1,184 @@
-[
+{
+  "programmingLanguage": [
     {
-        "name": "Java",
-        "version": "^8",
-        "purpose": "General Program",
-        "level": ""
+      "name": "Java",
+      "version": "^8",
+      "purpose": "サーバプログラム",
+      "level": "最上"
     },
     {
-        "name": "Typescript",
-        "version": "1.8",
-        "purpose": "Client Program",
-        "level": "Expert"
+      "name": "Typescript",
+      "version": "^5.0.0",
+      "purpose": "フロントエン、クライアントプログラム",
+      "level": "上"
     },
     {
-        "name": "Python",
-        "version": "1.8",
-        "purpose": "Client Program",
-        "level": "Expert"
+      "name": "Javascript",
+      "version": "es2015以上",
+      "purpose": "フロントエン、サーバプログラム、スクリプト作成",
+      "level": "上"
     },
     {
-        "name": "C++",
-        "version": "1.8",
-        "purpose": "Client Program",
-        "level": "Expert"
-    },
-    {
-        "name": "Spring Boot",
-        "version": "1.8",
-        "purpose": "Server Program",
-        "level": "Expert"
-    },
-    {
-        "name": "React",
-        "version": "1.8",
-        "purpose": "Client Program",
-        "level": "Expert"
-    },
-    {
-        "name": "Next.js",
-        "version": "1.8",
-        "purpose": "Client Program",
-        "level": "Expert"
-    },
-    {
-        "name": "Node.js",
-        "version": "1.8",
-        "purpose": "Client Program",
-        "level": "Expert"
-    },
-    {
-        "name": "Docker",
-        "version": "1.8",
-        "purpose": "Server Program",
-        "level": "Expert"
-    },
-    {
-        "name": "MySql",
-        "version": "1.8",
-        "purpose": "Server Program",
-        "level": "Expert"
-    },
-    {
-        "name": "MongoDB",
-        "version": "1.8",
-        "purpose": "Server Program",
-        "level": "Expert"
-    },
-    {
-        "name": "Git",
-        "version": "1.8",
-        "purpose": "Server Program",
-        "level": "Expert"
-    },
-    {
-        "name": "AWS",
-        "version": "1.8",
-        "purpose": "Server Program",
-        "level": "Expert"
-    },
-    {
-        "name": "JPA",
-        "version": "1.8",
-        "purpose": "Server Program",
-        "level": "Expert"
-    },
-    {
-        "name": "JUnit",
-        "version": "1.8",
-        "purpose": "Server Program",
-        "level": "Expert"
-    },
-    {
-        "name": "Gradle",
-        "version": "1.8",
-        "purpose": "Server Program",
-        "level": "Expert"
-    },
-    {
-        "name": "Jest",
-        "version": "1.8",
-        "purpose": "Client Program",
-        "level": "Expert"
-    },
-    {
-        "name": "NPM",
-        "version": "1.8",
-        "purpose": "Client Program",
-        "level": "Expert"
+      "name": "Python",
+      "version": "^3.0.0",
+      "purpose": "サーバプログラム、データ分析、スクリプト作成",
+      "level": "上"
     }
-]
+  ],
+  "framework": [
+    {
+      "name": "Spring Boot",
+      "version": "^3.0.0",
+      "purpose": "WEBアプリケーションサーバー",
+      "level": "上"
+    },
+    {
+      "name": "React.js",
+      "version": "^17.0.0",
+      "purpose": "フロントエン",
+      "level": "上"
+    },
+    {
+      "name": "Next.js",
+      "version": "^14.0.0",
+      "purpose": "フロントエン、フロントエンドサーバー",
+      "level": "中"
+    },
+    {
+      "name": "Node.js",
+      "version": "^16.0.0",
+      "purpose": "フロントエンドサーバー、WEBアプリケーションサーバー",
+      "level": "中"
+    }
+  ],
+  "database": [
+    {
+      "name": "MySQL",
+      "version": "^8.0.0",
+      "purpose": "データベース",
+      "level": "中"
+    },
+    {
+      "name": "MongoDB",
+      "version": "^8.0",
+      "purpose": "Server Program",
+      "level": "中"
+    }
+  ],
+  "containerization": [
+    {
+      "name": "Docker",
+      "version": "^20.1",
+      "purpose": "コンテナー化、アプリケーション配布",
+      "level": "中"
+    }
+  ],
+  "versionControl": [
+    {
+      "name": "Git",
+      "version": "2.3",
+      "purpose": "バージョン管理システム",
+      "level": "上"
+    }
+  ],
+  "cicd": [
+    {
+      "name": "Github",
+      "version": "最新",
+      "purpose": "CI/CD",
+      "level": "上"
+    }
+  ],
+  "packageManagement": [
+    {
+      "name": "NPM",
+      "version": "最新",
+      "purpose": "パッケージ管理",
+      "level": "上"
+    }
+  ],
+  "buildTools": [
+    {
+      "name": "Gradle",
+      "version": "^8.0.0",
+      "purpose": "ビルドツール",
+      "level": "下"
+    }
+  ],
+  "testFramework": [
+    {
+      "name": "JUnit",
+      "version": "^5.0",
+      "purpose": "単位テスト、結合テスト",
+      "level": "下"
+    },
+    {
+      "name": "Jest",
+      "version": "^29.0.0",
+      "purpose": "単位テスト、結合テスト",
+      "level": "下"
+    }
+  ],
+  "cloudService": [
+    {
+      "name": "AWS",
+      "version": "最新",
+      "purpose": "クラウドコンピューティング",
+      "level": "中"
+    },
+    {
+      "name": "AWS Amplify",
+      "version": "^3",
+      "purpose": "WEBアプリケーションサーバー",
+      "level": "中"
+    },
+    {
+      "name": "AWS EC2",
+      "version": "最新",
+      "purpose": "仮想マシン",
+      "level": "下"
+    }
+  ],
+  "os": [
+    {
+      "name": "Windows",
+      "version": "^10",
+      "purpose": "オペレーティングシステム",
+      "level": "上"
+    },
+    {
+      "name": "Mac",
+      "version": "^10",
+      "purpose": "オペレーティングシステム",
+      "level": "上"
+    },
+    {
+      "name": "Linux(Ubuntu)",
+      "version": "^20",
+      "purpose": "オペレーティングシステム",
+      "level": "中"
+    }
+  ],
+  "frontend": [
+    {
+      "name": "HTML",
+      "version": "5",
+      "purpose": "マークアップ言語、WEBページ作成",
+      "level": "上"
+    },
+    {
+      "name": "CSS",
+      "version": "3",
+      "purpose": "スタイルシート言語、WEBページ作成",
+      "level": "上"
+    }
+  ],
+  "orm": [
+    {
+      "name": "JPA",
+      "version": "^3.1",
+      "purpose": "ORM(オブジェクトリレーショナルマッピング)",
+      "level": "中"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+---
+import Footer from '../../components/SharedFooter.astro';
+import Nav from '../../components/SharedNav.astro';
+import {
+  ReactPill,
+  NextPill,
+  JotaiPill,
+  MantineUIPill,
+  AWSAmplifyPill,
+  AWSRoute53Pill,
+  TypescriptPill,
+  NodePill,
+  GoogleAnalyticsPill,
+  Github,
+} from '../../components/TechStackPills.tsx';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title='Abstract of HoJoon Eum'>
+  <Nav />
+  <main>
+    <div id='outer-container'>
+      <h1>プロジェクトのご説明</h1>
+
+      <section class='project-intro'>
+        <h1>TopsterMaker</h1>
+        <h2>(トップスターメーカー)</h2>
+        <p>
+          好きな音楽のアルバムカバーのコラージュを作って大事にしてみましょう。
+        </p>
+      </section>
+
+      <section class='project-details'>
+        <h2>プロジェクトの詳細</h2>
+        <p>
+          このプロジェクトは、自分の好きな音楽アルバムのカバーイメージを望む形で
+          構成してコラージュを作り、ダウンロードして所蔵できるウェブ
+          アプリケーションです。 英国の音楽サービス企業であるLast
+          FMからアルバム情報を
+          照会して、ウェブブラウザでコラージュを構成した後、画像ファイルにダウンロード
+          します。
+        </p>
+      </section>
+
+      <section class='project-purpose'>
+        <h2>プロジェクトの目的</h2>
+        こちらのサービスは、従来提供されていたトップスターメーカーウェブサービスのモバイルビュー未支援、
+        ビューサイズの変化、未支援などの不便さを改善するために開発されました。
+      </section>
+
+      <section class='project-tech'>
+        <h2>活用した技術</h2>
+        <ReactPill />
+        <NextPill />
+        <JotaiPill />
+        <TypescriptPill />
+        <NodePill />
+        <MantineUIPill />
+        <AWSAmplifyPill />
+        <AWSRoute53Pill />
+        <GoogleAnalyticsPill />
+        <Github />
+      </section>
+
+      <section class='project-architecture'>
+        <h2>ハイレベルアーキテクチャ</h2>
+        <!-- 이곳에는 고수준 아키텍처 이미지를 삽입 -->
+        <!-- <Image
+        src={TopsterMakerArchitecture}
+        width={500}
+        height={300}
+        alt={'Topstermaker high level architecture'}
+        /> -->
+      </section>
+
+      <section class='project-preview'>
+        <h2>プロジェクトのプレビュー</h2>
+      </section>
+
+      <section class='project-links'>
+        <h3>プロジェクトにおけるリンク</h3>
+        <div id='live-service-link'>
+          <a
+            href='https://topstermaker.tuneup-studio.com'
+            target='_blank'
+            >ライブサービス</a
+          >
+        </div>
+        <!-- <li>
+          <a
+          href='GitHub 리포지토리 URL'
+          target='_blank'
+          >GitHubのリポジトリ</a
+          >
+          </li> -->
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  #outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  .project-intro {
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+  .project-intro > h1 {
+    margin: 0 auto;
+  }
+  #live-service-link {
+    color: var(--Swatches-green-tones-6);
+  }
+</style>
