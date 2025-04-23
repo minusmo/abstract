@@ -11,7 +11,7 @@
         },
         {
             "title": "Tokens-to",
-            "titleJp": "トークンズーツ",
+            "titleJp": "トークンズ・トゥー",
             "description": "Javascriptのオブジェクトで定義されたCSSトークンをCSSに変換するライブラリです。",
             "techStack": ["glob.js", "commander.js", "Jest", "Typescript", "Node.js"],
             "problemAndSolution": "Javascriptのオブジェクトで定義されたCSSトークンをCSSに変換する課程をCLIで自動化。",
